@@ -7,17 +7,17 @@
 <style>
   :root {
     --bg: #0A1A5C;     /* royal dark blue */
-    --mint: #3EE8C4;   /* mint teal */
+    --mint: #0A1A5C;
     --pale: #E6FFF8;
-    --caption: #BFF5E6;
+    --caption: #0A1A5C;
   }
   html, body { margin: 0; height: 100%; background: var(--bg); overflow: hidden; }
   body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
   .stage { position: fixed; inset: 0; }
   svg { width: 100%; height: 100%; display: block; }
-  .arc  { fill: none; stroke-width: 1; stroke-linecap: round; }
-  .att  { fill: none; stroke-width: 1.1; stroke-linecap: round; }
-  .glow { filter: drop-shadow(0 0 7px var(--mint)); }
+  .arc  { fill: none; stroke-width: 1; stroke-linecap: round; filter: drop-shadow(0 0 1.5px #9BD6FF); }
+  .att  { fill: none; stroke-width: 1.1; stroke-linecap: round; filter: drop-shadow(0 0 1.5px #E6FFF8); }
+  .glow { filter: drop-shadow(0 0 7px #E6FFF8); }
 </style>
 </head>
 <body>
@@ -28,7 +28,7 @@
 <script>
 (() => {
   // ---- settings ----
-  const MINT = '#3EE8C4', PALE = '#E6FFF8', BG = '#0A1A5C';
+  const MINT = '#0A1A5C', PALE = '#E6FFF8', BG = '#0A1A5C';
   const LAV = '#B8A6FF', SKY = '#9BD6FF';
   const SPEED = 1;          // 1 = default; lower is slower
   const STEP_SECONDS = 7.5; // time per new point (higher = slower)

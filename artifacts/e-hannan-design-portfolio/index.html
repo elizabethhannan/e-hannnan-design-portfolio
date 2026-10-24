@@ -11,8 +11,8 @@
     :root {
       --ink: #0f0f0f; --paper: #f5f2ec; --warm-white: #faf8f4;
       --paper-alt: #ebe5d8;
-      --accent: #2a6b6b; --accent-light: #3d8b8b; --accent-dark: #1a4a4a;
-      --rule: #c8bfb0; --muted: #6b6358; --tag-bg: #e2edec;
+      --accent: #0A1A5C; --accent-light: #0A1A5C; --accent-dark: #0A1A5C;
+      --rule: #c8bfb0; --muted: #6b6358; --tag-bg: rgba(10, 26, 92, 0.12);
       --serif: 'Playfair Display', Georgia, serif;
       --mono: 'DM Mono', 'Courier New', monospace;
       --sans: 'DM Sans', system-ui, sans-serif;
@@ -418,36 +418,37 @@
     }
     .hero-left,
     .hero-right { position: relative; z-index: 1; }
-    .hero-left::after { background: rgba(191, 245, 230, 0.24); }
+    .hero-left::after { background: rgba(10, 26, 92, 0.24); }
     .hero-label,
     .hero-title,
-    .hero-quote { color: #BFF5E6; }
+    .hero-quote { color: #0A1A5C; }
     .hero-name,
-    .hero-statement { color: #E6FFF8; }
+    .hero-statement { color: #FAF8F4; }
     .hero-name em,
-    .hero-subtitle { color: #3EE8C4; }
-    .hero-quote { border-left-color: #3EE8C4; }
+    .hero-subtitle { color: #0A1A5C; }
+    .hero-quote { border-left-color: #0A1A5C; }
     .hero .tag {
-      color: #BFF5E6;
+      color: #0A1A5C;
       background: rgba(10, 26, 92, 0.64);
       border-color: rgba(62, 232, 196, 0.45);
     }
     .hero .btn {
       color: #E6FFF8;
       background: rgba(10, 26, 92, 0.9);
-      border-left-color: #3EE8C4;
+      border-left-color: #0A1A5C;
       box-shadow: 0 5px 16px rgba(0, 0, 0, 0.26);
     }
     .hero .btn-primary {
       color: #071233;
-      background: #3EE8C4;
+      background: #0A1A5C;
     }
     .hero .btn:hover,
     .hero .btn-primary:hover {
       color: #071233;
-      background: #7CF5D8;
+      background: #0A1A5C;
     }
   </style>
+  <link rel="stylesheet" href="/src/navy-accent.css">
 </head>
 <body>
 
@@ -515,7 +516,7 @@
   </div>
   <div class="hero-right">
     <p class="hero-statement">After an eon in corporate enterprise tech and entrepreneurism endeavors — it's time to pivot with the most optimal knowledge base in hand and grow. That's why I show up.</p>
-    <blockquote class="hero-quote">After an eon in corporate enterprise tech and entrepreneurism endeavors — it's time to pivot with the most optimal knowledge base in hand and grow. That's why I show up.</blockquote>
+    <blockquote class="hero-quote">Every new point is chosen by looking back at all the ones before it.</blockquote>
     <div class="hero-tags">
       <span class="tag">AI Safety</span><span class="tag">AI Security</span><span class="tag">HXO / HCI</span><span class="tag">Accessibility</span><span class="tag">ESG Transparency</span><span class="tag">Adversarial Robustness</span><span class="tag">Sustainability</span>
     </div>
@@ -659,7 +660,7 @@
     else if (loopT < 0.72) { straight = easeInOutCubic((loopT - 0.50) / 0.22); }
     else if (loopT < 0.86) { straight = 1; nodeAppear = easeOutCubic((loopT - 0.72) / 0.14); }
     else { const p = (loopT - 0.86) / 0.14; straight = 1 - easeInOutCubic(p); nodeAppear = 1 - easeOutCubic(p); globalAlpha = 1 - easeInOutSine(p) * 0.3; }
-    const bgColor = '#f5f2ec', primaryColor = '#1a4a4a', secondColor = '#245151', ruleColor = '#d5cfc5';
+    const bgColor = '#f5f2ec', primaryColor = '#0A1A5C', secondColor = '#0A1A5C', ruleColor = '#d5cfc5';
     ctx.clearRect(0, 0, W, H);
     ctx.fillStyle = bgColor; ctx.fillRect(0, 0, W, H);
     const time = elapsed;
@@ -1069,7 +1070,7 @@
   <canvas id="loopThreadCanvas"></canvas>
 </section>
 <style>
-  .loop-anim-section { background: #1a4a4a; padding: 0; width: 100%; overflow: hidden; }
+  .loop-anim-section { background: #0A1A5C; padding: 0; width: 100%; overflow: hidden; }
   #loopThreadCanvas { width: 100%; height: 140px; display: block; }
   @media (max-width: 720px) { #loopThreadCanvas { height: 100px; } }
 </style>
@@ -1192,7 +1193,7 @@
     else if (loopT < 0.86) { straight = 1; nodeAppear = easeOutCubic((loopT - 0.72) / 0.14); }
     else { const p = (loopT - 0.86) / 0.14; straight = 1 - easeInOutCubic(p); nodeAppear = 1 - easeOutCubic(p); globalAlpha = 1 - easeInOutSine(p) * 0.3; }
 
-    const bgColor = '#1a4a4a', primaryColor = '#f5f2ec', secondColor = '#d5cfc5', ruleColor = '#2e6b6b';
+    const bgColor = '#0A1A5C', primaryColor = '#f5f2ec', secondColor = '#d5cfc5', ruleColor = '#0A1A5C';
     ctx.clearRect(0, 0, W, H);
     ctx.fillStyle = bgColor; ctx.fillRect(0, 0, W, H);
     const time = elapsed;

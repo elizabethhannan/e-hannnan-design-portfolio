@@ -1,0 +1,162 @@
+:root {
+  --accent: #0A1A5C !important;
+  --accent-light: #0A1A5C !important;
+  --accent-dark: #0A1A5C !important;
+  --tag-bg: rgba(10, 26, 92, 0.12) !important;
+  --dossier-teal: #0A1A5C !important;
+  --dossier-pale: rgba(10, 26, 92, 0.12) !important;
+}
+
+a,
+.hero-name em,
+.hero-subtitle,
+.hero-label,
+.hero-title,
+.hero-quote,
+.eyebrow,
+.source-link,
+.captcha-refresh,
+.speaking-label,
+.speaking-event-eyebrow,
+.speaking-video-link {
+  color: #0A1A5C !important;
+}
+
+.hero-name,
+.hero-name em {
+  color: #ffffff !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+
+.hero-label,
+.hero-subtitle,
+.hero-title,
+.hero-statement,
+.hero-quote {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+
+.btn-primary,
+.newsletter-btn,
+.newsletter-submit,
+.pdf-slide-btn,
+.cv-send,
+.download-btn {
+  color: #fff !important;
+  background-color: #0A1A5C !important;
+  border-color: #0A1A5C !important;
+}
+
+.btn-primary:hover,
+.newsletter-btn:hover,
+.newsletter-submit:hover,
+.pdf-slide-btn:hover,
+.cv-send:hover:not(:disabled),
+.download-btn:hover {
+  color: #fff !important;
+  background-color: #0A1A5C !important;
+  border-color: #0A1A5C !important;
+}
+
+.tag,
+.active-badge,
+.patent-badge,
+.badge-safety,
+.award-chip,
+.location-pill {
+  color: #fff !important;
+  background-color: #0A1A5C !important;
+  border-color: #0A1A5C !important;
+}
+
+.hero .tag {
+  color: #0A1A5C !important;
+  background-color: #faf8f4 !important;
+  border-color: #faf8f4 !important;
+}
+
+.foundation-img-placeholder {
+  background: linear-gradient(135deg, rgba(10, 26, 92, 0.12), rgba(10, 26, 92, 0.28)) !important;
+}
+
+.agent-note,
+.hxo-statement,
+.paper-placeholder,
+.ptk-carousel-arrow:hover {
+  background-color: rgba(10, 26, 92, 0.1) !important;
+  border-color: rgba(10, 26, 92, 0.3) !important;
+}
+
+.video-thumb,
+.rp-video-col,
+.rp-video-overlay {
+  background: #0A1A5C !important;
+}
+
+.loop-anim-section,
+.thread-anim-teal {
+  background: #0A1A5C !important;
+}
+
+.nav-links .dropdown a:hover,
+.captcha-refresh:hover,
+.link-list .badge {
+  color: #0A1A5C !important;
+  background-color: rgba(10, 26, 92, 0.1) !important;
+}
+
+.field input:focus,
+.field textarea:focus,
+.urgency-calendar input[type="date"]:focus {
+  border-color: #0A1A5C !important;
+  box-shadow: 0 0 0 3px rgba(10, 26, 92, 0.12) !important;
+}
+
+.ptk-icon-btn:hover,
+.ptk-award-thumb:hover {
+  box-shadow: 0 4px 16px rgba(10, 26, 92, 0.16) !important;
+}
+
+.code-block .fn,
+.cmod-terminal,
+.cmod-terminal-output,
+[style*="#a8d8a8" i],
+[style*="#7ec98a" i],
+[style*="#2f5a3a" i],
+[style*="#2a6a2a" i] {
+  color: #0A1A5C !important;
+  text-shadow: none !important;
+}
+
+[style*="background:#e8f4e8" i],
+[style*="background: #e8f4e8" i],
+[style*="background:#d4ead5" i],
+[style*="background: #d4ead5" i] {
+  color: #fff !important;
+  background: #0A1A5C !important;
+}
+
+.hero .btn-primary {
+  color: #fff !important;
+  background-color: #0A1A5C !important;
+  border-color: #faf8f4 !important;
+}
+
+.hero .btn,
+.hero .btn:hover,
+.hero .btn-primary:hover {
+  color: #fff !important;
+  background-color: #0A1A5C !important;
+  border-color: #faf8f4 !important;
+}
+
+.twk-toggle[data-on="1"] {
+  background-color: #0A1A5C !important;
+}
+
+.event-facts,
+.agent-note {
+  border-left-color: #0A1A5C !important;
+}

@@ -8,7 +8,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
 
     :root {
-      --accent: #2a6b6b;
+      --accent: #0A1A5C;
       --accent-dark: #1a3f3f;
       --ink: #1a1e2e;
       --muted: #6b7280;
@@ -487,6 +487,7 @@
       margin: 0.4in;
     }
   </style>
+  <link rel="stylesheet" href="/src/navy-accent.css">
 </head>
 <body>
 
@@ -625,7 +626,7 @@
     else if (loopT < 0.72) { straight = easeInOutCubic((loopT - 0.50) / 0.22); }
     else if (loopT < 0.86) { straight = 1; nodeAppear = easeOutCubic((loopT - 0.72) / 0.14); }
     else { const p = (loopT - 0.86) / 0.14; straight = 1 - easeInOutCubic(p); nodeAppear = 1 - easeOutCubic(p); globalAlpha = 1 - easeInOutSine(p) * 0.3; }
-    const bgColor = '#f5f2ec', primaryColor = '#1a4a4a', secondColor = '#245151', ruleColor = '#d5cfc5';
+    const bgColor = '#f5f2ec', primaryColor = '#0A1A5C', secondColor = '#0A1A5C', ruleColor = '#d5cfc5';
     ctx.clearRect(0, 0, W, H);
     ctx.fillStyle = bgColor; ctx.fillRect(0, 0, W, H);
     const time = elapsed;
