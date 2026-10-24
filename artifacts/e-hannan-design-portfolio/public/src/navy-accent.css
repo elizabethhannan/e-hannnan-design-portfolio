@@ -17,15 +17,15 @@ a,
   color: #0A1A5C !important;
 }
 
-/* Restore the uploaded portfolio palette only within the hero. */
+/* Keep header text crisp white over the blue animation. */
 .hero {
-  --ink: #0f0f0f;
+  --ink: #fff;
   --paper: #f5f2ec;
-  --accent: #2a6b6b !important;
-  --accent-light: #3d8b8b !important;
-  --accent-dark: #1a4a4a !important;
-  --muted: #6b6358;
-  --tag-bg: #e2edec !important;
+  --accent: #fff !important;
+  --accent-light: #fff !important;
+  --accent-dark: #fff !important;
+  --muted: #fff;
+  --tag-bg: rgba(10, 26, 92, 0.8) !important;
   color: var(--ink);
 }
 
@@ -96,7 +96,7 @@ a,
 .hero .tag {
   color: var(--accent) !important;
   background-color: var(--tag-bg) !important;
-  border-color: rgba(42, 107, 107, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
 }
 
 .foundation-img-placeholder {
@@ -162,20 +162,20 @@ a,
 
 .hero .btn {
   color: var(--ink) !important;
-  background-color: var(--paper) !important;
+  background-color: #0A1A5C !important;
   border-color: var(--accent) !important;
 }
 
 .hero .btn:hover {
   color: var(--accent) !important;
-  background-color: var(--paper) !important;
+  background-color: #172e7a !important;
   border-color: var(--accent) !important;
 }
 
 .hero .btn-primary,
 .hero .btn-primary:hover {
   color: #fff !important;
-  background-color: var(--accent) !important;
+  background-color: #0A1A5C !important;
   border-color: rgba(255, 255, 255, 0.28) !important;
 }
 
