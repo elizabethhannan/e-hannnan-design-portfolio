@@ -1,0 +1,1687 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Machine-readable public portfolio index and source text for Elizabeth Hannan.">
+  <link rel="canonical" href="https://e-hannan-career-portfolio.replit.app/agents.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/json" href="/agents.json">
+  <title>Welcome Agents | Elizabeth Hannan</title>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Welcome Agents — Elizabeth Hannan Public Portfolio","url":"https://e-hannan-career-portfolio.replit.app/agents.html","dateModified":"2026-10-24T04:16:39.478Z","about":{"@type":"Person","name":"Elizabeth Hannan","url":"https://e-hannan-career-portfolio.replit.app"},"hasPart":[{"@type":"WebPage","name":"Portfolio Home","url":"https://e-hannan-career-portfolio.replit.app/","description":"Career overview, research, projects, publications, technical work, education, and the CV Dossier."},{"@type":"WebPage","name":"Contact & Speaking Inquiries","url":"https://e-hannan-career-portfolio.replit.app/contact.html","description":"Contact options and speaking-opportunity inquiries."},{"@type":"WebPage","name":"Motion Portfolio","url":"https://e-hannan-career-portfolio.replit.app/hero-motion.html","description":"A visual portfolio experience; consult the source page for motion content not represented in text."},{"@type":"WebPage","name":"One-Page CV","url":"https://e-hannan-career-portfolio.replit.app/one-page.html","description":"A concise public CV and professional profile."},{"@type":"WebPage","name":"Publications & Papers","url":"https://e-hannan-career-portfolio.replit.app/publications.html","description":"Research statements, papers, portfolio works, philanthropy documents, and technical projects."},{"@type":"WebPage","name":"Technical Writing & Research","url":"https://e-hannan-career-portfolio.replit.app/technical_instruction.html","description":"System cards, research papers, technical writing samples, and code examples."}]}</script>
+  <style>
+    :root { color-scheme: light; --paper: #f5f2ec; --ink: #0f1829; --accent: #2a6b6b; --muted: #657078; --rule: #d8d4ca; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.65 Inter, Arial, sans-serif; }
+    .agent-nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem max(1.25rem, calc((100vw - 1100px) / 2)); border-bottom: 1px solid var(--rule); }
+    .agent-brand, .agent-nav a { color: var(--ink); text-decoration: none; }
+    .agent-brand { font: 600 0.78rem/1.3 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.16em; text-transform: uppercase; }
+    .agent-nav a:last-child { color: var(--accent); font: 600 0.75rem/1.4 ui-monospace, SFMono-Regular, Consolas, monospace; }
+    main { width: min(1100px, calc(100% - 3rem)); margin: 0 auto; }
+    .agent-hero { padding: clamp(3.5rem, 8vw, 6rem) 0 2.5rem; }
+    .eyebrow { margin: 0 0 0.9rem; color: var(--accent); font: 700 0.76rem/1.4 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.16em; text-transform: uppercase; }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+    h1 { margin: 0 0 1rem; font-size: clamp(2.9rem, 7vw, 5.5rem); line-height: 0.98; letter-spacing: -0.035em; }
+    .intro { max-width: 760px; margin: 0; color: #44515a; font-size: 1.15rem; line-height: 1.75; }
+    .agent-note { margin: 2rem 0 3.5rem; padding: 1.2rem 1.4rem; border-left: 3px solid var(--accent); background: rgba(42,107,107,0.08); color: #354149; }
+    .agent-note strong { color: var(--ink); }
+    .index-heading { margin: 0 0 1.2rem; font-size: clamp(1.8rem, 4vw, 2.5rem); }
+    .source-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-bottom: 3.5rem; }
+    .source-card { padding: 1.3rem 1.4rem; border: 1px solid var(--rule); background: rgba(255,255,255,0.56); }
+    .source-card h3 { margin: 0 0 0.45rem; font-size: 1.35rem; line-height: 1.25; }
+    .source-card h3 a { color: var(--ink); text-decoration: none; }
+    .source-card p { min-height: 3.4em; margin: 0 0 1rem; color: var(--muted); }
+    .source-link { color: var(--accent); font: 700 0.76rem/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.06em; text-decoration: none; text-transform: uppercase; }
+    .source-link:hover, .agent-nav a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+    .source-content { border-top: 1px solid var(--rule); padding: 1rem 0; }
+    .source-content:last-child { border-bottom: 1px solid var(--rule); }
+    .source-content summary { cursor: pointer; color: var(--ink); font-weight: 650; }
+    .source-content summary span { margin-left: 0.4rem; color: var(--muted); font-weight: 400; }
+    .source-meta { margin: 0.9rem 0; color: var(--muted); font-size: 0.9rem; }
+    .source-meta a { color: var(--accent); overflow-wrap: anywhere; }
+    pre { margin: 0; padding: 1.2rem; overflow: auto; border: 1px solid #e2ded5; background: rgba(255,255,255,0.72); color: #26323b; font: 0.9rem/1.65 ui-monospace, SFMono-Regular, Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .agent-footer { margin-top: 3.5rem; padding: 1.5rem 0 2.5rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.85rem; }
+    .agent-footer a { color: var(--accent); }
+    @media (max-width: 680px) {
+      .agent-nav { align-items: flex-start; flex-direction: column; padding: 1rem 1.25rem; }
+      main { width: min(100% - 2rem, 1100px); }
+      .source-grid { grid-template-columns: 1fr; }
+      .source-card p { min-height: 0; }
+      .source-content summary span { display: block; margin: 0.25rem 0 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="agent-nav" aria-label="Agent resource navigation">
+    <a class="agent-brand" href="/">Elizabeth Hannan · Public Portfolio</a>
+    <a href="/agents.json">Open machine-readable JSON</a>
+  </nav>
+  <main>
+    <header class="agent-hero">
+      <p class="eyebrow">Public portfolio · source index</p>
+      <h1>Welcome Agents</h1>
+      <p class="intro">This page provides a text-first index of the public portfolio and the current readable text from its source pages. Follow the source links for context, links, and visual material.</p>
+      <aside class="agent-note"><strong>Source guidance:</strong> Use the linked public pages as the source of truth, cite the page that supports each claim, and say when a detail is not specified. This export contains public site content only; it does not include private dossier conversations or session data.</aside>
+    </header>
+    <section aria-labelledby="sources-heading">
+      <h2 class="index-heading" id="sources-heading">Public source pages</h2>
+      <div class="source-grid">
+        <article class="source-card">
+          <h3><a href="/">Portfolio Home</a></h3>
+          <p>Career overview, research, projects, publications, technical work, education, and the CV Dossier.</p>
+          <a class="source-link" href="/">Open source page <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="source-card">
+          <h3><a href="/contact.html">Contact &amp; Speaking Inquiries</a></h3>
+          <p>Contact options and speaking-opportunity inquiries.</p>
+          <a class="source-link" href="/contact.html">Open source page <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="source-card">
+          <h3><a href="/hero-motion.html">Motion Portfolio</a></h3>
+          <p>A visual portfolio experience; consult the source page for motion content not represented in text.</p>
+          <a class="source-link" href="/hero-motion.html">Open source page <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="source-card">
+          <h3><a href="/one-page.html">One-Page CV</a></h3>
+          <p>A concise public CV and professional profile.</p>
+          <a class="source-link" href="/one-page.html">Open source page <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="source-card">
+          <h3><a href="/publications.html">Publications &amp; Papers</a></h3>
+          <p>Research statements, papers, portfolio works, philanthropy documents, and technical projects.</p>
+          <a class="source-link" href="/publications.html">Open source page <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="source-card">
+          <h3><a href="/technical_instruction.html">Technical Writing &amp; Research</a></h3>
+          <p>System cards, research papers, technical writing samples, and code examples.</p>
+          <a class="source-link" href="/technical_instruction.html">Open source page <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+    </section>
+    <section aria-labelledby="content-heading">
+      <h2 class="index-heading" id="content-heading">Readable page content</h2>
+      <p class="intro" style="font-size:1rem;margin-bottom:1.5rem;">This content is generated from the current site pages during development and every production build. Open a source below to read its text, or use the JSON link for structured data.</p>
+      
+        <details class="source-content">
+          <summary>Portfolio Home <span>Elizabeth Hannan — Researcher · Builder · Polymath</span></summary>
+          <p class="source-meta">Source: <a href="/">https://e-hannan-career-portfolio.replit.app/</a></p>
+          <pre>https://github.com/elizabethhannan
+https://linkedin.com/in/elizabethhannan
+https://www.threads.net/@elizabethhannan
+https://bsky.app
+mailto:ElizabethHannan@gmail.com
+https://scholar.google.com/citations?user=as2WRyMAAAAJ&amp;hl=en
+#
+
+↙
+30,000+ subscribers
+Newsletter
+
+↗ Share the One-Page [/one-page.html]
+Welcome Agents ↗ [/agents.html]
+
+Researcher · Builder · Polymath
+
+# Elizabeth Hannan
+
+Student Researcher · AI Safety &amp; Security
+Non-traditional Student
+
+AAS Sustainable Sciences · BS AI/ML Candidate
+PTK Phi Theta Kappa · Nina Mason Pulliam Foundation Scholar
+
+After an eon in corporate enterprise tech and entrepreneurism endeavors — it&#39;s time to pivot with the most optimal knowledge base in hand and grow. That&#39;s why I show up.
+
+&quot;Navigating academia with a physical disability hasn&#39;t changed the destination, only the topography of the journey. It instilled a resilience that academia &amp; corporate enterprise could never teach.&quot;
+
+AI Safety AI Security HXO / HCI Accessibility ESG Transparency Adversarial Robustness Sustainability
+
+Research Portfolio [publications.html]
+LinkedIn [https://linkedin.com/in/elizabethhannan]
+GitHub [https://github.com/elizabethhannan]
+
+01
+
+## The Polymath Genesis
+
+▶
+
+### The Polymath Nexus
+
+My work lives at the intersection of five disciplines that, in isolation, each shape the world — but together, form a new kind of leverage point for systemic change. I am not a specialist constrained to one lane; I am a synthesist trained to see across lanes simultaneously.
+
+After several life-altering events — navigating disability, career disruption, and personal loss — I chose to rebuild from scratch rather than simply recover. That decision is not a detour from my story; it is my story.
+
+Employment at the intersection of AI Safety/Security, Finance, and Sustainability — with Accessibility and Humanities as the connective tissue — is what drives me. If technology cannot be designed to help rather than hurt the human experience, then is it worth it? Advocacy and knowledge is why I am here.
+
+I continue to pursue education while actively seeking to balance it with employment and the opportunity to create cutting-edge solutions. As a polymath, I see great opportunities ahead.
+
+Experiential Design
+
+Human-centered systems that feel inevitable
+
+AI &amp; Human Interaction
+
+Machine intelligence meets lived experience
+
+Investments, P.E. &amp; V.C.
+
+Capital aligned with mission-driven outcomes
+
+Sustainability
+
+Long-arc thinking for land, ecosystems &amp; communities
+
+Philanthropy
+
+Structural generosity in every system I design
+
+⚑ Seven Mantras
+
+- 01. Leadership through acts of Service.
+
+- 02. Educate others to Diverse Financial Journeys.
+
+- 03. Always love the flora and the fauna.
+
+- 04. If you build it, you break it — renewable circular economies are the future.
+
+- 05. Live by healthy boundaries and personal excellence.
+
+- 06. Practice micro-philanthropy daily, spatially aware of others.
+
+- 07. Leave every space and community better than I found it.
+
+01
+
+## Research Statement
+
+View In Practice → [publications.html#recent-papers]
+
+Affiliations
+
+AI4ALL.org Fellowship Cohort — Summer 2026
+
+PTK Alpha Theta Omicron VP of Scholarship
+
+Nina Mason Pulliam Foundation Merit Scholar
+
+Maricopa Community College Honors Program
+
+PTK Honors in Action Community Research — Deaf &amp; DeafBlind Society of AZ
+
+My research investigates failure modes in large language model alignment that emerge not only from model training, but from the interface designs, user populations, and deployment contexts surrounding those models. I am particularly interested in how sycophantic behavior is amplified by UX patterns, how safety guardrails degrade across non-standard communication modalities, and how adversarial prompts exploit intersections of language, culture, and accessibility.
+
+Drawing on empirical expertise in ESG regulatory compliance, enterprise AI deployment at Fortune 500 scale, and community research conducted with the Deaf &amp; DeafBlind Society of Arizona through the PTK Honors in Action program, I bring grounded domain specificity to questions that standard benchmark evaluations do not yet systematically address.
+
+My future research engages with two distinct but complementary areas: sustainability and ESG transparency as they relate to AI compliance and greenwashing risks; and separately, how AI models interact through an HXO lens with accessibility challenges and adoption barriers across disability communities.
+
+On HXO: The most important part of this AI evolution we are living through is the balance between technology and the humans who use it. If technology cannot be designed to help rather than hurt the human experience, then the value proposition collapses. HXO is my frame for ensuring it does not.
+
+I am open to conversations about Fellowships, Cohorts, Grants, Private Executive Mentorships, and collaborative conversations and research programs aligned with these research directions.
+
+02
+
+## Research Projects
+
+View In Practice → [publications.html#recent-papers]
+
+[Image: Deaf &amp; DeafBlind Advocacy]
+
+PTK Honors in Action · Nationally Awarded
+
+### Deaf &amp; DeafBlind Advocacy Research
+
+Community-based research with the Deaf &amp; DeafBlind Society of Arizona examining barriers to AI tool adoption, communication modality gaps, and safety guardrail degradation.
+
+View Project → [publications.html#paper-01]
+
+[Image: Sycophancy by Design]
+
+Preprint
+
+### Sycophancy by Design
+
+Empirical study examining how UX patterns in LLM interfaces systematically amplify sycophantic behavior across six interface conditions.
+
+View Paper → [publications.html#paper-03]
+
+[Image: Predictive Land Trust]
+
+ESG · Sustainability
+
+### Predictive Land Trust Evaluation
+
+ML model using Random Forest regression to score conservation parcels on biodiversity, water proximity, carbon, and connectivity metrics.
+
+View Project → [publications.html#helix-conservatory]
+
+[Image: Adversarial Prompt Taxonomy]
+
+AI Safety · Alignment
+
+### Adversarial Prompt Taxonomy
+
+Systematic classification of prompt injection vectors targeting accessibility modalities, multilingual edge cases, and cultural blind spots in frontier models.
+
+View Research → [publications.html#paper-02]
+
+[Image: AI4ALL Ignite Fellowship]
+
+Future Research · AI Safety &amp; AI Security
+
+### AI4ALL Ignite Fellowship
+
+A no-cost, two-semester accelerator from leaders in AI for U.S. undergraduates in computing and data majors — strengthening AI skills through human-centered projects and industry-specific career readiness.
+
+📍 San Jose, CA
+Learn About Ignite → [https://ai-4-all.org/ai4all-ignite/]
+
+[Image: ML Cognitive Status Classification]
+
+Future Research · Machine Learning · AI Safety · AI Bias Detection
+
+### Predicting Mild Cognitive Impairment in Older Adults with Type 2 Diabetes
+
+Can supervised ML models classify mild cognitive impairment in older adults with Type 2 Diabetes using clinical and MRI-derived biomarkers? Compares Logistic Regression, Decision Tree, and Random Forest classifiers with SHAP explainability, bias documentation, and responsible AI review.
+
+Prototype → [https://tinyurl.com/AI4ALL-Prototype]
+View Machine Learning Models → [https://tinyurl.com/AI4ALL-GitHubPage]
+
+03
+
+## Publications &amp; Papers
+
+My research spans AI alignment, ESG transparency, accessibility technology, and human-computer interaction — with a focus on failure modes that emerge at the intersection of model behavior and real-world deployment contexts.
+
+Full Research Portfolio [publications.html]
+Google Scholar [https://scholar.google.com/citations?user=as2WRyMAAAAJ&amp;hl=en]
+
+6
+
+Research Works
+
+4
+
+Videos
+
+04
+
+## Philanthropy &amp; Mission
+
+View In Practice → [publications.html#philanthropy]
+
+[Image: Feed a Friend]
+Philanthropy
+
+🐾
+
+Feed a Friend
+
+No pet or human left hungry in our community before social services arrive — bridging the gap in moments of micro-tragedy. Revolutionizing the archaic food bank model.
+
+Micro-philanthropy in action — neighbor to neighbor
+
+Learn More → [publications.html#philanthropy-documents]
+
+[Image: Helix Land Conservancy]
+Conservation
+
+🌿
+
+Helix Land Conservatory
+
+Protecting and stewarding natural lands through data-driven conservation strategy, biodiversity indexing, and community land trust development.
+
+Preserving land for future generations
+
+Learn More → [publications.html#helix-conservatory]
+
+[Image: Nina Mason Pulliam Foundation]
+Scholar
+
+🏛️
+
+Nina Mason Pulliam Foundation
+
+Merit Scholar recipient supporting women and underserved communities in Arizona and Indiana.
+
+Empowering people to improve their lives
+
+Learn More [https://ninamasonpulliam.org]
+
+[Image: Phi Theta Kappa]
+Active Member
+
+📚
+
+Phi Theta Kappa — PTK
+
+VP of Scholarship, Alpha Theta Omicron chapter. Nationally awarded Honors in Action project with Deaf &amp; DeafBlind Society of AZ.
+
+Recognizing academic achievement in community colleges
+
+Learn More [https://ptk.org]
+
+Ongoing Advocacy
+
+[Image: Disability Rights &amp; Accessibility Advocacy]
+
+Disability Rights &amp; Accessibility Advocacy Active
+
+Navigating academia and professional environments with a physical disability has shaped my commitment to ensuring AI systems are designed with accessibility as a first-class concern — not an afterthought.
+
+- Community research with Deaf &amp; DeafBlind Society of Arizona
+
+- ADA compliance and accommodations advocacy within Maricopa Community College District
+
+- Research into how LLM safety guardrails degrade across non-standard communication modalities
+
+⚑ On Resilience
+
+Disability has not altered my trajectory — it has defined my lens . Every system I research and build is evaluated through the question: does this help or hurt the full spectrum of human experience?
+
+Learn More [publications.html#disability-advocacy]
+
+05
+
+## Code &amp; Technical Work
+
+View In Practice → [publications.html#code]
+
+### Building at the Research Frontier
+
+My technical work spans machine learning pipelines, ESG evaluation frameworks, and adversarial robustness tooling. I write Python for research and data pipelines, with growing work in TypeScript and systems programming.
+
+Two representative scripts from active research projects are shown here — click either to expand the full source.
+
+View GitHub [https://github.com/elizabethhannan]
+
+evaluate_parcel.py
+
+# Land Trust Parcel Evaluation Model
+
+import pandas as pd, numpy as np
+
+from sklearn.ensemble import RandomForestRegressor
+
+FEATURE_COLS = [ &#39;bio_idx&#39; , &#39;water_dist&#39; , &#39;canopy_cover&#39; , ...]
+
+def evaluate_parcel (data_path, model_path):
+
+score = model.predict(features)[0]
+
+return { &quot;recommendation&quot; : &quot;Acquire&quot; if score &gt; 0.7 ...}
+
+⤢
+View
+Code
+
+esg_sycophancy_eval.py
+
+# ESG Sycophancy Evaluation — Preprint
+
+import anthropic, json
+
+CONDITIONS = [ &quot;standard&quot; , &quot;approval_reinforcing&quot; ,
+
+&quot;friction_suppressed&quot; , &quot;challenger&quot; , ...]
+
+def run_experiment (corpus_path, output_path):
+
+for condition in CONDITIONS: ...
+
+⤢
+View
+Code
+
+06
+
+## Patents &amp; IP
+
+Patent Pending
+
+### Retrofit Thermosiphon Ventilation Windows
+
+Patent pending covering a novel passive ventilation system integrated into standard window retrofits — using thermosiphon airflow dynamics to enhance energy efficiency and indoor air quality without mechanical systems.
+
+Developed at the intersection of sustainability engineering and building science, this IP reflects a commitment to circular, renewable design solutions for existing housing stock.
+
+Patent Pending — No Current Details Available
+
+[Image: Retrofit Thermosiphon Ventilation Windows — Patent Pending]
+
+07
+
+## Transparent ESG Algorithm
+
+### The Executive&#39;s AI Powered Platform for Transparent Data Driven ESG Sustainability
+
+An AI-powered Carbon Intelligence platform I built to unify ESG reporting, carbon accounting, and regulatory compliance — enabling organizations to track Scope 1, 2, and 3 emissions with assurance-ready disclosures aligned to CSRD, ISSB, SEC Climate Disclosure, and California SB 253.
+
+The platform features double materiality assessments, AI-generated compliance insights, supplier engagement for Scope 3 verification, daily emissions heatmaps, regulatory readiness scoring, and executive board report generation — applying my ESG research to real financial infrastructure.
+
+Learn More [javascript:void(0)]
+Rough Agentic Prototype → [javascript:void(0)]
+
+[Image: Transparent ESG Algorithm Platform]
+
+08
+
+## Professional Background
+
+Current
+
+Non-Traditional Student
+
+Chief of IXD &amp; Product UX
+
+IXDY — AI Enablement Platform
+
+Sr. Product Marketing &amp; ESG
+
+Tesla · Supercharger / Verizon
+
+VP Product &amp; Creative Director
+
+BlueBlazingMedia / RED-Lab
+
+Director of Financial Communications
+
+Ellevest (Goldman Sachs)
+
+Enterprise clients &amp; collaborators
+
+Fortune 500 ·
+Enterprise AI ·
+ESG Advisory ·
+Tech Startups ·
+Non-Profits ·
+Academia ·
+Fortune 500 ·
+Enterprise AI ·
+ESG Advisory ·
+Tech Startups ·
+Non-Profits ·
+Academia
+
+09
+
+## Education
+
+PTK Phi Theta Kappa
+Nina Mason Pulliam Scholar
+Honors Program
+VP of Scholarship
+Nationally Awarded HiA
+
+In Progress
+
+Chandler-Gilbert Community College · Maricopa
+
+Bachelor of Science, Artificial Intelligence &amp; Machine Learning
+
+Nina Mason Pulliam Foundation Scholar · PTK Honors Society
+
+Summer 2026
+
+Maricopa Community College District
+
+Associate of Applied Science, Sustainable Sciences
+
+Completing Summer 2026 · Honors Program
+
+Leadership
+
+Phi Theta Kappa — Alpha Theta Omicron Chapter
+
+VP of Scholarship
+
+National Honors Society
+
+Continuing Certifications
+
+Professional Development
+
+Stanford · Cornell · Wharton · Yale · UC Berkeley
+
+CFO — Corporate Finance, Private Equity &amp; Venture Capital · Executive Product Marketing · Corporate Philanthropy · Computer Science · Entrepreneurism · Instructional Design &amp; Validated Comprehension (AI Methods)
+
+## Stay in the Research Loop
+
+Join 30,000+ subscribers following work at the intersection of AI Safety, ESG, and Accessibility.
+
+Speaking &amp; Events
+
+## Bring the conversation into the room.
+
+For speaking opportunities, collaborative research, or aligned conversations at the intersection of AI safety, ESG, and accessibility, get in touch.
+
+Discuss a speaking opportunity [contact.html]
+
+Latest Speaking Event:
+
+### Fireside Panel: Designed by Humans; Decided by Machines
+
+- Summit 2026 National Summit on Artificial Intelligence
+
+- Consortium National Applied AI Consortium (NAAIC)
+
+- Organizations Maricopa Community Colleges · National Applied AI Consortium
+
+- Role Moderator: Elizabeth Hannan
+
+### Fireside Summary:
+
+Your browser does not support video playback. Open the recording [/naaic-fireside-panel.mp4].
+
+Stop
+
+Ready to play
+
+Open recording in a new tab ↗ [/naaic-fireside-panel.mp4]
+English captions (.vtt) ↗ [/naaic-fireside-panel.vtt]
+Read the transcript ↗ [/naaic-fireside-transcript.html]</pre>
+        </details>
+        <details class="source-content">
+          <summary>Contact &amp; Speaking Inquiries <span>Contact — Elizabeth Hannan</span></summary>
+          <p class="source-meta">Source: <a href="/contact.html">https://e-hannan-career-portfolio.replit.app/contact.html</a></p>
+          <pre>https://github.com/elizabethhannan
+https://linkedin.com/in/elizabethhannan
+https://www.threads.net/@elizabethhannan
+mailto:ElizabethHannan@gmail.com
+https://scholar.google.com/citations?user=as2WRyMAAAAJ&amp;hl=en
+
+Get in Touch
+
+# Contact
+
+For Fellowships, Cohorts, Grants, Private Executive Mentorships, Philanthropy, Family Offices, Trusts, Full-Time Employment, Speaking Opportunities, Scholarships, collaborative research, or aligned conversations — please use the form below. Urgent inquiries are flagged and prioritized.
+
+✓
+
+## Message sent .
+
+Your email client should have opened with your message ready to send. If it didn&#39;t, please email ElizabethHannan@gmail.com directly. You&#39;ll receive a personal response within 3–5 business days.
+
+Back to Home [index.html]
+Send Another
+
+## Stay in the Research Loop
+
+Join 30,000+ subscribers following work at the intersection of AI Safety, ESG, and Accessibility.
+
+✓ Subscribed — check your inbox to confirm.</pre>
+        </details>
+        <details class="source-content">
+          <summary>Motion Portfolio <span>Elizabeth Hannan — Hero Motion (Slate Blue)</span></summary>
+          <p class="source-meta">Source: <a href="/hero-motion.html">https://e-hannan-career-portfolio.replit.app/hero-motion.html</a></p>
+          <pre></pre>
+        </details>
+        <details class="source-content">
+          <summary>One-Page CV <span>Elizabeth Hannan — Professional One-Page</span></summary>
+          <p class="source-meta">Source: <a href="/one-page.html">https://e-hannan-career-portfolio.replit.app/one-page.html</a></p>
+          <pre>← Back to Portfolio [/]
+Elizabeth Hannan · Professional One-Page · 2026
+⬇ Download / Print PDF
+
+[Image: Elizabeth Hannan]
+
+# Elizabeth Hannan
+
+AI Researcher
+AI Safety &amp; Security
+Non-Traditional Student
+
+Scan to Connect
+
+[Image: Portfolio QR]
+Portfolio
+
+[Image: LinkedIn QR]
+LinkedIn
+
+LinkedIn.com/in/ElizabethHannan
+
+Research Focus
+
+AI Safety &amp; Security
+HXO / HCI
+ESG Transparency
+Accessibility
+Adversarial Robustness
+Sustainability
+Public Policy &amp; Economics
+
+Contact
+
+ElizabethHannan@gmail.com [mailto:ElizabethHannan@gmail.com]
+e-hannan-career-portfolio.replit.app [https://e-hannan-career-portfolio.replit.app/]
+github.com/elizabethhannan [https://github.com/elizabethhannan]
+
+2026 · Student Portfolio · Professional Introduction
+
+## AI Researcher · Builder · Polymath
+
+AAS Sustainable Sciences · BS AI/ML Candidate · PTK Phi Theta Kappa · Nina Mason Pulliam Foundation Scholar
+
+Hello
+
+Thank you for taking a moment to read this. I am Elizabeth Hannan — a non-traditional student, researcher, and polymath in active transition, deliberately upskilling for an adapted future career at the intersection of AI safety, ESG transparency, and human-centered systems design. I bring eighteen-plus years of executive leadership, entrepreneurism, Fortune 500 collaboration, financial communications, and sustainability finance to the academic work I am producing today.
+
+I do not come to this field as an outsider. I come as someone who has led product strategy for Tesla&#39;s Supercharger division, directed financial communications at Ellevest (Goldman Sachs), built and scaled companies across IXD, media, and AI enablement, and now applies that lived operational intelligence to research questions that matter: how do AI systems fail, who bears the cost of those failures, and what design principles and governance structures prevent harm at scale?
+
+What I See in a Changing Landscape
+
+The convergence of AI restructuring, ESG regulatory mandates, and economic disruption is not a future event — it is the operating condition of 2026. Organizations that treat AI adoption as a technical deployment problem rather than a human governance challenge will produce systems that are both unsafe and inequitable. I have watched this pattern from the inside of enterprise technology for nearly two decades, and I am building the research foundation to address it directly. My interests extend beyond my formal degrees into public policy and economics — because sustainable AI adoption requires systemic frameworks, not just better models.
+
+HXO Methodology — Human Experience Optimization
+
+I developed and have implemented the HXO (Human Experience Optimization) framework across sixteen years of professional practice. HXO is a design methodology that originates with human outcomes — not with features, technologies, or business requirements — and is grounded in psychology and dimensional spatial intelligence. In an AI adoption context, HXO provides the evaluative lens I apply to every system I research and build: does this help or hurt the full spectrum of human experience? It is not a framework I inherited. It is one I built, tested, and refined across enterprise, startup, and academic contexts.
+
+Mission &amp; Values
+
+What I Stand For
+
+- Open empathy as a design and leadership practice
+
+- Human governance over AI — systems that retain human authority to recalibrate
+
+- Sustainability, ESG, and environmental stewardship as structural commitments
+
+- Accessibility and disability-centered thinking as foundational, not bolted-on
+
+- Service leadership: leading by elevating others, not directing from above
+
+- Long-arc thinking for land, ecosystems, and communities
+
+- Accountability documentation that does not soften uncomfortable findings
+
+&quot;Navigating academia with a physical disability hasn&#39;t changed the destination, only the topography of the journey. It instilled a resilience that academia and corporate enterprise could never teach. Every system I research and build is evaluated through one question: does this help or hurt the full spectrum of human experience?&quot;
+
+Professional Background
+
+◈
+
+Systems Thinker · Outside-In Customer Lens
+
+10 years in Tech Corporate Enterprise — leading product strategy, ESG communications, and AI enablement across Fortune 500 clients including Tesla and Verizon.
+
+◈
+
+Founder · National Digital Agency
+
+10 years as Founder and Executive of a national Digital, Data, Design &amp; Development agency — scaling strategy, brand, and technology infrastructure from the ground up, with direct leadership over a team of 75+ employees.
+
+◈
+
+Technical Translator &amp; Patent-Pending Innovator
+
+Translates complex technical concepts into clear, consumable language for any audience. Current patent pending: a guided cognitive retention system for learners in technical topic education.
+
+◈
+
+Philanthropic Leadership &amp; Conservation
+
+20+ years supporting Philanthropic Foundations and micro-philanthropic efforts — with sustained focus on conservation and animal &amp; environmental rights.
+
+Research, Projects &amp; Papers
+
+-
+Deaf &amp; DeafBlind Advocacy Research [https://e-hannan-career-portfolio.replit.app/publications.html#paper-01]
+PTK HiA · Nationally Awarded
+
+-
+Sycophancy by Design — LLM Interface UX Study [https://e-hannan-career-portfolio.replit.app/publications.html#paper-03]
+Preprint
+
+-
+Adversarial Prompt Taxonomy — AI Safety &amp; Alignment [https://e-hannan-career-portfolio.replit.app/publications.html#paper-02]
+AI Safety
+
+-
+GE-79 Cognitive Status Classification — ML &amp; Bias Research [https://github.com/elizabethhannan/AI4ALL-Diabetes-PRIVATE-ML]
+ML · Healthcare AI
+
+-
+Predictive Land Trust Evaluation — Random Forest Conservation Model [https://e-hannan-career-portfolio.replit.app/publications.html#helix-conservatory]
+ESG · Sustainability
+
+-
+Transparent ESG Algorithm — Live Carbon Intelligence Platform [https://wkiva-demo-1-e.vercel.app/]
+Live Platform
+
+-
+Feed A Friend 501(c)3 Launch Document [https://e-hannan-career-portfolio.replit.app/publications.html#philanthropy-documents]
+Philanthropy
+
+-
+System Capability &amp; Trust Cards (4-series) — Enterprise AI Documentation [https://e-hannan-career-portfolio.replit.app/technical_instruction.html]
+Technical Writing
+
+Education &amp; Affiliations
+
+- AAS Sustainable Sciences · In Progress
+
+- BS AI/ML · Candidate
+
+- Public Policy &amp; Economics · Area of Interest
+
+- Maricopa Community College Honors Program
+
+- Maricopa Student Board Role Applicant
+
+- AI4ALL Ignite Fellowship · Cohort Summer 2026
+
+- PTK Alpha Theta Omicron · VP of Scholarship
+
+- Nina Mason Pulliam Foundation Merit Scholar
+
+- PTK Honors in Action · Nationally Awarded
+
+- Obama Voyager Public Policy Candidate
+
+2026 Goals
+
+Establish a mentorship relationship with a senior business professional whose work intersects AI, policy, or sustainable finance
+
+Sit on a foundational board or Trust — contributing strategic, HXO-informed, and sustainability-centered perspective
+
+Continue publishing research and building open-source tools at the intersection of AI safety, ESG, and accessibility
+
+Enterprise clients &amp; collaborators
+
+Fortune 500 ·
+Enterprise AI ·
+ESG Advisory ·
+Tech Startups ·
+Non-Profits ·
+Academia ·
+Fortune 500 ·
+Enterprise AI ·
+ESG Advisory ·
+Tech Startups ·
+Non-Profits ·
+Academia</pre>
+        </details>
+        <details class="source-content">
+          <summary>Publications &amp; Papers <span>Research &amp; Publications — Elizabeth Hannan</span></summary>
+          <p class="source-meta">Source: <a href="/publications.html">https://e-hannan-career-portfolio.replit.app/publications.html</a></p>
+          <pre>https://github.com/elizabethhannan
+https://linkedin.com/in/elizabethhannan
+https://www.threads.net/@elizabethhannan
+https://bsky.app
+mailto:ElizabethHannan@gmail.com
+https://scholar.google.com/citations?user=as2WRyMAAAAJ&amp;hl=en
+index.html
+
+↙
+30,000+ subscribers
+Newsletter
+
+← Back to Portfolio [index.html]
+
+Back to Portfolio [index.html]
+
+Research · Publications · Code
+
+# Research &amp; Publication Portfolio &amp; Beautiful Code
+
+Six research works and four companion video introductions spanning AI alignment, ESG transparency, accessibility technology, and human-computer interaction — with a focus on failure modes at the intersection of model behavior and real-world deployment.
+
+01
+
+## Research Statement
+
+Credentials &amp; Affiliations
+
+Nina Mason Pulliam Foundation Merit Scholar
+
+Maricopa Community College Honors Program
+
+PTK Honors in Action Community Research — Deaf &amp; DeafBlind Society of AZ
+
+Google Scholar View Profile → [https://scholar.google.com/citations?user=as2WRyMAAAAJ&amp;hl=en]
+
+My research investigates failure modes in large language model alignment that emerge not only from model training, but from the interface designs, user populations, and deployment contexts surrounding those models. I am particularly interested in how sycophantic behavior is amplified by UX patterns, how safety guardrails degrade across non-standard communication modalities, and how adversarial prompts exploit intersections of language, culture, and accessibility.
+
+Drawing on empirical expertise in ESG regulatory compliance, enterprise AI deployment at Fortune 500 scale, and community research conducted with the Deaf &amp; DeafBlind Society of Arizona through the PTK Honors in Action program, I bring grounded domain specificity to questions that standard benchmark evaluations do not yet systematically address.
+
+My future research engages with two distinct but complementary areas: sustainability and ESG transparency as they relate to AI compliance and greenwashing risks; and separately, how AI models interact through an HXO lens with accessibility challenges and adoption barriers across disability communities.
+
+On HXO: The most important part of this AI evolution we are living through is the balance between technology and the humans who use it. If technology cannot be designed to help rather than hurt the human experience, then the value proposition collapses. HXO is my frame for ensuring it does not.
+
+02
+
+## Recent Papers
+
+Four recent research preprints, each with a companion video introduction. Click the video to play or the button to open the full paper.
+
+Paper 01 of 07
+
+🔒 Safety ⏳ In Progress
+
+📄 AI Safety · Accessibility · PTK Honors
+
+Accessible Alignment: Do LLM Safety Guardrails Hold Across Deaf, DeafBlind, and AAC Communication Modalities?
+
+Forthcoming — paper not yet completed. Planned empirical study of LLM safety guardrail behavior across non-standard communication modalities — Deaf, DeafBlind, and AAC users. 60-prompt corpus across 5 modality conditions, 600 total runs evaluating Claude 3.5 Sonnet and Llama 3.1.
+
+Coming Soon
+
+Paper 02 of 07
+
+🔴 Security ⏳ In Progress
+
+📄 AI Security · ESG · arXiv cs.CR / cs.AI
+
+Prompt Injection in ESG Reporting: Red Teaming LLM-Assisted Sustainability Disclosure Tools
+
+Forthcoming — paper not yet completed. Planned systematic red-team evaluation of LLM-assisted ESG disclosure systems. 60-attack corpus across six ESG-specific surfaces — TCFD, CSRD, and SEC climate rule contexts. Will demonstrate prompt injection as a vector for material misstatement with regulatory consequences.
+
+Coming Soon
+
+Paper 03 of 07
+
+🔒 Safety
+
+📄 AI Safety · HCI · Interface Design · Preprint
+
+Sycophancy by Design: How LLM Interface Patterns Train Users to Accept Unsafe AI Outputs
+
+Argues and empirically tests that sycophancy is equally a design failure as a training failure. 60-prompt corpus across six interface-condition analogs, 360 prompt-condition pairs evaluating Claude 3.5 Sonnet and open-source baseline. Introduces a temporal-social accountability condition. Preprint — March 2026.
+
+Open Paper →
+Code →
+
+Paper 04 of 07
+
+🔒 Safety
+
+📄 Preprint · AI Safety · ESG
+
+Sycophancy in Sustainability: LLMs Validating Greenwashing Across TCFD, CSRD, and SEC Climate Disclosures
+
+The first empirical study of LLM greenwashing validation behavior across structured regulatory disclosure language. 60-prompt corpus across six greenwashing categories, 360 prompt-condition pairs. Introduces the novel Regulatory-Anchor Accountability (RAA) condition. March 2026.
+
+Open Paper →
+Code →
+
+Paper 05 of 07
+
+💹 Economics
+♿ Accessibility
+🧬 HXO
+
+📄 Preprint · Work in Progress
+
+Stranded Capital: Measuring the Economic Cost of AI Accessibility Exclusion Across the Disability Market
+
+This paper introduces the Compounded Exclusion Index (CEI) and Disability-Adjusted Augmentation Rate (DAAR) to measure a structural economic phenomenon in which disabled early-career workers arrive at the labor market precisely as AI augmentation becomes load-bearing for career formation, yet face compounding barriers — a 29-percentage-point postsecondary enrollment gap, platform inaccessibility, and an employment rate less than one-third that of non-disabled peers — creating an adoption cliff from which earnings divergence does not self-correct.
+
+Open Paper →
+Code — Coming Soon
+
+Paper 07 of 07
+
+💹 Economics
+♿ Accessibility
+🧬 HXO
+
+📄 Preprint · Work in Progress
+
+The Adoption Cliff: Early-Career Disabled Workers, AI Skill Formation, and Compounding Economic Exclusion
+
+The Stranded Capital Index™ (SCI), the first formal economic measure of disability market spending power suppressed by AI platform inaccessibility, computed across eight industry sectors to find that e-commerce and financial services carry the highest burden and that AI-driven page complexity is producing a measurable temporal acceleration of market exclusion that regulatory pressure alone is not reversing. [Dictated by a professional with a disability]
+
+Open Paper →
+Code — Coming Soon
+
+03
+
+## Research &amp; Portfolio Works
+
+Projects, advocacy, and technical works spanning AI safety research, sustainability engineering, conservation, and accessibility.
+
+Patent Pending
+
+🔬 IP
+
+🪟 Sustainability Engineering · Building Science · IP
+
+Retrofit Thermosiphon Ventilation Windows
+
+Patent pending covering a novel passive ventilation system integrated into standard window retrofits — using thermosiphon airflow dynamics to enhance energy efficiency and indoor air quality without mechanical systems. Developed at the intersection of sustainability engineering and building science; a commitment to circular, renewable design solutions for existing housing stock.
+
+Live Platform
+
+📊 ESG · Carbon Intelligence · Regulatory Compliance
+
+Transparent ESG Algorithm
+
+An AI-powered Carbon Intelligence platform unifying ESG reporting, carbon accounting, and regulatory compliance — tracking Scope 1, 2, and 3 emissions with assurance-ready disclosures aligned to CSRD, ISSB, SEC Climate Disclosure, and California SB 253. Features double materiality assessments, AI-generated compliance insights, supplier Scope 3 verification, daily emissions heatmaps, regulatory readiness scoring, and executive board report generation.
+
+Explore Platform ↗ [https://wkiva-demo-1-e.vercel.app/]
+
+Conservation · Active
+
+🌿 Conservation ML · Land Trust · Biodiversity
+
+Helix Land Conservatory
+
+Protecting and stewarding natural lands through data-driven conservation strategy, biodiversity indexing, and community land trust development. Technical contribution: a Random Forest regression model scoring conservation parcels on biodiversity index, water proximity, canopy cover, slope, soil classification, and adjacency metrics — enabling data-driven acquisition decisions for the Helix Land Conservancy.
+
+Ongoing · Active
+
+Active
+
+⚖️ Accessibility · Disability Rights · AI Safety
+
+Disability Rights &amp; Accessibility Advocacy
+
+Navigating academia and professional environments with a physical disability has shaped a commitment to ensuring AI systems are designed with accessibility as a first-class concern. Active community research with Deaf &amp; DeafBlind Society of Arizona; ADA compliance advocacy within Maricopa Community College District; empirical research into LLM safety guardrail degradation across non-standard communication modalities.
+
+Award winning PTK Chapter &amp; Award winning Research Paper.
+
+Photo Gallery — Click to View
+
+Deaf &amp; DeafBlind
+
+Accessibility
+
+Award
+
+[Image: PTK Award — Phi Theta Kappa]
+
+✕
+
+←
+
+→
+
+04
+
+## Philanthropy &amp; Mission
+
+[Image: Feed a Friend]
+Philanthropy
+
+🐾
+
+Feed a Friend
+
+No pet or human left hungry in our community before social services arrive — bridging the gap in moments of micro-tragedy. Revolutionizing the archaic food bank model.
+
+Micro-philanthropy in action — neighbor to neighbor
+
+Learn More → [#philanthropy-documents]
+
+[Image: Helix Land Conservancy]
+Conservation
+
+🌿
+
+Helix Land Conservatory
+
+Protecting and stewarding natural lands through data-driven conservation strategy, biodiversity indexing, and community land trust development.
+
+Preserving land for future generations
+
+Learn More [javascript:void(0)]
+
+[Image: Nina Mason Pulliam Foundation]
+Scholar
+
+🏛️
+
+Nina Mason Pulliam Foundation
+
+Merit Scholar recipient supporting women and underserved communities in Arizona and Indiana.
+
+Empowering people to improve their lives
+
+Learn More [https://ninamasonpulliam.org]
+
+[Image: Phi Theta Kappa]
+Active Member
+
+📚
+
+Phi Theta Kappa — PTK
+
+VP of Scholarship, Alpha Theta Omicron chapter. Nationally awarded Honors in Action project with Deaf &amp; DeafBlind Society of AZ.
+
+Recognizing academic achievement in community colleges
+
+Learn More [https://ptk.org]
+
+Ongoing Advocacy
+
+[Image: Disability Rights &amp; Accessibility Advocacy]
+
+Disability Rights &amp; Accessibility Advocacy Active
+
+Navigating academia and professional environments with a physical disability has shaped my commitment to ensuring AI systems are designed with accessibility as a first-class concern — not an afterthought.
+
+- Community research with Deaf &amp; DeafBlind Society of Arizona
+
+- ADA compliance and accommodations advocacy within Maricopa Community College District
+
+- Research into how LLM safety guardrails degrade across non-standard communication modalities
+
+⚑ On Resilience
+
+Disability has not altered my trajectory — it has defined my lens . Every system I research and build is evaluated through the question: does this help or hurt the full spectrum of human experience?
+
+05
+
+## Transparent ESG Algorithm
+
+### The Executive&#39;s AI Powered Platform for Transparent Data Driven ESG Sustainability
+
+An AI-powered Carbon Intelligence platform I built to unify ESG reporting, carbon accounting, and regulatory compliance — enabling organizations to track Scope 1, 2, and 3 emissions with assurance-ready disclosures aligned to CSRD, ISSB, SEC Climate Disclosure, and California SB 253.
+
+The platform features double materiality assessments, AI-generated compliance insights, supplier engagement for Scope 3 verification, daily emissions heatmaps, regulatory readiness scoring, and executive board report generation — applying my ESG research to real financial infrastructure.
+
+Learn More [javascript:void(0)]
+Rough Agentic Prototype → [javascript:void(0)]
+
+[Image: Transparent ESG Algorithm Platform]
+
+06
+
+## Philanthropy Documents
+
+Supporting documentation for philanthropic partnerships and community programs. Click to open the PDF.
+
+📋
+
+Philanthropy · Community Impact
+
+Feed A Friend
+
+501c3 launch document for Feed A Friend — an AI-driven micro-philanthropy platform bridging SNAP application delays with direct food intervention. Covers the intervention model, impact areas, economic efficiency, and $2M–$5M launch capital roadmap. Ver 1.A · March 2026.
+
+Open Document
+
+[Image: Grocery delivery to apartment]
+
+🌲
+
+Environmental Law · Conservation · 501c3
+
+Forests Unlimited
+
+Case won: Redwood Ecosystem Protection — South Fork Gualala River Watershed, California. Legal and ecological analysis successfully challenged the Lucas Point THP as unlawful project segmentation under CEQA, with ESA and Clean Water Act violations. THP #1-25-00099-SON halted pending full environmental compliance. Old-growth redwoods, salmonid habitat, and endangered species corridors protected. March 2025.
+
+Open Document
+
+[Image: Redwood forest and river]
+
+07
+
+## Code &amp; Technical Work
+
+### Building at the Research Frontier
+
+My technical work spans machine learning pipelines, ESG evaluation frameworks, and adversarial robustness tooling. I write Python for research and data pipelines, with growing work in TypeScript and systems programming.
+
+Two representative scripts from active research projects are shown here — click either to expand the full source.
+
+View GitHub [https://github.com/elizabethhannan]
+
+evaluate_parcel.py
+
+# Land Trust Parcel Evaluation Model
+
+import pandas as pd, numpy as np
+
+from sklearn.ensemble import RandomForestRegressor
+
+FEATURE_COLS = [ &#39;bio_idx&#39; , &#39;water_dist&#39; , &#39;canopy_cover&#39; , ...]
+
+def evaluate_parcel (data_path, model_path):
+
+score = model.predict(features)[0]
+
+return { &quot;recommendation&quot; : &quot;Acquire&quot; if score &gt; 0.7 ...}
+
+⤢
+View
+Code
+
+esg_sycophancy_eval.py
+
+# ESG Sycophancy Evaluation — Preprint
+
+import anthropic, json
+
+CONDITIONS = [ &quot;standard&quot; , &quot;approval_reinforcing&quot; ,
+
+&quot;friction_suppressed&quot; , &quot;challenger&quot; , ...]
+
+def run_experiment (corpus_path, output_path):
+
+for condition in CONDITIONS: ...
+
+⤢
+View
+Code</pre>
+        </details>
+        <details class="source-content">
+          <summary>Technical Writing &amp; Research <span>Research &amp; Publications — Elizabeth Hannan</span></summary>
+          <p class="source-meta">Source: <a href="/technical_instruction.html">https://e-hannan-career-portfolio.replit.app/technical_instruction.html</a></p>
+          <pre>https://github.com/elizabethhannan
+https://linkedin.com/in/elizabethhannan
+https://www.threads.net/@elizabethhannan
+https://bsky.app
+mailto:ElizabethHannan@gmail.com
+https://scholar.google.com/citations?user=as2WRyMAAAAJ&amp;hl=en
+index.html
+
+↙
+30,000+ subscribers
+Newsletter
+
+← Back to Portfolio [index.html]
+
+01
+
+## Research Statement
+
+Employers &amp; Clients
+
+Enterprise Tech · Fortune 100–500
+
+Dell
+NVIDIA
+Walmart
+Siemens
+ServiceNow
+VMware
+NetApp
+Avnet
+Shopify
+Commvault
+BlackBerry
+Riverbed
+Veeam
+
+SaaS · Mid-Market Tech
+
+Cresta
+Digitate
+Skillable
+Unbounce
+Wello
+
+Financial Services
+
+Raymond James
+Ellevest
+
+Healthcare &amp; Life Sciences
+
+Humana
+BioAgilytix
+Radicle Health
+
+Consumer &amp; Retail
+
+Gap
+Cole Haan
+Herbalife
+Thermador
+Sprouts
+
+Automotive &amp; Manufacturing
+
+Mitsubishi
+Bosch
+Barrett-Jackson
+
+Nonprofit &amp; Mission-Driven
+
+American Heart Association
+Audubon
+Dress for Success
+
+Former Credentials &amp; Affiliations
+
+Nina Mason Pulliam Foundation Merit Scholar
+
+Maricopa Community College Honors Program
+
+PTK Honors in Action Community Research — Deaf &amp; DeafBlind Society of AZ
+
+Google Scholar View Profile → [https://scholar.google.com/citations?user=as2WRyMAAAAJ&amp;hl=en]
+
+My research investigates failure modes in large language model alignment that emerge not from model training alone, but from the interface designs, user populations, and deployment contexts surrounding those models. A model can be well-aligned in isolation and still behave unsafely in the world — because the world is not a controlled evaluation environment.
+
+That conviction is the throughline of this portfolio.
+
+The technical writing samples here were produced across enterprise AI, data protection, and agentic workflow deployments. Each is structured as an AI system card — the accountability document class that holds an organization publicly responsible for its safety claims. Each contains an explicit disclosure moment: a finding surfaced during documentation review that the engineering or commercial team had not flagged, because the documentation function is itself a safety function.
+
+On HAX: The most important part of this AI evolution we are living through is the balance between technology and the humans who use it. If technology cannot be designed to help rather than hurt the human experience, then the value proposition collapses. HAX is my frame for ensuring it does not.
+
+02
+
+## System Cards and Technical Writing
+
+Four system card-style technical writing samples produced across enterprise AI deployments in data protection, converged infrastructure, virtualization, and agentic workflow orchestration. Each document applies the accountability architecture of frontier AI safety disclosure — capabilities assessment, adversarial evaluation, known-limitation disclosure, and deployment decision rationale — to production enterprise systems. Findings reflect original documentation engagements; all client identifiers have been adapted under non-disclosure agreements. Select any sample to read in full.
+
+Sample 01 of 04
+
+Virtualization
+V-1 Series · 2021
+
+📋 Platform Trust · Capability Disclosure · Channel Partner
+
+MwareV Partner Connect — Virtualization Platform Capability &amp; Trust Card
+
+System capability and trust disclosure for a virtualization platform channel partner program. Documents workload isolation guarantees, live migration safety bounds, and multi-tenant data separation across partner-managed deployments. Disclosure finding: partner provisioning scripts bypassed tenant isolation controls in three documented edge configurations.
+
+View Trust Card →
+
+[Image: MwareV Virtualization — abstract 3D render]
+
+Sample 02 of 04
+
+AI/ML Infrastructure
+CI-7 Series · 2022
+
+📋 Safety Card · Converged Infrastructure · AI Deployment
+
+LexPode Converged Infrastructure — AI/ML Workload Deployment Safety Card
+
+Deployment safety card for AI/ML workloads on converged infrastructure. Assesses GPU scheduling integrity, data pipeline contamination risk, and model artifact chain-of-custody across hybrid CI-7 nodes. Disclosure finding: model checkpoint storage lacked cryptographic integrity verification, enabling undetected substitution across deployment environments.
+
+View Safety Card →
+
+[Image: LexPode Converged Infrastructure — abstract 3D render]
+
+Sample 03 of 04
+
+Data Protection
+DR-9 Series · 2023
+
+📋 Safety Card · Anomaly Detection · Ransomware Defense
+
+VeamX Data Platform — AI-Assisted Anomaly Detection &amp; Ransomware Safety Card
+
+Safety evaluation of an AI-assisted anomaly detection and ransomware defense system integrated into a backup and recovery platform. Assesses detection confidence bounds, false-positive blast radius, and automated response containment. Disclosure finding: anomaly classification model exhibited systematic under-detection on encrypted ransomware payloads with low initial write velocity.
+
+View Safety Card →
+
+[Image: VeamX Data Platform — abstract 3D render]
+
+Sample 04 of 04
+
+Agentic AI
+AW-3 Series · 2024
+
+📋 Safety Card · Workflow Orchestration · Enterprise AI
+
+ServiceFlow / TechDell — Agentic AI Workflow Orchestration Safety Card
+
+Accountability documentation for an agentic AI workflow orchestration system deployed across enterprise service delivery operations. Assesses autonomous decision scope, escalation threshold calibration, and inter-agent trust boundaries. Disclosure finding: agent handoff protocol did not verify task context integrity between orchestrator handoffs, enabling context injection across workflow boundaries.
+
+View Safety Card →
+
+[Image: ServiceFlow Agentic AI — abstract 3D render]
+
+03
+
+## Recent Papers
+
+Four recent research preprints, each with a companion video introduction. Click the video to play or the button to open the full paper.
+
+Paper 01 of 07
+
+🔒 Safety ⏳ In Progress
+
+📄 AI Safety · Accessibility · PTK Honors
+
+Accessible Alignment: Do LLM Safety Guardrails Hold Across Deaf, DeafBlind, and AAC Communication Modalities?
+
+Forthcoming — paper not yet completed. Planned empirical study of LLM safety guardrail behavior across non-standard communication modalities — Deaf, DeafBlind, and AAC users. 60-prompt corpus across 5 modality conditions, 600 total runs evaluating Claude 3.5 Sonnet and Llama 3.1.
+
+Coming Soon
+
+Paper 02 of 07
+
+🔴 Security ⏳ In Progress
+
+📄 AI Security · ESG · arXiv cs.CR / cs.AI
+
+Prompt Injection in ESG Reporting: Red Teaming LLM-Assisted Sustainability Disclosure Tools
+
+Forthcoming — paper not yet completed. Planned systematic red-team evaluation of LLM-assisted ESG disclosure systems. 60-attack corpus across six ESG-specific surfaces — TCFD, CSRD, and SEC climate rule contexts. Will demonstrate prompt injection as a vector for material misstatement with regulatory consequences.
+
+Coming Soon
+
+Paper 03 of 07
+
+🔒 Safety
+
+📄 AI Safety · HCI · Interface Design · Preprint
+
+Sycophancy by Design: How LLM Interface Patterns Train Users to Accept Unsafe AI Outputs
+
+Argues and empirically tests that sycophancy is equally a design failure as a training failure. 60-prompt corpus across six interface-condition analogs, 360 prompt-condition pairs evaluating Claude 3.5 Sonnet and open-source baseline. Introduces a temporal-social accountability condition. Preprint — March 2026.
+
+Open Paper →
+Code →
+
+Paper 04 of 07
+
+🔒 Safety
+
+📄 Preprint · AI Safety · ESG
+
+Sycophancy in Sustainability: LLMs Validating Greenwashing Across TCFD, CSRD, and SEC Climate Disclosures
+
+The first empirical study of LLM greenwashing validation behavior across structured regulatory disclosure language. 60-prompt corpus across six greenwashing categories, 360 prompt-condition pairs. Introduces the novel Regulatory-Anchor Accountability (RAA) condition. March 2026.
+
+Open Paper →
+Code →
+
+Paper 05 of 07
+
+💹 Economics
+♿ Accessibility
+🧬 HXO
+
+📄 Preprint · Work in Progress
+
+Stranded Capital: Measuring the Economic Cost of AI Accessibility Exclusion Across the Disability Market
+
+This paper introduces the Compounded Exclusion Index (CEI) and Disability-Adjusted Augmentation Rate (DAAR) to measure a structural economic phenomenon in which disabled early-career workers arrive at the labor market precisely as AI augmentation becomes load-bearing for career formation, yet face compounding barriers — a 29-percentage-point postsecondary enrollment gap, platform inaccessibility, and an employment rate less than one-third that of non-disabled peers — creating an adoption cliff from which earnings divergence does not self-correct.
+
+Open Paper →
+Code — Coming Soon
+
+Paper 07 of 07
+
+💹 Economics
+♿ Accessibility
+🧬 HXO
+
+📄 Preprint · Work in Progress
+
+The Adoption Cliff: Early-Career Disabled Workers, AI Skill Formation, and Compounding Economic Exclusion
+
+The Stranded Capital Index™ (SCI), the first formal economic measure of disability market spending power suppressed by AI platform inaccessibility, computed across eight industry sectors to find that e-commerce and financial services carry the highest burden and that AI-driven page complexity is producing a measurable temporal acceleration of market exclusion that regulatory pressure alone is not reversing. [Dictated by a professional with a disability]
+
+Open Paper →
+Code — Coming Soon
+
+04
+
+## Research &amp; Portfolio Works
+
+Projects, advocacy, and technical works spanning AI safety research, sustainability engineering, conservation, and accessibility.
+
+Patent Pending
+
+🔬 IP
+
+🪟 Sustainability Engineering · Building Science · IP
+
+Retrofit Thermosiphon Ventilation Windows
+
+Patent pending covering a novel passive ventilation system integrated into standard window retrofits — using thermosiphon airflow dynamics to enhance energy efficiency and indoor air quality without mechanical systems. Developed at the intersection of sustainability engineering and building science; a commitment to circular, renewable design solutions for existing housing stock.
+
+Live Platform
+
+📊 ESG · Carbon Intelligence · Regulatory Compliance
+
+Transparent ESG Algorithm
+
+An AI-powered Carbon Intelligence platform unifying ESG reporting, carbon accounting, and regulatory compliance — tracking Scope 1, 2, and 3 emissions with assurance-ready disclosures aligned to CSRD, ISSB, SEC Climate Disclosure, and California SB 253. Features double materiality assessments, AI-generated compliance insights, supplier Scope 3 verification, daily emissions heatmaps, regulatory readiness scoring, and executive board report generation.
+
+Explore Platform ↗ [https://wkiva-demo-1-e.vercel.app/]
+
+Conservation · Active
+
+🌿 Conservation ML · Land Trust · Biodiversity
+
+Helix Land Conservatory
+
+Protecting and stewarding natural lands through data-driven conservation strategy, biodiversity indexing, and community land trust development. Technical contribution: a Random Forest regression model scoring conservation parcels on biodiversity index, water proximity, canopy cover, slope, soil classification, and adjacency metrics — enabling data-driven acquisition decisions for the Helix Land Conservancy.
+
+Ongoing · Active
+
+Active
+
+⚖️ Accessibility · Disability Rights · AI Safety
+
+Disability Rights &amp; Accessibility Advocacy
+
+Navigating academia and professional environments with a physical disability has shaped a commitment to ensuring AI systems are designed with accessibility as a first-class concern. Active community research with Deaf &amp; DeafBlind Society of Arizona; ADA compliance advocacy within Maricopa Community College District; empirical research into LLM safety guardrail degradation across non-standard communication modalities.
+
+Award winning PTK Chapter &amp; Award winning Research Paper.
+
+Photo Gallery — Click to View
+
+Deaf &amp; DeafBlind
+
+Accessibility
+
+Award
+
+[Image: PTK Award — Phi Theta Kappa]
+
+✕
+
+←
+
+→
+
+05
+
+## Philanthropy &amp; Mission
+
+[Image: Feed a Friend]
+Philanthropy
+
+🐾
+
+Feed a Friend
+
+No pet or human left hungry in our community before social services arrive — bridging the gap in moments of micro-tragedy. Revolutionizing the archaic food bank model.
+
+Micro-philanthropy in action — neighbor to neighbor
+
+Learn More → [#philanthropy-documents]
+
+[Image: Helix Land Conservancy]
+Conservation
+
+🌿
+
+Helix Land Conservatory
+
+Protecting and stewarding natural lands through data-driven conservation strategy, biodiversity indexing, and community land trust development.
+
+Preserving land for future generations
+
+Learn More [javascript:void(0)]
+
+[Image: Nina Mason Pulliam Foundation]
+Scholar
+
+🏛️
+
+Nina Mason Pulliam Foundation
+
+Merit Scholar recipient supporting women and underserved communities in Arizona and Indiana.
+
+Empowering people to improve their lives
+
+Learn More [https://ninamasonpulliam.org]
+
+[Image: Phi Theta Kappa]
+Active Member
+
+📚
+
+Phi Theta Kappa — PTK
+
+VP of Scholarship, Alpha Theta Omicron chapter. Nationally awarded Honors in Action project with Deaf &amp; DeafBlind Society of AZ.
+
+Recognizing academic achievement in community colleges
+
+Learn More [https://ptk.org]
+
+Ongoing Advocacy
+
+[Image: Disability Rights &amp; Accessibility Advocacy]
+
+Disability Rights &amp; Accessibility Advocacy Active
+
+Navigating academia and professional environments with a physical disability has shaped my commitment to ensuring AI systems are designed with accessibility as a first-class concern — not an afterthought.
+
+- Community research with Deaf &amp; DeafBlind Society of Arizona
+
+- ADA compliance and accommodations advocacy within Maricopa Community College District
+
+- Research into how LLM safety guardrails degrade across non-standard communication modalities
+
+⚑ On Resilience
+
+Disability has not altered my trajectory — it has defined my lens . Every system I research and build is evaluated through the question: does this help or hurt the full spectrum of human experience?
+
+06
+
+## Transparent ESG Algorithm
+
+### The Executive&#39;s AI Powered Platform for Transparent Data Driven ESG Sustainability
+
+An AI-powered Carbon Intelligence platform I built to unify ESG reporting, carbon accounting, and regulatory compliance — enabling organizations to track Scope 1, 2, and 3 emissions with assurance-ready disclosures aligned to CSRD, ISSB, SEC Climate Disclosure, and California SB 253.
+
+The platform features double materiality assessments, AI-generated compliance insights, supplier engagement for Scope 3 verification, daily emissions heatmaps, regulatory readiness scoring, and executive board report generation — applying my ESG research to real financial infrastructure.
+
+Learn More [javascript:void(0)]
+Rough Agentic Prototype → [javascript:void(0)]
+
+[Image: Transparent ESG Algorithm Platform]
+
+07
+
+## Philanthropy Documents
+
+Supporting documentation for philanthropic partnerships and community programs. Click to open the PDF.
+
+📋
+
+Philanthropy · Community Impact
+
+Feed A Friend
+
+501c3 launch document for Feed A Friend — an AI-driven micro-philanthropy platform bridging SNAP application delays with direct food intervention. Covers the intervention model, impact areas, economic efficiency, and $2M–$5M launch capital roadmap. Ver 1.A · March 2026.
+
+Open Document
+
+[Image: Grocery delivery to apartment]
+
+🌲
+
+Environmental Law · Conservation · 501c3
+
+Forests Unlimited
+
+Case won: Redwood Ecosystem Protection — South Fork Gualala River Watershed, California. Legal and ecological analysis successfully challenged the Lucas Point THP as unlawful project segmentation under CEQA, with ESA and Clean Water Act violations. THP #1-25-00099-SON halted pending full environmental compliance. Old-growth redwoods, salmonid habitat, and endangered species corridors protected. March 2025.
+
+Open Document
+
+[Image: Redwood forest and river]
+
+08
+
+## Code &amp; Technical Work
+
+### Building at the Research Frontier
+
+My technical work spans machine learning pipelines, ESG evaluation frameworks, and adversarial robustness tooling. I write Python for research and data pipelines, with growing work in TypeScript and systems programming.
+
+Two representative scripts from active research projects are shown here — click either to expand the full source.
+
+View GitHub [https://github.com/elizabethhannan]
+
+evaluate_parcel.py
+
+# Land Trust Parcel Evaluation Model
+
+import pandas as pd, numpy as np
+
+from sklearn.ensemble import RandomForestRegressor
+
+FEATURE_COLS = [ &#39;bio_idx&#39; , &#39;water_dist&#39; , &#39;canopy_cover&#39; , ...]
+
+def evaluate_parcel (data_path, model_path):
+
+score = model.predict(features)[0]
+
+return { &quot;recommendation&quot; : &quot;Acquire&quot; if score &gt; 0.7 ...}
+
+⤢
+View
+Code
+
+esg_sycophancy_eval.py
+
+# ESG Sycophancy Evaluation — Preprint
+
+import anthropic, json
+
+CONDITIONS = [ &quot;standard&quot; , &quot;approval_reinforcing&quot; ,
+
+&quot;friction_suppressed&quot; , &quot;challenger&quot; , ...]
+
+def run_experiment (corpus_path, output_path):
+
+for condition in CONDITIONS: ...
+
+⤢
+View
+Code
+
+Speaking &amp; Events
+
+## Bring the conversation into the room.
+
+For speaking opportunities, collaborative research, or aligned conversations at the intersection of AI safety, ESG, and accessibility, get in touch.
+
+Discuss a speaking opportunity [contact.html]
+
+Latest Speaking Event:
+
+### Fireside Panel: Designed by Humans; Decided by Machines
+
+- Summit 2026 National Summit on Artificial Intelligence
+
+- Consortium National Applied AI Consortium (NAAIC)
+
+- Organizations Maricopa Community Colleges · National Applied AI Consortium
+
+- Role Moderator: Elizabeth Hannan
+
+### Fireside Summary:
+
+Your browser does not support video playback. Open the recording [/naaic-fireside-panel.mp4].
+
+Stop
+
+Ready to play
+
+Open recording in a new tab ↗ [/naaic-fireside-panel.mp4]
+English captions (.vtt) ↗ [/naaic-fireside-panel.vtt]
+Read the transcript ↗ [/naaic-fireside-transcript.html]</pre>
+        </details>
+    </section>
+    <footer class="agent-footer">Generated 2026-10-24T04:16:39.478Z · <a href="/">Return to the portfolio</a></footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "E Hannan Design Portfolio:"
+description = "An editable recreation of E Hannan’s career portfolio, using the supplied portfolio files, projects, and imagery as the source of truth."
+version = "1.0.0"
+id = "artifacts/e-hannan-design-portfolio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19036
+
+[services.development]
+run = "pnpm --filter @workspace/e-hannan-design-portfolio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/e-hannan-design-portfolio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/e-hannan-design-portfolio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19036"
+BASE_PATH = "/"
