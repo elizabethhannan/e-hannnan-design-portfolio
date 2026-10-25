@@ -53,3 +53,8 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+node_modules/
+dist/
+.cache/
+.upm/
+.pythonlibs/
