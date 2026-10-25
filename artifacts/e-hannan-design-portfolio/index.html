@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elizabeth Hannan — Researcher · Builder · Polymath</title>
+  <title>Elizabeth Hannan — Design Executive, AI-Native Products</title>
+  <meta name="description" content="Elizabeth Hannan: design executive for AI-native products. Human-agent collaboration, agentic UX, design systems and the HXO and AXO methods.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./src/cv-dossier.css">
@@ -421,6 +422,7 @@
     .hero-left::after { background: rgba(10, 26, 92, 0.24); }
   </style>
   <link rel="stylesheet" href="/src/navy-accent.css">
+  <link rel="stylesheet" href="/src/exec.css">
 </head>
 <body>
 
@@ -429,30 +431,43 @@
   <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open');this.classList.toggle('open');"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li class="has-dropdown">
-      <a href="publications.html" style="color:var(--accent);font-weight:700;">In Practice</a>
+      <a href="#work" style="color:var(--accent);font-weight:700;">Work</a>
       <ul class="dropdown">
-        <li><a href="technical_instruction.html">Technical Instruction</a></li>
+        <li><a href="/work/ai-native.html">AI-Native &amp; Agentic</a></li>
+        <li><a href="/work/shipped.html">Shipped Results</a></li>
+        <li><a href="/work/system.html">The System</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="#leadership">Leadership</a>
+      <ul class="dropdown">
+        <li><a href="#research">Point of View</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#leadership">How I Lead</a></li>
+        <li><a href="#adopt">Adopt It</a></li>
       </ul>
     </li>
     <li class="has-dropdown">
       <a href="#polymath">About</a>
       <ul class="dropdown">
         <li><a href="#polymath">About</a></li>
+        <li><a href="#career">Career</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="contact.html">Get In Touch</a></li>
       </ul>
     </li>
     <li class="has-dropdown">
-      <a href="#research">Works</a>
+      <a href="#research-ip">Research &amp; IP</a>
       <ul class="dropdown">
-        <li><a href="#research">Research</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#projects">Research Projects</a></li>
         <li><a href="publications.html#recent-papers">Papers</a></li>
-        <li><a href="#philanthropy">Philanthropy</a></li>
         <li><a href="#code">Code</a></li>
+        <li><a href="#patents">Patents</a></li>
+        <li><a href="#philanthropy">Mission</a></li>
+        <li><a href="publications.html">In Practice</a></li>
+        <li><a href="technical_instruction.html">Technical Instruction</a></li>
       </ul>
     </li>
-    <li><a href="#career">Career</a></li>
   </ul>
 </nav>
 <div class="social-bar">
@@ -480,22 +495,23 @@
     aria-hidden="true"
     tabindex="-1"
     loading="eager"></iframe>
-  <div class="hero-left">
-    <p class="hero-label">Researcher · Builder · Polymath</p>
+    <div class="hero-left">
+    <p class="hero-label">Design Executive · AI-Native Products</p>
     <h1 class="hero-name">Elizabeth<br><em>Hannan</em></h1>
-    <p class="hero-subtitle">Student Researcher · AI Safety &amp; Security<br>Non-traditional Student</p>
-    <p class="hero-title">AAS Sustainable Sciences · BS AI/ML Candidate<br>PTK Phi Theta Kappa · Nina Mason Pulliam Foundation Scholar</p>
+    <p class="hero-subtitle">Head of Design · Human-Agent Collaboration<br>HXO &amp; AXO Methods</p>
+    <p class="hero-title">20+ Years in HCI &amp; Interaction Design · Founder, One Acquisition<br>Built and Led Teams of 30+ Designers &amp; Researchers</p>
   </div>
   <div class="hero-right">
-    <p class="hero-statement">After an eon in corporate enterprise tech and entrepreneurism endeavors — it's time to pivot with the most optimal knowledge base in hand and grow. That's why I show up.</p>
+    <p class="hero-statement">I lead design for products where people and AI agents work together: what an agent shows, when it acts, and how it hands control back. I design it, build it and measure it.</p>
     <blockquote class="hero-quote">Every new point is chosen by looking back at all the ones before it.</blockquote>
     <div class="hero-tags">
-      <span class="tag">AI Safety</span><span class="tag">AI Security</span><span class="tag">HXO / HCI</span><span class="tag">Accessibility</span><span class="tag">ESG Transparency</span><span class="tag">Adversarial Robustness</span><span class="tag">Sustainability</span>
+      <span class="tag">Human-Agent Collaboration</span><span class="tag">Agentic UX</span><span class="tag">Design Systems</span><span class="tag">Enterprise AI</span><span class="tag">Accessibility</span><span class="tag">HXO / AXO</span>
     </div>
     <div class="hero-links">
-      <a href="publications.html" class="btn btn-primary">Research Portfolio</a>
-      <a href="https://linkedin.com/in/elizabethhannan" target="_blank" class="btn">LinkedIn</a>
-      <a href="https://github.com/elizabethhannan" target="_blank" class="btn">GitHub</a>
+      <a href="#work" class="btn btn-primary">Selected Work</a>
+      <a href="/one-page.html" class="btn">One-Page CV</a>
+      <a href="https://linkedin.com/in/elizabethhannan" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+      <a href="https://github.com/elizabethhannan" target="_blank" rel="noopener" class="btn">GitHub</a>
     </div>
   </div>
 </section>
@@ -697,7 +713,15 @@
 
 <section id="research">
   <div class="section-inner">
-    <div class="section-header reveal" style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;"><div><span class="section-number">01</span><h2 class="section-title" style="display:inline;">Research Statement</h2></div><a href="publications.html#recent-papers" style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">View In Practice →</a></div>
+    <div class="section-header reveal" style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;"><div><span class="section-number">02</span><h2 class="section-title" style="display:inline;">Point of View</h2></div><a href="publications.html#recent-papers" style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">View In Practice →</a></div>
+        <p class="x-lead reveal">AI-native products succeed or fail on one thing: whether people can trust what an agent does on their behalf. My point of view is that every agent must do three things well.</p>
+    <div class="x-pov reveal">
+      <div class="x-pov-card"><span class="x-pov-step">01 · Present</span><h3>Show what it understood</h3><p>Before anything changes, the agent shows what it understood, how sure it is, and the evidence behind it.</p></div>
+      <div class="x-pov-card"><span class="x-pov-step">02 · Act</span><h3>Act where it can be undone</h3><p>Preview before applying. Agents act alone only where the work is reversible; a person decides where it matters.</p></div>
+      <div class="x-pov-card"><span class="x-pov-step">03 · Hand back</span><h3>Hand back with context</h3><p>When an agent stops, it passes the task, the intent, what it knows versus guesses, and what it already ruled out.</p></div>
+    </div>
+    <div class="hxo-statement reveal" style="margin:0 0 2.6rem;"><strong>HXO</strong> (Human Experience Optimization) is a design methodology that starts from human outcomes, not features, technology or business requirements, and tests every system with one question: does it help or hurt the full spectrum of human experience? <strong>AXO</strong> (Agent Experience Optimization) designs what an AI agent reads, calls and receives, because people are not the only users anymore.</div>
+    <p class="x-subhead reveal">Research statement</p>
     <div class="research-grid reveal">
       <div class="research-aside">
         <p class="research-aside-label">Affiliations</p>
@@ -718,9 +742,312 @@
   </div>
 </section>
 
-<section id="projects" style="background:var(--warm-white);">
+<section class="x-section" id="work" aria-labelledby="work-title">
   <div class="section-inner">
-    <div class="section-header reveal" style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;"><div><span class="section-number">02</span><h2 class="section-title" style="display:inline;">Research Projects</h2></div><a href="publications.html#recent-papers" style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">View In Practice →</a></div>
+    <div class="section-header reveal" style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;"><div><span class="section-number">03</span><h2 class="section-title" id="work-title" style="display:inline;">Selected Work</h2></div><a class="x-more" href="/work/ai-native.html">All AI-native work →</a></div>
+    <p class="x-lead reveal">Each piece is labeled by the leadership problem it solves. Every card opens with the same results header: scope, baseline, target, result and what was not achieved.</p>
+
+    <div class="x-tabs" role="tablist" aria-label="Work by topic" data-x-tabs="work">
+      <button class="x-tab" role="tab" id="tab-ai-native" aria-controls="work-ai-native" aria-selected="true" data-topic="ai-native">AI-native &amp; agentic<span class="x-count">5</span></button>
+      <button class="x-tab" role="tab" id="tab-shipped" aria-controls="work-shipped" aria-selected="false" tabindex="-1" data-topic="shipped">Shipped results<span class="x-count">3</span></button>
+      <!-- Reserved topics: remove "hidden" from the tab and its panel when the work is added. -->
+      <button class="x-tab" role="tab" id="tab-earlier-ux-ui" aria-controls="work-earlier-ux-ui" aria-selected="false" tabindex="-1" data-topic="earlier-ux-ui" hidden>Earlier UX &amp; UI</button>
+      <button class="x-tab" role="tab" id="tab-experiential" aria-controls="work-experiential" aria-selected="false" tabindex="-1" data-topic="experiential" hidden>Experiential design</button>
+      <button class="x-tab" role="tab" id="tab-cognitive-research" aria-controls="work-cognitive-research" aria-selected="false" tabindex="-1" data-topic="cognitive-research" hidden>Cognitive &amp; behavioral research</button>
+    </div>
+
+    <div class="x-panel" role="tabpanel" id="work-ai-native" aria-labelledby="tab-ai-native" tabindex="0">
+      <div class="x-grid">
+        <article class="x-card feature" id="work-network-fix">
+          <p class="x-practice">Enterprise AI · explanation, correction &amp; telemetry <span class="x-badge lead">Lead case</span></p>
+          <h3>Network Fix Review</h3>
+          <p class="x-outcome">AI recommendations an operator can question, correct and teach, so every correction becomes training data for the model team.</p>
+          <p class="x-client">International enterprise cloud, database and network infrastructure company · client unnamed under NDA</p>
+          <dl class="x-results">
+            <dt>Scope</dt><dd>AI-recommended network fixes reviewed by operators (accept, edit, reject with a reason), checked by a second change-safety agent</dd>
+            <dt>Baseline</dt><dd>Every fix checked by hand; operator corrections not captured</dd>
+            <dt>Target</dt><dd>Accept correct fixes, catch wrong ones, turn every correction into a training label</dd>
+            <dt>Result</dt><dd>Scenario (best case): review time per fix down 40%; 95% of seeded wrong fixes caught; 100% of corrections saved as labeled examples</dd>
+            <dt>Not achieved</dt><dd class="x-gap">No operator study published yet; no live network connected</dd>
+          </dl>
+          <p class="x-role"><strong>My role:</strong> design lead and builder: problem framing, task analysis, heuristic evaluation, telemetry design, working prototype.</p>
+          <div class="x-links">
+            <a class="x-link primary" href="https://elizabethhannan.github.io/network-fix-review/" target="_blank" rel="noopener">Live prototype ↗</a>
+            <a class="x-link" href="/work/ai-native.html#network-fix-review">Case summary →</a>
+            <a class="x-link" href="https://www.figma.com/design/Cb0QDEILY9cggEp101ZTg0/HXO-Trust-and-Control-Kit?node-id=14-62" target="_blank" rel="noopener">Telemetry spec ↗</a>
+          </div>
+          <span class="x-honest">Portfolio rebuild of shipped client work · names, data and details changed under NDA · scenario figures, not client data</span>
+        </article>
+
+        <article class="x-card feature" id="work-team-chat">
+          <p class="x-practice">Human-agent collaboration · agents that hand back control <span class="x-badge lead">Lead case</span></p>
+          <h3>Agent Hand-Back in Team Chat</h3>
+          <p class="x-outcome">An agent works inside a team channel: it presents what it understood, acts only after a preview, and hands the work back to a person with full context.</p>
+          <p class="x-client">Pattern in the HXO Trust and Control Kit · generic team chat, no product branding</p>
+          <dl class="x-results">
+            <dt>Scope</dt><dd>One channel thread: request, understood card, preview-then-apply, approval, hand-back card, undo</dd>
+            <dt>Baseline</dt><dd>New pattern; built from kit components shared by design and code</dd>
+            <dt>Target</dt><dd>A person always sees what the agent will do before it happens, and can take the work back at any point</dd>
+            <dt>Result</dt><dd>Built in Figma and in React; passes automated accessibility checks in light and dark</dd>
+            <dt>Not achieved</dt><dd class="x-gap">No user test yet</dd>
+          </dl>
+          <p class="x-role"><strong>My role:</strong> interaction design, design system, Figma library and React build.</p>
+          <div class="x-links">
+            <a class="x-link primary" href="https://www.figma.com/design/Cb0QDEILY9cggEp101ZTg0/HXO-Trust-and-Control-Kit?node-id=22-231" target="_blank" rel="noopener">Figma pattern ↗</a>
+            <a class="x-link" href="https://elizabethhannan.github.io/hxo-trust-kit/" target="_blank" rel="noopener">Storybook ↗</a>
+            <a class="x-link" href="/work/system.html">The system →</a>
+          </div>
+          <span class="x-honest">Concept pattern · no client data</span>
+        </article>
+
+        <article class="x-card" id="work-claims-coder">
+          <p class="x-practice">Regulated B2B workflow · many agents, one accountable person</p>
+          <h3>Claims Coder</h3>
+          <p class="x-outcome">Vet SOAP notes and invoices become a traceable claim packet; every code links to its text, and a person stays accountable.</p>
+          <p class="x-client">National pet insurance provider · client unnamed under NDA</p>
+          <dl class="x-results">
+            <dt>Scope</dt><dd>SOAP notes and invoices to a claim packet; 18 agents (13 working, 5 always-on security)</dd>
+            <dt>Baseline</dt><dd>Notes read and coded by hand; no shared billing code set in pet insurance</dd>
+            <dt>Target</dt><dd>Every code traceable to its text, page and coding-system version</dd>
+            <dt>Result</dt><dd>30 of 30 notes coded exactly on a test set written alongside the agents</dd>
+            <dt>Not achieved</dt><dd class="x-gap">No real clinic records or insurer decisions tested</dd>
+          </dl>
+          <div class="x-links">
+            <a class="x-link primary" href="https://elizabethhannan.github.io/claims-coder/" target="_blank" rel="noopener">Live app ↗</a>
+            <a class="x-link" href="/work/ai-native.html#claims-coder">Case summary →</a>
+          </div>
+          <span class="x-honest">Portfolio rebuild of shipped client work · best-case scenario figures, not client data</span>
+        </article>
+
+        <article class="x-card" id="work-food-rescue">
+          <p class="x-practice">Agent-to-agent orchestration · people step in by exception</p>
+          <h3>Food Rescue Agents</h3>
+          <p class="x-outcome">Agents coordinate surplus-food pickups and a household bridge; a person decides only the exceptions, inside the food-safety window.</p>
+          <p class="x-client">Feed-A-Friend, a national philanthropic foundation in food distribution</p>
+          <dl class="x-results">
+            <dt>Scope</dt><dd>Five agents run a week of pickups and a household bridge</dd>
+            <dt>Baseline</dt><dd>A coordinator matched every pickup by phone</dd>
+            <dt>Target</dt><dd>Agents handle routine pickups; every escalation reaches a person in time</dd>
+            <dt>Result</dt><dd>Scenario (best case): 86 of 100 pickups end to end; coordinator time per pickup down 70%</dd>
+            <dt>Not achieved</dt><dd class="x-gap">No real partners or households contacted; no participant test yet</dd>
+          </dl>
+          <div class="x-links">
+            <a class="x-link primary" href="https://elizabethhannan.github.io/food-rescue/" target="_blank" rel="noopener">Live prototype ↗</a>
+            <a class="x-link" href="/work/ai-native.html#food-rescue">Case summary →</a>
+          </div>
+          <span class="x-honest">Portfolio rebuild of shipped work · scenario figures, not client data</span>
+        </article>
+
+        <article class="x-card feature" id="work-spatial-director">
+          <p class="x-practice">Spatial &amp; multimodal interfaces · vision work</p>
+          <h3>Spatial Director</h3>
+          <p class="x-outcome">Direct a 3D office by typing, speaking and pointing; three agents show what "that" and "there" mean before anything moves.</p>
+          <p class="x-client">National autonomous vehicle motor company · client unnamed under NDA</p>
+          <dl class="x-results">
+            <dt>Scope</dt><dd>Language, spatial and layout agents; add, move, remove and agent suggestions</dd>
+            <dt>Baseline</dt><dd>Spatial edits could land off-screen or on the wrong object</dd>
+            <dt>Target</dt><dd>Preview every change; removals and suggestions wait for an OK; Stop and undo always work</dd>
+            <dt>Result</dt><dd>Every contract rule passes automated checks on desktop and phone, light and dark</dd>
+            <dt>Not achieved</dt><dd class="x-gap">Five-task participant sessions not yet run</dd>
+          </dl>
+          <div class="x-links">
+            <a class="x-link primary" href="https://elizabethhannan.github.io/spatial-director/" target="_blank" rel="noopener">Live prototype ↗</a>
+            <a class="x-link" href="/work/ai-native.html#spatial-director">Case summary →</a>
+          </div>
+          <span class="x-honest">Portfolio rebuild · simulated office, details changed under NDA</span>
+        </article>
+      </div>
+      <div class="x-panel-foot"><a class="x-more" href="/work/ai-native.html">Open the AI-native &amp; agentic topic page →</a></div>
+    </div>
+
+    <div class="x-panel" role="tabpanel" id="work-shipped" aria-labelledby="tab-shipped" tabindex="0" hidden>
+      <div class="x-grid">
+        <article class="x-card">
+          <p class="x-practice">Operations AI · frontline reports to diagnostic workflows <span class="x-badge measured">Measured</span></p>
+          <h3>Field Diagnostics</h3>
+          <p class="x-outcome">AI-powered diagnostic workflows for service technicians, built from field-reported failure signals.</p>
+          <p class="x-client">Autonomous Vehicle Motor Company · Senior Product Manager, Special Projects · 2023</p>
+          <dl class="x-results"><dt>Result</dt><dd>Operational efficiency up 20%</dd><dt>Also</dt><dd>EHS and compliance dashboards linking field input to outcomes for operations leaders</dd></dl>
+          <div class="x-links"><a class="x-link" href="/work/shipped.html#field-diagnostics">Details →</a></div>
+        </article>
+        <article class="x-card">
+          <p class="x-practice">Human-in-the-loop LLM workflows · corrections that teach the model <span class="x-badge measured">Measured</span></p>
+          <h3>Feedback That Teaches the Model</h3>
+          <p class="x-outcome">The model proposes, domain experts correct, and the correction data measurably improves synthesis quality. I wrote the prompts and built the evals.</p>
+          <p class="x-client">IXDY, AI enablement platform · Founder &amp; Chief of Interaction Design</p>
+          <dl class="x-results"><dt>Also</dt><dd>Multimodal AI platform for B2B manufacturing: training complexity down 60%; 85% skills-transfer effectiveness</dd></dl>
+          <div class="x-links"><a class="x-link" href="/work/shipped.html#feedback-loop">Details →</a></div>
+        </article>
+        <article class="x-card">
+          <p class="x-practice">Agentic ESG intelligence · live product</p>
+          <h3>Wkiva</h3>
+          <p class="x-outcome">Turns unstructured regulatory and customer input into trackable, decision-ready issues under SEC, TCFD and CSRD frameworks.</p>
+          <p class="x-client">IXDY · designed and built</p>
+          <div class="x-links"><a class="x-link" href="/work/shipped.html#wkiva">Details →</a><a class="x-link" href="#esg-algorithm">Platform overview →</a></div>
+        </article>
+      </div>
+      <div class="x-panel-foot"><a class="x-more" href="/work/shipped.html">Open the shipped results topic page →</a></div>
+    </div>
+
+    <!-- Reserved topic panels: fill with cards in the same format, then remove "hidden" here and on the tab. -->
+    <div class="x-panel" role="tabpanel" id="work-earlier-ux-ui" aria-labelledby="tab-earlier-ux-ui" tabindex="0" hidden data-reserved></div>
+    <div class="x-panel" role="tabpanel" id="work-experiential" aria-labelledby="tab-experiential" tabindex="0" hidden data-reserved></div>
+    <div class="x-panel" role="tabpanel" id="work-cognitive-research" aria-labelledby="tab-cognitive-research" tabindex="0" hidden data-reserved></div>
+  </div>
+</section>
+
+<section class="x-system" id="system" aria-labelledby="system-title">
+  <div class="section-inner">
+    <div class="section-header reveal" style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;"><div><span class="section-number">04</span><h2 class="section-title" id="system-title" style="display:inline;">The System Behind the Work</h2></div><a class="x-more" href="/work/system.html">Open the system page →</a></div>
+    <p class="x-lead reveal">The HXO Trust and Control Kit turns my point of view into parts any team can use: 17 components built on seven principles, matched one to one in Figma and in React.</p>
+    <ul class="x-principles reveal">
+      <li><b>Principle 1</b>Show the reasoning</li>
+      <li><b>Principle 2</b>Preview before acting</li>
+      <li><b>Principle 3</b>Humans hold the switch</li>
+      <li><b>Principle 4</b>Hand back with context</li>
+      <li><b>Principles 5–7</b>Learn and govern: frustration, audit and evaluation</li>
+      <li><b>Patterns</b>Claims review and team-chat hand-back</li>
+      <li><b>Modes</b>Light and dark, from one set of tokens</li>
+      <li><b>Checked</b>Automated accessibility tests on every story</li>
+    </ul>
+    <div class="x-tiles reveal">
+      <a class="x-tile" href="https://www.figma.com/design/Cb0QDEILY9cggEp101ZTg0/HXO-Trust-and-Control-Kit" target="_blank" rel="noopener"><span class="x-tile-kind">Figma library</span><span class="x-tile-name">Components &amp; tokens</span><span class="x-tile-desc">17 components, light and dark, published as a library.</span><span class="x-tile-go">Open in Figma ↗</span></a>
+      <a class="x-tile" href="https://elizabethhannan.github.io/hxo-trust-kit/" target="_blank" rel="noopener"><span class="x-tile-kind">React + Storybook</span><span class="x-tile-name">The same parts in code</span><span class="x-tile-desc">20 components and 93 stories in React and TypeScript.</span><span class="x-tile-go">Open Storybook ↗</span></a>
+      <a class="x-tile" href="https://www.figma.com/design/Cb0QDEILY9cggEp101ZTg0/HXO-Trust-and-Control-Kit?node-id=13-62" target="_blank" rel="noopener"><span class="x-tile-kind">Requirements map</span><span class="x-tile-name">Why each part exists</span><span class="x-tile-desc">Each component traced to the role requirement it answers.</span><span class="x-tile-go">Open in Figma ↗</span></a>
+      <a class="x-tile" href="https://www.figma.com/design/Cb0QDEILY9cggEp101ZTg0/HXO-Trust-and-Control-Kit?node-id=14-62" target="_blank" rel="noopener"><span class="x-tile-kind">Telemetry spec</span><span class="x-tile-name">What the model team learns</span><span class="x-tile-desc">17 events and 6 derived measures from every accept, edit, stop and undo.</span><span class="x-tile-go">Open in Figma ↗</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="x-section alt" id="impact" aria-labelledby="impact-title">
+  <div class="section-inner">
+    <div class="section-header reveal"><span class="section-number">05</span><h2 class="section-title" id="impact-title">Impact</h2></div>
+    <p class="x-lead reveal">Measured results from roles I have held. Portfolio rebuilds above use scenario figures and are labeled that way.</p>
+    <div class="x-kpis reveal">
+      <div class="x-kpi"><div class="x-kpi-num">+38%</div><div class="x-kpi-what">User satisfaction</div><div class="x-kpi-where">HXO framework across enterprise AI portfolios, leading 30+ designers and researchers</div></div>
+      <div class="x-kpi"><div class="x-kpi-num">+42%</div><div class="x-kpi-what">Team productivity</div><div class="x-kpi-where">Built the design org and research-to-product loop, health tech platform (HIPAA)</div></div>
+      <div class="x-kpi"><div class="x-kpi-num">+20%</div><div class="x-kpi-what">Operational efficiency</div><div class="x-kpi-where">AI diagnostic workflows, Autonomous Vehicle Motor Company</div></div>
+      <div class="x-kpi"><div class="x-kpi-num">−60%</div><div class="x-kpi-what">Training complexity</div><div class="x-kpi-where">Multimodal AI platform for B2B manufacturing; 85% skills-transfer effectiveness</div></div>
+      <div class="x-kpi"><div class="x-kpi-num">−28%</div><div class="x-kpi-what">Development errors</div><div class="x-kpi-where">Iterative prototyping across multimodal AI interfaces</div></div>
+      <div class="x-kpi"><div class="x-kpi-num">103%</div><div class="x-kpi-what">Of performance targets</div><div class="x-kpi-where">AI product strategy across 30+ concurrent enterprise engagements</div></div>
+      <div class="x-kpi"><div class="x-kpi-num">50+</div><div class="x-kpi-what">Staff, 90%+ client retention</div><div class="x-kpi-where">Founded and grew a national design, data and AI consultancy</div></div>
+      <div class="x-kpi"><div class="x-kpi-num">60,000+</div><div class="x-kpi-what">Professionals certified</div><div class="x-kpi-where">Product management curriculum used at 4,500+ companies</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="x-section" id="leadership" aria-labelledby="leadership-title">
+  <div class="section-inner">
+    <div class="section-header reveal"><span class="section-number">06</span><h2 class="section-title" id="leadership-title">How I Lead</h2></div>
+    <p class="x-lead reveal">An operating model another leader can read in five minutes and adapt to their own culture.</p>
+    <div class="x-lead-grid reveal">
+      <div class="x-lead-card"><h3>Taste, proven in craft</h3><p>I design in Figma first for craft, then build working products in code, so taste is judged on something real.</p><span class="x-proof">Proof: every card above links to a live build</span></div>
+      <div class="x-lead-card"><h3>A clear point of view</h3><p>Present, act, hand back. Teams get one shared test for every AI interaction instead of a debate per screen.</p><span class="x-proof">Proof: the point of view and HXO above</span></div>
+      <div class="x-lead-card"><h3>Interactions as systems</h3><p>Patterns become shared components with written rules, so many teams ship the same trustworthy behavior.</p><span class="x-proof">Proof: the Trust and Control Kit</span></div>
+      <div class="x-lead-card"><h3>Research into the roadmap</h3><p>One intake for field, support and in-product signals; synthesis standards; routing into sprint planning.</p><span class="x-proof">Proof: +42% team productivity</span></div>
+      <div class="x-lead-card"><h3>Influence across functions</h3><p>I drive adoption through teams that do not report to me, with product, engineering, data and executives.</p><span class="x-proof">Proof: 30+ concurrent enterprise engagements</span></div>
+      <div class="x-lead-card"><h3>Build the organization</h3><p>Hiring, critique and design operations that let designers and researchers do their best work at scale.</p><span class="x-proof">Proof: led 30+ designers and researchers; grew a 50+ person firm</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="x-section alt" id="adopt" aria-labelledby="adopt-title">
+  <div class="section-inner">
+    <div class="section-header reveal"><span class="section-number">07</span><h2 class="section-title" id="adopt-title">Adopt It at Your Company</h2></div>
+    <p class="x-lead reveal">The method is built to travel. A team can run it on one workflow, keep what fits its culture and goals, and scale from there.</p>
+    <div class="x-adopt-grid reveal">
+      <ol class="x-steps" aria-label="HXO for Agents, seven steps">
+        <li><b>Listen.</b> People and agents are both users now; study both.</li>
+        <li><b>Define.</b> Name the one gap in trust that matters most.</li>
+        <li><b>Design both sides.</b> HXO for the person, AXO for the agent.</li>
+        <li><b>Prototype.</b> Preview, approve, stop, undo and hand back, from the kit.</li>
+        <li><b>Test.</b> Measure trust with real people, not only accuracy.</li>
+        <li><b>Resolve.</b> Agents act where work is reversible; a person decides where it matters.</li>
+        <li><b>Audit.</b> Every action is logged, and the auditor is audited too.</li>
+      </ol>
+      <div class="x-strands">
+        <h3>The Handoff Contract</h3>
+        <p class="x-strands-sub">What every hand-off between agents, or from an agent to a person, must carry.</p>
+        <dl>
+          <dt>Task</dt><dd>What to do, and what done looks like.</dd>
+          <dt>Intent</dt><dd>Why it matters, so choices stay on target.</dd>
+          <dt>Confidence</dt><dd>What is known versus guessed, labeled both ways.</dd>
+          <dt>Ruled out</dt><dd>Dead ends already tried, so no one repeats them.</dd>
+          <dt>Human context</dt><dd>Who it is for and what they care about.</dd>
+          <dt>Edge cases</dt><dd>Exceptions that must survive any summary.</dd>
+          <dt>Checkpoint</dt><dd>Evidence verified before a result moves on.</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="employer-section" id="career" aria-labelledby="career-title">
+  <div class="section-inner">
+    <div class="section-header reveal"><span class="section-number">08</span><h2 class="section-title" id="career-title">Career &amp; Leadership Arc</h2></div>
+    <ol class="x-arc reveal">
+      <li class="now"><div class="x-arc-when">2019 – Present</div><div class="x-arc-role">Founder &amp; Chief of Interaction Design</div><div class="x-arc-org">IXDY, AI enablement platform</div><p class="x-arc-did">Human-in-the-loop LLM workflows, the Wkiva agentic ESG platform, and centralized design operations for 15+ designers and researchers.</p></li>
+      <li><div class="x-arc-when">2023</div><div class="x-arc-role">Senior Product Manager, Special Projects</div><div class="x-arc-org">Autonomous Vehicle Motor Company</div><p class="x-arc-did">AI diagnostic workflows for service technicians (+20% operational efficiency); EHS and compliance dashboards for operations leaders.</p></li>
+      <li><div class="x-arc-when">2021 – 2022</div><div class="x-arc-role">Interim Chief of Product Design &amp; Research</div><div class="x-arc-org">Health tech platform (HIPAA)</div><p class="x-arc-did">Built the design organization and the research-to-product loop for a distributed engineering org (+42% team productivity).</p></li>
+      <li><div class="x-arc-when">2018 – 2022</div><div class="x-arc-role">VP, Technical Product Management &amp; Data Science</div><div class="x-arc-org">BlueBlazingMedia</div><p class="x-arc-did">AI product strategy for enterprise technology leaders across 30+ concurrent engagements; built the HXO framework (+38% user satisfaction).</p></li>
+      <li><div class="x-arc-when">2008 – 2018</div><div class="x-arc-role">Founder &amp; Chief Experience Officer</div><div class="x-arc-org">BlueBlazingMedia, design, data and AI agency</div><p class="x-arc-did">Grew a national consultancy to 50+ cross-functional staff with 90%+ client retention.</p></li>
+      <li><div class="x-arc-when">2014 – 2016</div><div class="x-arc-role">VP, Product Analytics &amp; Data Science</div><div class="x-arc-org">RED-Lab, retail technology (acquired 2018)</div><p class="x-arc-did">Co-created a 6,000+ retail-executive advisory community; ETL and ML infrastructure optimizing $100M+ in ad spend.</p></li>
+      <li><div class="x-arc-when">2010 – 2012</div><div class="x-arc-role">Director, Product Marketing &amp; Financial Communications</div><div class="x-arc-org">85 Broads (now Ellevate)</div></li>
+      <li><div class="x-arc-when">2008 – 2010</div><div class="x-arc-role">Senior Instructional Design Manager</div><div class="x-arc-org">Pragmatic &amp; Data Science Institute</div><p class="x-arc-did">Product management certification curriculum used by 60,000+ professionals at 4,500+ companies.</p></li>
+    </ol>
+    <span class="logo-carousel-label">Enterprise clients &amp; collaborators</span>
+    <div class="logo-carousel" aria-hidden="true">
+      <div class="logo-track">
+        <span class="logo-item">Fortune 500</span><span class="logo-item">·</span>
+        <span class="logo-item">Enterprise AI</span><span class="logo-item">·</span>
+        <span class="logo-item">ESG Advisory</span><span class="logo-item">·</span>
+        <span class="logo-item">Tech Startups</span><span class="logo-item">·</span>
+        <span class="logo-item">Non-Profits</span><span class="logo-item">·</span>
+        <span class="logo-item">Academia</span><span class="logo-item">·</span>
+        <span class="logo-item">Fortune 500</span><span class="logo-item">·</span>
+        <span class="logo-item">Enterprise AI</span><span class="logo-item">·</span>
+        <span class="logo-item">ESG Advisory</span><span class="logo-item">·</span>
+        <span class="logo-item">Tech Startups</span><span class="logo-item">·</span>
+        <span class="logo-item">Non-Profits</span><span class="logo-item">·</span>
+        <span class="logo-item">Academia</span>
+      </div>
+    </div>
+    <div class="x-edu reveal" id="education" style="margin-top:2.4rem;">
+      <h3>Education, alongside the work</h3>
+      <p class="x-edu-line">I am completing two bachelor's degrees and an associate degree while working: the AI study keeps my practice close to how models and agents are built, the business study ties design to strategy, and sustainability shapes how I weigh long-term impact.</p>
+      <ul>
+        <li><b>B.S. Artificial Intelligence &amp; Machine Learning</b>Chandler-Gilbert Community College · in progress</li>
+        <li><b>B.S. Leadership &amp; Management</b>New York University · in progress</li>
+        <li><b>A.A.S. Sustainable Sciences</b>Rio Salado College · expected Spring 2027</li>
+      </ul>
+      <div class="awards-row">
+        <span class="award-chip">Product Management Certified, Pragmatic Marketing (2009)</span>
+        <span class="award-chip">AI4ALL Scholar</span>
+        <span class="award-chip">Nina Mason Pulliam Scholar</span>
+        <span class="award-chip">Phi Theta Kappa</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="x-rip-head" id="research-ip" aria-labelledby="rip-title">
+  <div class="section-inner">
+    <div class="section-header reveal" style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;"><div><span class="section-number">09</span><h2 class="section-title" id="rip-title" style="display:inline;">Research, Publications &amp; IP</h2></div><a class="x-more" href="publications.html">View In Practice →</a></div>
+    <p class="x-lead reveal">The research that shapes the product work: AI safety, accessibility, ESG transparency, code, patents and mission work.</p>
+    <div class="x-tabs" role="tablist" aria-label="Research, publications and IP" data-x-tabs="rip">
+      <button class="x-tab" role="tab" id="rip-tab-projects" aria-controls="projects" aria-selected="true" data-target="projects">Research projects</button>
+      <button class="x-tab" role="tab" id="rip-tab-publications" aria-controls="publications" aria-selected="false" tabindex="-1" data-target="publications">Publications</button>
+      <button class="x-tab" role="tab" id="rip-tab-esg" aria-controls="esg-algorithm" aria-selected="false" tabindex="-1" data-target="esg-algorithm">ESG platform</button>
+      <button class="x-tab" role="tab" id="rip-tab-code" aria-controls="code" aria-selected="false" tabindex="-1" data-target="code">Code</button>
+      <button class="x-tab" role="tab" id="rip-tab-patents" aria-controls="patents" aria-selected="false" tabindex="-1" data-target="patents">Patents</button>
+      <button class="x-tab" role="tab" id="rip-tab-mission" aria-controls="philanthropy" aria-selected="false" tabindex="-1" data-target="philanthropy">Mission</button>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="x-rip-panel" role="tabpanel" aria-labelledby="rip-tab-projects" style="background:var(--warm-white);">
+  <div class="section-inner">
+    <div class="section-header reveal" style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;"><div><span class="section-number">09.1</span><h2 class="section-title" style="display:inline;">Research Projects</h2></div><a href="publications.html#recent-papers" style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">View In Practice →</a></div>
     <div class="course-grid">
       <div class="course-card reveal">
         <div class="course-card-img"><img src="/3d-deaf-advocacy.png" alt="Deaf & DeafBlind Advocacy"></div>
@@ -770,9 +1097,9 @@
   </div>
 </section>
 
-<section class="publications-section" id="publications">
+<section class="publications-section x-rip-panel" id="publications" role="tabpanel" aria-labelledby="rip-tab-publications" hidden>
   <div class="section-inner">
-    <div class="section-header reveal"><span class="section-number">03</span><h2 class="section-title">Publications &amp; Papers</h2></div>
+    <div class="section-header reveal"><span class="section-number">09.2</span><h2 class="section-title">Publications &amp; Papers</h2></div>
     <div class="pub-teaser reveal">
       <div class="pub-teaser-text">
         <p>My research spans AI alignment, ESG transparency, accessibility technology, and human-computer interaction — with a focus on failure modes that emerge at the intersection of model behavior and real-world deployment contexts.</p>
@@ -795,9 +1122,97 @@
   </div>
 </section>
 
-<section class="philanthropy-section" id="philanthropy">
+<section class="wkiva-section x-rip-panel" id="esg-algorithm" role="tabpanel" aria-labelledby="rip-tab-esg" hidden>
   <div class="section-inner">
-    <div class="section-header reveal" style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;"><div><span class="section-number">04</span><h2 class="section-title" style="display:inline;">Philanthropy &amp; Mission</h2></div><a href="publications.html#philanthropy" style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">View In Practice →</a></div>
+    <div class="section-header reveal"><span class="section-number">09.3</span><h2 class="section-title">Transparent ESG Algorithm</h2></div>
+    <div class="wkiva-grid reveal">
+      <div class="wkiva-text">
+        <h3>The Executive's AI Powered Platform for Transparent Data Driven ESG Sustainability</h3>
+        <p>An AI-powered Carbon Intelligence platform I built to unify ESG reporting, carbon accounting, and regulatory compliance — enabling organizations to track Scope 1, 2, and 3 emissions with assurance-ready disclosures aligned to CSRD, ISSB, SEC Climate Disclosure, and California SB 253.</p>
+        <p>The platform features double materiality assessments, AI-generated compliance insights, supplier engagement for Scope 3 verification, daily emissions heatmaps, regulatory readiness scoring, and executive board report generation — applying my ESG research to real financial infrastructure.</p>
+        <a href="javascript:void(0)" onclick="openEsgGate()" class="wkiva-link">Learn More</a>
+        <a href="javascript:void(0)" onclick="openPrototypeGate()" class="wkiva-link" style="margin-left:0.6rem;">Rough Agentic Prototype →</a>
+      </div>
+      <div class="wkiva-screenshot">
+        <img src="/esg-algorithm.png?v=5" alt="Transparent ESG Algorithm Platform" style="width:100%;display:block;border-radius:4px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="code-section x-rip-panel" id="code" role="tabpanel" aria-labelledby="rip-tab-code" hidden>
+  <div class="section-inner">
+    <div class="section-header reveal" style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;"><div><span class="section-number">09.4</span><h2 class="section-title" style="display:inline;">Code &amp; Technical Work</h2></div><a href="publications.html#code" style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">View In Practice →</a></div>
+    <div class="code-grid reveal" style="position:relative;">
+      <div class="code-left">
+        <h3>Building at the Research Frontier</h3>
+        <p>My technical work spans machine learning pipelines, ESG evaluation frameworks, and adversarial robustness tooling. I write Python for research and data pipelines, with growing work in TypeScript and systems programming.</p>
+        <p>Two representative scripts from active research projects are shown here — click either to expand the full source.</p>
+        <a href="https://github.com/elizabethhannan" target="_blank" class="github-btn">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.005 2.05.138 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          View GitHub
+        </a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <div class="code-row">
+        <div class="code-block code-clickable" onclick="openCodePopup('parcel')">
+          <div style="color:rgba(255,255,255,0.25);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;">evaluate_parcel.py</div>
+          <span style="color:#5a6a8a;font-style:italic;"># Land Trust Parcel Evaluation Model</span><br>
+          <span style="color:#7ec8e3;">import</span> pandas <span style="color:#7ec8e3;">as</span> pd, numpy <span style="color:#7ec8e3;">as</span> np<br>
+          <span style="color:#7ec8e3;">from</span> sklearn.ensemble <span style="color:#7ec8e3;">import</span> RandomForestRegressor<br>
+          <br>
+          FEATURE_COLS = [<span style="color:#f0c070;">'bio_idx'</span>, <span style="color:#f0c070;">'water_dist'</span>, <span style="color:#f0c070;">'canopy_cover'</span>, ...]<br>
+          <br>
+          <span style="color:#7ec8e3;">def</span> <span style="color:#a8d8a8;">evaluate_parcel</span>(data_path, model_path):<br>
+          &nbsp;&nbsp;score = model.predict(features)[0]<br>
+          &nbsp;&nbsp;<span style="color:#7ec8e3;">return</span> {<span style="color:#f0c070;">"recommendation"</span>: <span style="color:#f0c070;">"Acquire"</span> <span style="color:#7ec8e3;">if</span> score > 0.7 ...}
+        </div>
+        <button type="button" class="view-code-btn" onclick="openCodePopup('parcel')" aria-label="View evaluate_parcel.py">
+          <span class="vc-icon">⤢</span>
+          <span>View<br>Code</span>
+        </button>
+        </div>
+        <div class="code-row">
+        <div class="code-block code-clickable" onclick="openCodePopup('esg')">
+          <div style="color:rgba(255,255,255,0.25);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;">esg_sycophancy_eval.py</div>
+          <span style="color:#5a6a8a;font-style:italic;"># ESG Sycophancy Evaluation — Preprint</span><br>
+          <span style="color:#7ec8e3;">import</span> anthropic, json<br>
+          <br>
+          CONDITIONS = [<span style="color:#f0c070;">"standard"</span>, <span style="color:#f0c070;">"approval_reinforcing"</span>,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f0c070;">"friction_suppressed"</span>, <span style="color:#f0c070;">"challenger"</span>, ...]<br>
+          <br>
+          <span style="color:#7ec8e3;">def</span> <span style="color:#a8d8a8;">run_experiment</span>(corpus_path, output_path):<br>
+          &nbsp;&nbsp;<span style="color:#7ec8e3;">for</span> condition <span style="color:#7ec8e3;">in</span> CONDITIONS: ...
+        </div>
+        <button type="button" class="view-code-btn" onclick="openCodePopup('esg')" aria-label="View esg_sycophancy_eval.py">
+          <span class="vc-icon">⤢</span>
+          <span>View<br>Code</span>
+        </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="patent-section x-rip-panel" id="patents" role="tabpanel" aria-labelledby="rip-tab-patents" hidden>
+  <div class="section-inner">
+    <div class="section-header reveal"><span class="section-number">09.5</span><h2 class="section-title">Patents &amp; IP</h2></div>
+    <div class="patent-grid reveal">
+      <div class="patent-text">
+        <span class="patent-badge">Patent Pending</span>
+        <h3>Retrofit Thermosiphon Ventilation Windows</h3>
+        <p>Patent pending covering a novel passive ventilation system integrated into standard window retrofits — using thermosiphon airflow dynamics to enhance energy efficiency and indoor air quality without mechanical systems.</p>
+        <p>Developed at the intersection of sustainability engineering and building science, this IP reflects a commitment to circular, renewable design solutions for existing housing stock.</p>
+        <span class="btn" style="cursor:default;opacity:0.6;">Patent Pending — No Current Details Available</span>
+      </div>
+      <img src="/patent.png" alt="Retrofit Thermosiphon Ventilation Windows — Patent Pending" class="patent-img">
+    </div>
+  </div>
+</section>
+
+<section class="philanthropy-section x-rip-panel" id="philanthropy" role="tabpanel" aria-labelledby="rip-tab-mission" hidden>
+  <div class="section-inner">
+    <div class="section-header reveal" style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;"><div><span class="section-number">09.6</span><h2 class="section-title" style="display:inline;">Philanthropy &amp; Mission</h2></div><a href="publications.html#philanthropy" style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">View In Practice →</a></div>
     <div class="foundation-grid">
       <div class="foundation-card reveal">
         <img src="/3d-cat-paws.png" alt="Feed a Friend" class="foundation-img">
@@ -867,173 +1282,7 @@
   </div>
 </section>
 
-<section class="code-section" id="code">
-  <div class="section-inner">
-    <div class="section-header reveal" style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;"><div><span class="section-number">05</span><h2 class="section-title" style="display:inline;">Code &amp; Technical Work</h2></div><a href="publications.html#code" style="font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">View In Practice →</a></div>
-    <div class="code-grid reveal" style="position:relative;">
-      <div class="code-left">
-        <h3>Building at the Research Frontier</h3>
-        <p>My technical work spans machine learning pipelines, ESG evaluation frameworks, and adversarial robustness tooling. I write Python for research and data pipelines, with growing work in TypeScript and systems programming.</p>
-        <p>Two representative scripts from active research projects are shown here — click either to expand the full source.</p>
-        <a href="https://github.com/elizabethhannan" target="_blank" class="github-btn">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.005 2.05.138 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          View GitHub
-        </a>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:1rem;">
-        <div class="code-row">
-        <div class="code-block code-clickable" onclick="openCodePopup('parcel')">
-          <div style="color:rgba(255,255,255,0.25);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;">evaluate_parcel.py</div>
-          <span style="color:#5a6a8a;font-style:italic;"># Land Trust Parcel Evaluation Model</span><br>
-          <span style="color:#7ec8e3;">import</span> pandas <span style="color:#7ec8e3;">as</span> pd, numpy <span style="color:#7ec8e3;">as</span> np<br>
-          <span style="color:#7ec8e3;">from</span> sklearn.ensemble <span style="color:#7ec8e3;">import</span> RandomForestRegressor<br>
-          <br>
-          FEATURE_COLS = [<span style="color:#f0c070;">'bio_idx'</span>, <span style="color:#f0c070;">'water_dist'</span>, <span style="color:#f0c070;">'canopy_cover'</span>, ...]<br>
-          <br>
-          <span style="color:#7ec8e3;">def</span> <span style="color:#a8d8a8;">evaluate_parcel</span>(data_path, model_path):<br>
-          &nbsp;&nbsp;score = model.predict(features)[0]<br>
-          &nbsp;&nbsp;<span style="color:#7ec8e3;">return</span> {<span style="color:#f0c070;">"recommendation"</span>: <span style="color:#f0c070;">"Acquire"</span> <span style="color:#7ec8e3;">if</span> score > 0.7 ...}
-        </div>
-        <button type="button" class="view-code-btn" onclick="openCodePopup('parcel')" aria-label="View evaluate_parcel.py">
-          <span class="vc-icon">⤢</span>
-          <span>View<br>Code</span>
-        </button>
-        </div>
-        <div class="code-row">
-        <div class="code-block code-clickable" onclick="openCodePopup('esg')">
-          <div style="color:rgba(255,255,255,0.25);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;">esg_sycophancy_eval.py</div>
-          <span style="color:#5a6a8a;font-style:italic;"># ESG Sycophancy Evaluation — Preprint</span><br>
-          <span style="color:#7ec8e3;">import</span> anthropic, json<br>
-          <br>
-          CONDITIONS = [<span style="color:#f0c070;">"standard"</span>, <span style="color:#f0c070;">"approval_reinforcing"</span>,<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f0c070;">"friction_suppressed"</span>, <span style="color:#f0c070;">"challenger"</span>, ...]<br>
-          <br>
-          <span style="color:#7ec8e3;">def</span> <span style="color:#a8d8a8;">run_experiment</span>(corpus_path, output_path):<br>
-          &nbsp;&nbsp;<span style="color:#7ec8e3;">for</span> condition <span style="color:#7ec8e3;">in</span> CONDITIONS: ...
-        </div>
-        <button type="button" class="view-code-btn" onclick="openCodePopup('esg')" aria-label="View esg_sycophancy_eval.py">
-          <span class="vc-icon">⤢</span>
-          <span>View<br>Code</span>
-        </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="patent-section">
-  <div class="section-inner">
-    <div class="section-header reveal"><span class="section-number">06</span><h2 class="section-title">Patents &amp; IP</h2></div>
-    <div class="patent-grid reveal">
-      <div class="patent-text">
-        <span class="patent-badge">Patent Pending</span>
-        <h3>Retrofit Thermosiphon Ventilation Windows</h3>
-        <p>Patent pending covering a novel passive ventilation system integrated into standard window retrofits — using thermosiphon airflow dynamics to enhance energy efficiency and indoor air quality without mechanical systems.</p>
-        <p>Developed at the intersection of sustainability engineering and building science, this IP reflects a commitment to circular, renewable design solutions for existing housing stock.</p>
-        <span class="btn" style="cursor:default;opacity:0.6;">Patent Pending — No Current Details Available</span>
-      </div>
-      <img src="/patent.png" alt="Retrofit Thermosiphon Ventilation Windows — Patent Pending" class="patent-img">
-    </div>
-  </div>
-</section>
-
-<section class="wkiva-section">
-  <div class="section-inner">
-    <div class="section-header reveal"><span class="section-number">07</span><h2 class="section-title">Transparent ESG Algorithm</h2></div>
-    <div class="wkiva-grid reveal">
-      <div class="wkiva-text">
-        <h3>The Executive's AI Powered Platform for Transparent Data Driven ESG Sustainability</h3>
-        <p>An AI-powered Carbon Intelligence platform I built to unify ESG reporting, carbon accounting, and regulatory compliance — enabling organizations to track Scope 1, 2, and 3 emissions with assurance-ready disclosures aligned to CSRD, ISSB, SEC Climate Disclosure, and California SB 253.</p>
-        <p>The platform features double materiality assessments, AI-generated compliance insights, supplier engagement for Scope 3 verification, daily emissions heatmaps, regulatory readiness scoring, and executive board report generation — applying my ESG research to real financial infrastructure.</p>
-        <a href="javascript:void(0)" onclick="openEsgGate()" class="wkiva-link">Learn More</a>
-        <a href="javascript:void(0)" onclick="openPrototypeGate()" class="wkiva-link" style="margin-left:0.6rem;">Rough Agentic Prototype →</a>
-      </div>
-      <div class="wkiva-screenshot">
-        <img src="/esg-algorithm.png?v=5" alt="Transparent ESG Algorithm Platform" style="width:100%;display:block;border-radius:4px;">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="employer-section" id="career">
-  <div class="section-inner">
-    <div class="section-header reveal"><span class="section-number">08</span><h2 class="section-title">Professional Background</h2></div>
-    <div class="career-status-row reveal">
-      <div class="career-status-box career-status-current">
-        <div class="career-status-label">Current</div>
-        <div class="career-status-value">Non-Traditional Student</div>
-      </div>
-    </div>
-    <div class="employer-grid reveal">
-      <div class="employer-card"><div class="employer-title">Chief of IXD &amp; Product UX</div><div class="employer-company">IXDY — AI Enablement Platform</div></div>
-      <div class="employer-card"><div class="employer-title">Sr. Product Marketing &amp; ESG</div><div class="employer-company">Tesla · Supercharger / Verizon</div></div>
-      <div class="employer-card"><div class="employer-title">VP Product &amp; Creative Director</div><div class="employer-company">BlueBlazingMedia / RED-Lab</div></div>
-      <div class="employer-card"><div class="employer-title">Director of Financial Communications</div><div class="employer-company">Ellevest (Goldman Sachs)</div></div>
-    </div>
-    <span class="logo-carousel-label">Enterprise clients &amp; collaborators</span>
-    <div class="logo-carousel">
-      <div class="logo-track">
-        <span class="logo-item">Fortune 500</span><span class="logo-item">·</span>
-        <span class="logo-item">Enterprise AI</span><span class="logo-item">·</span>
-        <span class="logo-item">ESG Advisory</span><span class="logo-item">·</span>
-        <span class="logo-item">Tech Startups</span><span class="logo-item">·</span>
-        <span class="logo-item">Non-Profits</span><span class="logo-item">·</span>
-        <span class="logo-item">Academia</span><span class="logo-item">·</span>
-        <span class="logo-item">Fortune 500</span><span class="logo-item">·</span>
-        <span class="logo-item">Enterprise AI</span><span class="logo-item">·</span>
-        <span class="logo-item">ESG Advisory</span><span class="logo-item">·</span>
-        <span class="logo-item">Tech Startups</span><span class="logo-item">·</span>
-        <span class="logo-item">Non-Profits</span><span class="logo-item">·</span>
-        <span class="logo-item">Academia</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="education-section" id="education">
-  <div class="section-inner">
-    <div class="section-header reveal"><span class="section-number">09</span><h2 class="section-title">Education</h2></div>
-    <div class="awards-row reveal">
-      <span class="award-chip">PTK Phi Theta Kappa</span>
-      <span class="award-chip">Nina Mason Pulliam Scholar</span>
-      <span class="award-chip">Honors Program</span>
-      <span class="award-chip">VP of Scholarship</span>
-      <span class="award-chip">Nationally Awarded HiA</span>
-    </div>
-    <div class="edu-row reveal">
-      <div class="edu-year">In Progress</div>
-      <div>
-        <div class="edu-institution">Chandler-Gilbert Community College · Maricopa</div>
-        <div class="edu-degree">Bachelor of Science, Artificial Intelligence &amp; Machine Learning</div>
-        <div class="edu-note">Nina Mason Pulliam Foundation Scholar · PTK Honors Society</div>
-      </div>
-    </div>
-    <div class="edu-row reveal">
-      <div class="edu-year">Summer 2026</div>
-      <div>
-        <div class="edu-institution">Maricopa Community College District</div>
-        <div class="edu-degree">Associate of Applied Science, Sustainable Sciences</div>
-        <div class="edu-note">Completing Summer 2026 · Honors Program</div>
-      </div>
-    </div>
-    <div class="edu-row reveal">
-      <div class="edu-year">Leadership</div>
-      <div>
-        <div class="edu-institution">Phi Theta Kappa — Alpha Theta Omicron Chapter</div>
-        <div class="edu-degree">VP of Scholarship</div>
-        <div class="edu-note">National Honors Society</div>
-      </div>
-    </div>
-    <div class="edu-row reveal">
-      <div class="edu-year">Continuing Certifications</div>
-      <div>
-        <div class="edu-institution">Professional Development</div>
-        <div class="edu-degree">Stanford · Cornell · Wharton · Yale · UC Berkeley</div>
-        <div class="edu-note">CFO — Corporate Finance, Private Equity &amp; Venture Capital · Executive Product Marketing · Corporate Philanthropy · Computer Science · Entrepreneurism · Instructional Design &amp; Validated Comprehension (AI Methods)</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div id="cv-dossier" data-cv-dossier data-theme="navy"></div>
 <script type="module" src="./src/cv-dossier.js"></script>
@@ -1283,21 +1532,21 @@
   <div class="footer-grid">
     <div>
       <div class="footer-name">Elizabeth Hannan</div>
-      <div class="footer-sub">Researcher · Builder · Polymath</div>
+      <div class="footer-sub">Design Executive · AI-Native Products</div>
       <a href="contact.html" class="footer-contact-btn">Get in Touch</a>
     </div>
     <div class="footer-links">
-      <a href="#polymath" class="footer-link">About</a>
-      <a href="#research" class="footer-link">Research</a>
-      <a href="#projects" class="footer-link">Projects</a>
+      <a href="#work" class="footer-link">Selected Work</a>
+      <a href="/work/system.html" class="footer-link">The System</a>
+      <a href="#leadership" class="footer-link">How I Lead</a>
+      <a href="#career" class="footer-link">Career</a>
+      <a href="#research-ip" class="footer-link">Research &amp; IP</a>
       <a href="publications.html" class="footer-link">Publications</a>
-      <a href="#philanthropy" class="footer-link">Philanthropy</a>
-      <a href="#education" class="footer-link">Education</a>
       <a href="https://github.com/elizabethhannan" target="_blank" class="footer-link">GitHub</a>
       <a href="https://linkedin.com/in/elizabethhannan" target="_blank" class="footer-link">LinkedIn</a>
     </div>
   </div>
-  <div class="footer-sig">© 2025 Elizabeth Hannan · Built with intention · All research cited where applicable</div>
+  <div class="footer-sig">© 2026 Elizabeth Hannan · Built with intention · All research cited where applicable</div>
 </footer>
 
 <div class="modal-overlay" id="newsletterModal">
@@ -1744,6 +1993,62 @@ temporal_accountability     <span style="color:#7ec98a;">0.12 ✓</span>        
       if (e.key === 'Escape') closeEsgGate();
     }
   });
+</script>
+
+<script>
+/* Topic tabs (Selected work) and Research & IP tabs. Arrow keys move between tabs; links to a section's id open its tab. */
+(function () {
+  function setup(list, getPanel) {
+    var tabs = Array.prototype.slice.call(list.querySelectorAll('[role="tab"]'));
+    function visible() { return tabs.filter(function (t) { return !t.hidden; }); }
+    function select(tab, focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        var p = getPanel(t);
+        if (p) p.hidden = !on;
+        if (on && p) p.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
+      });
+      if (focus) tab.focus();
+    }
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function () { select(t, false); });
+      t.addEventListener('keydown', function (e) {
+        var v = visible(), i = v.indexOf(t), n = null;
+        if (e.key === 'ArrowRight') n = v[(i + 1) % v.length];
+        else if (e.key === 'ArrowLeft') n = v[(i - 1 + v.length) % v.length];
+        else if (e.key === 'Home') n = v[0];
+        else if (e.key === 'End') n = v[v.length - 1];
+        if (n) { e.preventDefault(); select(n, true); }
+      });
+    });
+    return { tabs: tabs, select: select, getPanel: getPanel };
+  }
+  var groups = [];
+  var work = document.querySelector('[data-x-tabs="work"]');
+  if (work) groups.push(setup(work, function (t) { return document.getElementById(t.getAttribute('aria-controls')); }));
+  var rip = document.querySelector('[data-x-tabs="rip"]');
+  if (rip) groups.push(setup(rip, function (t) { return document.getElementById(t.dataset.target); }));
+
+  function openFromHash() {
+    var id = decodeURIComponent((location.hash || '').slice(1));
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (!el) return;
+    groups.forEach(function (g) {
+      g.tabs.forEach(function (t) {
+        var p = g.getPanel(t);
+        if (p && !t.hidden && (p === el || p.contains(el))) {
+          g.select(t, false);
+          requestAnimationFrame(function () { el.scrollIntoView({ block: 'start' }); });
+        }
+      });
+    });
+  }
+  window.addEventListener('hashchange', openFromHash);
+  openFromHash();
+})();
 </script>
 
 <script type="module" src="./src/body-copy-size.js"></script>

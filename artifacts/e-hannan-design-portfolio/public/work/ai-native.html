@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Native &amp; Agentic Work — Elizabeth Hannan</title>
+  <meta name="description" content="Network Fix Review, agent hand-back in team chat, Claims Coder, Food Rescue Agents and Spatial Director.">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, noai, noimageai">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+  <link rel="icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/work/work.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="bar">
+  <a class="bar-name" href="/">E. Hannan · Home</a>
+  <nav aria-label="Work topics">
+      <a href="/work/ai-native.html" aria-current="page">AI-Native &amp; Agentic</a>
+      <a href="/work/shipped.html">Shipped Results</a>
+      <a href="/work/system.html">The System</a>
+      <a href="/#leadership">How I Lead</a>
+  </nav>
+</div>
+<header class="top">
+  <div class="top-inner">
+    <p class="label">Topic · AI-native &amp; agentic products</p>
+    <h1>Products where people and agents work together</h1>
+    <p class="lead">Five pieces of work, each labeled by the leadership problem it solves. Every case opens with scope, baseline, target, result and what was not achieved, then shows the methods, the build and the testing.</p>
+    <nav class="jump" aria-label="Cases on this page">
+      <a href="#network-fix-review">Network Fix Review</a>
+      <a href="#team-chat-hand-back">Agent hand-back in team chat</a>
+      <a href="#claims-coder">Claims Coder</a>
+      <a href="#food-rescue">Food Rescue Agents</a>
+      <a href="#spatial-director">Spatial Director</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<article class="case" id="network-fix-review" aria-labelledby="nfr-h">
+  <p class="practice">Enterprise AI · explanation, correction &amp; telemetry</p>
+  <h2 id="nfr-h">Network Fix Review</h2>
+  <p class="outcome">AI recommendations an operator can question, correct and teach.</p>
+  <p class="client">International enterprise cloud, database and network infrastructure software company · client unnamed under NDA · design lead and builder</p>
+  <table class="results">
+    <tr><th scope="row">Scope</th><td>AI-recommended network fixes reviewed by operators (accept, edit, reject with a reason), with a change-safety agent</td></tr>
+    <tr><th scope="row">Baseline</th><td>Every fix checked by hand; operator corrections not captured</td></tr>
+    <tr><th scope="row">Target</th><td>Operators accept correct fixes, catch wrong ones, and every correction becomes a training label</td></tr>
+    <tr><th scope="row">Result</th><td>Scenario (best case): review time per fix down 40%; 95% of seeded wrong fixes caught before they ran; 100% of corrections saved as labeled examples</td></tr>
+    <tr><th scope="row">Not achieved</th><td class="gap">No operator study published yet; no live network connected</td></tr>
+  </table>
+  <h3>The challenge</h3>
+  <p>As networks grow, the fixes an AI can suggest grow faster than the number an operator can safely check. An operator who cannot tell a good recommendation from a bad one either rubber-stamps it or ignores the AI, and corrections taught the model nothing. IT and networking issues caused 23% of impactful outages in 2024 <span class="cite">(Uptime Institute, 2025)</span>, and over 40% of agentic AI projects are expected to be canceled by the end of 2027 <span class="cite">(Gartner, 2025)</span>.</p>
+  <h3>What the research says</h3>
+  <ul>
+    <li>Trust has to match reliability, so each recommendation shows its evidence and the track record of its confidence level <span class="cite">(Lee &amp; See, 2004)</span>.</li>
+    <li>People accept an imperfect algorithm when they can adjust it, so "Edit before applying" sits beside Accept <span class="cite">(Dietvorst et al., 2018)</span>.</li>
+    <li>Design for when the AI is wrong and for over time: the reject-with-a-reason flow, the abstain state and the model-feedback dashboard <span class="cite">(Amershi et al., 2019)</span>.</li>
+  </ul>
+  <h3>Design tasks</h3>
+  <ol>
+    <li>Problem framing and job stories</li>
+    <li>Task analysis of a single review: read, check evidence, judge confidence, preview, decide, verify</li>
+    <li>Information hierarchy that follows that order</li>
+    <li>Heuristic evaluation of every state, including low confidence with high risk and no recommendation at all</li>
+    <li>Dashboard design for the model team</li>
+    <li>Telemetry design: each operator goal mapped to a measure and to what it tells the model team</li>
+  </ol>
+  <h3>HXO and AXO</h3>
+  <p>The human outcome: an operator who fixes problems fast without breaking users, and who trusts the AI exactly as much as it deserves. For the agent side, every accept, edit, reject and rollback becomes a structured telemetry event and a labeled training example.</p>
+  <h3>Implementation</h3>
+  <p>A diagnosis agent proposes each fix and a separate change-safety agent checks it against what the first cannot see. When they disagree, the item waits for the operator; neither agent can apply a change on its own. A seeded simulation produces 60 days of decisions so every dashboard number comes from one set of records.</p>
+  <h3>Testing</h3>
+  <p>Done: automated browser tests of every decision path at laptop and phone width, in light and dark, plus a numbers check that the dashboard agrees with itself. Planned: a usability test with five network operators measuring time to decide and appropriate reliance.</p>
+  <div class="links">
+    <a class="btn primary" href="https://elizabethhannan.github.io/network-fix-review/" target="_blank" rel="noopener">Live prototype ↗</a>
+    <a class="btn" href="https://www.figma.com/design/Cb0QDEILY9cggEp101ZTg0/HXO-Trust-and-Control-Kit?node-id=14-62" target="_blank" rel="noopener">Telemetry spec ↗</a>
+  </div>
+  <p class="honest">Portfolio rebuild of shipped client work. Names, data and details changed under NDA; figures are scenario data, not client data. Happy to walk through the original work in an interview, within NDA limits.</p>
+</article>
+
+<article class="case" id="team-chat-hand-back" aria-labelledby="tc-h">
+  <p class="practice">Human-agent collaboration · agents that hand back control</p>
+  <h2 id="tc-h">Agent Hand-Back in Team Chat</h2>
+  <p class="outcome">An agent working inside a team channel presents what it understood, acts only after a preview, and hands the work back with full context.</p>
+  <p class="client">Pattern in the HXO Trust and Control Kit · generic team chat, no product branding · interaction design, design system and build</p>
+  <table class="results">
+    <tr><th scope="row">Scope</th><td>One channel thread: request, understood card, preview-then-apply, approval, hand-back card, undo</td></tr>
+    <tr><th scope="row">Baseline</th><td>New pattern, built from kit components shared by design and code</td></tr>
+    <tr><th scope="row">Target</th><td>A person always sees what the agent will do before it happens, and can take the work back at any point</td></tr>
+    <tr><th scope="row">Result</th><td>Built in Figma and in React; automated accessibility checks pass in light and dark</td></tr>
+    <tr><th scope="row">Not achieved</th><td class="gap">No user test yet</td></tr>
+  </table>
+  <h3>How it works</h3>
+  <ol>
+    <li>A person asks in the thread. The agent replies with an <b>Understood card</b>: what it will do, how sure it is, and the evidence.</li>
+    <li><b>Preview-then-apply</b> shows the change before it happens; anything that matters waits on an <b>Approval card</b>.</li>
+    <li>When the agent reaches its limit, a <b>Hand-back card</b> passes the task, intent, confidence, what it ruled out and what happens if no one decides.</li>
+    <li>An <b>Undo bar</b> stays available after every action.</li>
+  </ol>
+  <div class="links">
+    <a class="btn primary" href="https://www.figma.com/design/Cb0QDEILY9cggEp101ZTg0/HXO-Trust-and-Control-Kit?node-id=22-231" target="_blank" rel="noopener">Figma pattern ↗</a>
+    <a class="btn" href="https://elizabethhannan.github.io/hxo-trust-kit/" target="_blank" rel="noopener">Storybook ↗</a>
+    <a class="btn" href="/work/system.html">The system →</a>
+  </div>
+  <p class="honest">Concept pattern; no client data.</p>
+</article>
+
+<article class="case" id="claims-coder" aria-labelledby="cc-h">
+  <p class="practice">Regulated B2B workflow · many agents, one accountable person</p>
+  <h2 id="cc-h">Claims Coder</h2>
+  <p class="outcome">Vet SOAP notes and invoices become a traceable claim packet; every code links back to its text.</p>
+  <p class="client">National pet insurance provider · client unnamed under NDA · design lead and builder</p>
+  <table class="results">
+    <tr><th scope="row">Scope</th><td>Vet SOAP notes and invoices to a traceable claim packet; 18 agents (13 working, 5 always-on security)</td></tr>
+    <tr><th scope="row">Baseline</th><td>Most veterinary record systems have no clinical coding built in <span class="cite">(Boguslav et al., 2026)</span></td></tr>
+    <tr><th scope="row">Target</th><td>Every code traceable to its text, page, coding-system version and status; complete packet</td></tr>
+    <tr><th scope="row">Result</th><td>30 of 30 notes coded exactly on a test set written alongside the agents</td></tr>
+    <tr><th scope="row">Not achieved</th><td class="gap">No real clinic records tested; no real insurer decisions; reimbursement not predicted</td></tr>
+  </table>
+  <h3>The challenge</h3>
+  <p>Insured pets reached a record 7.03 million in North America at year-end 2024, up 20.9%, and written premium passed $5.2 billion <span class="cite">(NAPHIA, 2025)</span>. Claims grow with them, but pet insurance has no shared billing code set, so notes and invoices are still read by hand, and adjusters could not see why an automated code was chosen.</p>
+  <h3>Design tasks</h3>
+  <p>Job stories for the adjuster, clinic and owner; task analysis of one claim review; an interaction contract for what agents may and may not do; heuristic evaluation against the guidelines for human-AI interaction <span class="cite">(Amershi et al., 2019)</span>; plain-language review of every hand-back.</p>
+  <h3>What a person controls</h3>
+  <ul>
+    <li>An Approval agent approves only clean claims under a limit a person sets; it never denies or pays, and every approval can be undone and is logged as a labeled example.</li>
+    <li>An Emergency agent moves urgent claims to the front of a person's queue; it never approves, pays or denies.</li>
+    <li>Master shutoff, per-agent pause, Stop all, and live uptime, error rate, accuracy and p95 time for every agent.</li>
+  </ul>
+  <h3>Testing</h3>
+  <p>Automated browser tests at laptop and phone width in light and dark; a full claim run from upload to approved packet; a flagged claim handed to a person. The 30 of 30 result shows the agents work as designed; it is not evidence of accuracy on real records. Planned: a checked sample of real, consented notes and a usability test with five claims reviewers.</p>
+  <div class="links">
+    <a class="btn primary" href="https://elizabethhannan.github.io/claims-coder/" target="_blank" rel="noopener">Live app ↗</a>
+    <a class="btn" href="https://www.figma.com/design/Cb0QDEILY9cggEp101ZTg0/HXO-Trust-and-Control-Kit?node-id=16-62" target="_blank" rel="noopener">Review pattern in Figma ↗</a>
+  </div>
+  <p class="honest">Portfolio rebuild of shipped client work. Client, data and details changed under NDA; numbers are best-case scenario figures, not client data.</p>
+</article>
+
+<article class="case" id="food-rescue" aria-labelledby="fr-h">
+  <p class="practice">Agent-to-agent orchestration · people step in by exception</p>
+  <h2 id="fr-h">Food Rescue Agents</h2>
+  <p class="outcome">Agents coordinate surplus-food pickups and a household bridge; a person decides only the exceptions.</p>
+  <p class="client">Feed-A-Friend, a national philanthropic foundation in the food distribution space · design lead and builder</p>
+  <table class="results">
+    <tr><th scope="row">Scope</th><td>Five agents coordinate a week of surplus-food pickups and a household bridge; people step in by exception</td></tr>
+    <tr><th scope="row">Baseline</th><td>A coordinator matched every pickup by phone</td></tr>
+    <tr><th scope="row">Target</th><td>Agents handle routine pickups end to end; every escalation reaches a person inside the food-safety window</td></tr>
+    <tr><th scope="row">Result</th><td>Scenario (best case): 86 of 100 pickups handled by agents end to end; 100% of escalations decided inside the food-safety window; coordinator time per pickup down 70%</td></tr>
+    <tr><th scope="row">Not achieved</th><td class="gap">No real partners or households contacted; no participant test yet</td></tr>
+  </table>
+  <h3>The challenge</h3>
+  <p>Surplus food spoiled while coordinators made phone calls: every pickup was matched by hand, and the food-safety window closed before a driver was found. Families waiting on benefits needed food now, without retelling their story.</p>
+  <h3>What it shows</h3>
+  <ul>
+    <li><b>Agent contracts:</b> intake, safety, matching, partner and dispatch agents each have written limits on what they may do alone.</li>
+    <li><b>Escalation by exception:</b> each escalation arrives with what the agents tried, the minutes left in the food-safety window and suggested options.</li>
+    <li><b>Control:</b> pause any one agent or stop them all; deliveries already on the road finish.</li>
+    <li><b>Trace:</b> every message between agents is logged per pickup.</li>
+  </ul>
+  <div class="links">
+    <a class="btn primary" href="https://elizabethhannan.github.io/food-rescue/" target="_blank" rel="noopener">Live prototype ↗</a>
+  </div>
+  <p class="honest">Portfolio rebuild of shipped work. Data and details changed; numbers are best-case scenario figures, not client data.</p>
+</article>
+
+<article class="case" id="spatial-director" aria-labelledby="sd-h">
+  <p class="practice">Spatial &amp; multimodal interfaces · vision work</p>
+  <h2 id="sd-h">Spatial Director</h2>
+  <p class="outcome">Direct a 3D studio office by typing or speaking and pointing; three agents show what they understood before anything changes.</p>
+  <p class="client">National autonomous vehicle motor company · client unnamed under NDA · design lead and builder</p>
+  <table class="results">
+    <tr><th scope="row">Scope</th><td>Language, spatial and layout agents; add, move, turn, resize, recolor, remove and agent suggestions</td></tr>
+    <tr><th scope="row">Baseline</th><td>A wrong guess in a 3D space is easy to miss: the change may happen off-screen or behind another object</td></tr>
+    <tr><th scope="row">Target</th><td>The person always knows what is about to change, and can stop it or take it back</td></tr>
+    <tr><th scope="row">Result</th><td>Every contract rule, the disambiguation question, point-to-place, Stop, undo and the test export pass automated checks on desktop and phone, light and dark</td></tr>
+    <tr><th scope="row">Not achieved</th><td class="gap">Five-task participant sessions not yet run</td></tr>
+  </table>
+  <h3>What the research says</h3>
+  <p>Speech plus pointing is a natural way to direct a spatial display; the open question has always been how the system confirms what "that" and "there" refer to <span class="cite">(Bolt, 1980)</span>. An agent should act alone only when acting is cheap to undo <span class="cite">(Horvitz, 1999)</span>.</p>
+  <h3>The interaction contract</h3>
+  <ul>
+    <li>Add, move, turn, resize and recolor: a preview shows the result, then it applies with undo.</li>
+    <li>Remove: the object turns red and waits for an OK.</li>
+    <li>Agent suggestions: each has a reason and a checkbox; suggestions that add furniture start unchecked.</li>
+    <li>Stop cancels any preview and question and turns the microphone off.</li>
+  </ul>
+  <h3>Testing</h3>
+  <p>A five-task usability test is built into the prototype: completion, time on task, clarifying questions, misunderstood requests, stops and undos, and the Single Ease Question, exported as CSV or JSON.</p>
+  <div class="links">
+    <a class="btn primary" href="https://elizabethhannan.github.io/spatial-director/" target="_blank" rel="noopener">Live prototype ↗</a>
+  </div>
+  <p class="honest">Portfolio rebuild with a simulated office; details changed under NDA.</p>
+</article>
+
+<section class="refs" aria-labelledby="refs-h">
+  <h2 id="refs-h">References</h2>
+  <ul>
+    <li>Amershi, S., Weld, D., Vorvoreanu, M., Fourney, A., Nushi, B., Collisson, P., Suh, J., Iqbal, S., Bennett, P. N., Inkpen, K., Teevan, J., Kikin-Gil, R., &amp; Horvitz, E. (2019). Guidelines for human-AI interaction. In <i>Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems</i> (Paper 3). Association for Computing Machinery. https://doi.org/10.1145/3290605.3300233</li>
+    <li>Boguslav, M. R., Kiehl, A., Kott, D., Strecker, G. J., Webb, T. L., Saklou, N., Ward, T., &amp; Kirby, M. (2026). Fine-tuning foundational models to code diagnoses from veterinary health records. <i>PLOS Digital Health, 5</i>(2), e0001147. https://doi.org/10.1371/journal.pdig.0001147</li>
+    <li>Bolt, R. A. (1980). "Put-that-there": Voice and gesture at the graphics interface. <i>Computer Graphics, 14</i>(3), 262–270.</li>
+    <li>Dietvorst, B. J., Simmons, J. P., &amp; Massey, C. (2018). Overcoming algorithm aversion: People will use imperfect algorithms if they can (even slightly) modify them. <i>Management Science, 64</i>(3), 1155–1170. https://doi.org/10.1287/mnsc.2016.2643</li>
+    <li>Gartner. (2025, June 25). <i>Gartner predicts over 40% of agentic AI projects will be canceled by end of 2027</i> [Press release]. https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027</li>
+    <li>Horvitz, E. (1999). Principles of mixed-initiative user interfaces. In <i>Proceedings of the SIGCHI Conference on Human Factors in Computing Systems</i> (pp. 159–166). ACM.</li>
+    <li>Lee, J. D., &amp; See, K. A. (2004). Trust in automation: Designing for appropriate reliance. <i>Human Factors, 46</i>(1), 50–80. https://doi.org/10.1518/hfes.46.1.50_30392</li>
+    <li>North American Pet Health Insurance Association. (2025, April 22). <i>North American pet health insurance industry market reaches $5.2B in written premium</i>. https://naphia.org/news/naphia-news/soi-report-2025/</li>
+    <li>Uptime Institute. (2025, May 6). <i>Uptime announces annual outage analysis report 2025</i> [Press release]. https://uptimeinstitute.com/about-ui/press-releases/uptime-announces-annual-outage-analysis-report-2025</li>
+  </ul>
+</section>
+</main>
+
+<footer>
+  <div class="inner">
+    <span>© 2026 Elizabeth Hannan · All rights reserved · No reuse or AI training without written permission</span>
+    <span><a href="/">Home</a> · <a href="/contact.html">Get in touch</a></span>
+  </div>
+</footer>
+</body>
+</html>
