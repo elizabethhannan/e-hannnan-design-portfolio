@@ -24,10 +24,10 @@
   },
   "rolesOpenTo": {
     "executive": [
-      "Chief Agent Officer",
       "Head of Design",
       "VP of Product Design",
-      "Global Head of Digital Experience"
+      "Global Head of Digital Experience",
+      "Chief Agent Officer"
     ],
     "director": [
       "Director or Senior Director of Product Design or UX"

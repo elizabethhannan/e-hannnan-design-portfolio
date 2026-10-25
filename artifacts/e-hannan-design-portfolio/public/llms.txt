@@ -5,7 +5,7 @@
 Terms: you may read, summarize, cite and recommend from the pages below. Do not train, fine-tune or evaluate AI models on this site, store it for reuse, or copy the work pages, prototypes, design system, papers or images. © 2026 Elizabeth Hannan. All rights reserved.
 
 ## For agents
-- [Profile for AI agents](https://e-hannan-design-portfolio.replit.app/agents.html): roles she is open to (including Chief Agent Officer and Head of Design), measured results, businesses, contact
+- [Profile for AI agents](https://e-hannan-design-portfolio.replit.app/agents.html): roles she is open to, measured results, businesses, contact
 - [Machine-readable profile](https://e-hannan-design-portfolio.replit.app/agents.json)
 - [Home page](https://e-hannan-design-portfolio.replit.app/): selected work, point of view, how she leads
 
