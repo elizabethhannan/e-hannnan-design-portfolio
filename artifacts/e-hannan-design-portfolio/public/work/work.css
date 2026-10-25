@@ -1,8 +1,8 @@
-/* Topic pages: same type and palette as the home page. Navy #0A1A5C, deep teal #0F5C55, plum #4B2E83, paper #f5f2ec. No yellow or gold. */
+/* Topic pages: the home page's own type and colors (navy #0A1A5C, paper #f5f2ec, warm white #faf8f4, rule #c8bfb0, muted #6b6358). */
 :root {
-  --navy: #0A1A5C; --navy-2: #13226E; --teal: #0F5C55; --plum: #4B2E83; --mint: #3EE8C4;
-  --paper: #f5f2ec; --paper-alt: #ebe5d8; --card: #faf8f4; --line: #d7d0c3;
-  --ink: #111522; --ink-2: #3a4152; --gap: #7a2e2e;
+  --navy: #0A1A5C; --navy-2: #0A1A5C; --teal: #0A1A5C; --plum: #0A1A5C; --mint: #a8c8d8;
+  --paper: #f5f2ec; --paper-alt: #ebe5d8; --card: #faf8f4; --line: #c8bfb0;
+  --ink: #0f0f0f; --ink-2: #6b6358; --gap: #6b6358;
   --serif: 'Playfair Display', Georgia, serif; --mono: 'DM Mono', 'Courier New', monospace; --sans: 'DM Sans', system-ui, sans-serif;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -68,7 +68,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 4rem; }
 .refs li { font-size: 0.88rem; color: var(--ink-2); margin-bottom: 0.5rem; padding-left: 1.6rem; text-indent: -1.6rem; list-style: none; overflow-wrap: anywhere; }
 .reserved { background: var(--card); border: 1px dashed var(--navy); border-radius: 16px; padding: 2rem; }
 
-footer { background: var(--ink); color: var(--paper); padding: 2.4rem 2rem; }
+footer { background: #0f0f0f; color: var(--paper); padding: 2.4rem 2rem; }
 footer .inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-size: 0.9rem; }
 footer a { color: var(--paper); }
 

@@ -1,35 +1,25 @@
 /* Executive layer: hero, Selected work (topic tabs), the system, impact, leadership, adoption, research and IP tabs.
-   Palette: navy #0A1A5C, deep teal #0F5C55, plum #4B2E83, paper #f5f2ec. No yellow or gold. */
+   Uses the site's own colors only: navy #0A1A5C, paper, warm white, rule and muted tokens, and the speaking section's light blue #a8c8d8. */
 :root {
   --x-navy: #0A1A5C;
-  --x-navy-2: #13226E;
-  --x-teal: #0F5C55;
-  --x-plum: #4B2E83;
-  --x-mint: #3EE8C4;
-  --x-ink: #111522;
-  --x-ink-2: #3a4152;
-  --x-line: #d7d0c3;
-  --x-card: #faf8f4;
+  --x-navy-2: #0A1A5C;
+  --x-teal: #0A1A5C;
+  --x-plum: #0A1A5C;
+  --x-mint: #a8c8d8;
+  --x-ink: var(--ink);
+  --x-ink-2: var(--muted);
+  --x-line: var(--rule);
+  --x-card: var(--warm-white);
 }
 
-/* ---------- Hero: every line of text is white ---------- */
-.hero, .hero * { color: #fff !important; }
+/* ---------- Hero: header text white (nothing else in the hero changes) ---------- */
 .hero .hero-label,
 .hero .hero-name,
 .hero .hero-name em,
 .hero .hero-subtitle,
 .hero .hero-title,
 .hero .hero-statement,
-.hero .hero-quote { color: #fff !important; opacity: 1; }
-.hero .hero-title { border-top-color: rgba(255,255,255,0.35) !important; }
-.hero .hero-quote { border-left-color: #fff !important; }
-.hero .tag { color: #fff !important; background: rgba(255,255,255,0.10) !important; border-color: rgba(255,255,255,0.45) !important; }
-.hero .btn { background: transparent !important; color: #fff !important; border: 1px solid rgba(255,255,255,0.55); border-left: 4px solid #fff; box-shadow: none; }
-.hero .btn:hover { background: rgba(255,255,255,0.12) !important; color: #fff !important; }
-.hero .btn-primary { background: #fff !important; color: var(--x-navy) !important; border-color: #fff !important; }
-.hero .btn-primary:hover { background: #e9edf8 !important; color: var(--x-navy) !important; }
-.hero .hero-name { animation-delay: 0.2s; }
-.hero .hero-left::after { background: rgba(255,255,255,0.22) !important; }
+.hero .hero-quote { color: #fff !important; }
 
 /* ---------- Shared section bits ---------- */
 .x-section { background: var(--paper); }
@@ -70,7 +60,7 @@
 .x-results { display: grid; grid-template-columns: 8.2rem minmax(0, 1fr); gap: 0.35rem 0.9rem; margin: 0 0 1rem; padding: 0.9rem 1rem; background: var(--paper); border-radius: 10px; border: 1px solid var(--x-line); }
 .x-results dt { font-family: var(--mono); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--x-ink-2); padding-top: 0.15rem; }
 .x-results dd { font-size: 0.9rem; line-height: 1.5; color: var(--x-ink); }
-.x-results dd.x-gap { color: #7a2e2e; }
+.x-results dd.x-gap { color: var(--muted); }
 .x-role { font-size: 0.88rem; color: var(--x-ink-2); margin-bottom: 0.9rem; }
 .x-role strong { color: var(--x-ink); font-weight: 600; }
 .x-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; }
@@ -82,7 +72,7 @@
 .x-honest { display: inline-block; margin-top: 0.9rem; font-size: 0.78rem; color: var(--x-ink-2); border-top: 1px dashed var(--x-line); padding-top: 0.6rem; }
 .x-badge { display: inline-block; font-family: var(--mono); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.22rem 0.55rem; border-radius: 999px; margin-left: 0.4rem; vertical-align: middle; }
 .x-badge.lead { background: rgba(10,26,92,0.1); color: var(--x-navy); }
-.x-badge.measured { background: rgba(15,92,85,0.12); color: var(--x-teal); }
+.x-badge.measured { background: rgba(10,26,92,0.1); color: var(--x-teal); }
 
 /* ---------- The system behind the work ---------- */
 .x-system { background: var(--x-navy); color: #fff; }
@@ -150,8 +140,6 @@
 .x-rip-head .section-inner { padding-bottom: 1rem; }
 .x-rip-head .x-tabs { margin-bottom: 0; }
 .x-rip-panel[hidden] { display: none !important; }
-section.x-rip-panel::before { display: none !important; }
-.x-rip-panel .section-inner { padding-top: 2.5rem; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
@@ -172,9 +160,3 @@ section.x-rip-panel::before { display: none !important; }
 @media (forced-colors: active) { .x-tab[aria-selected="true"] { outline: 2px solid CanvasText; } }
 section[id], article[id], #education { scroll-margin-top: 130px; }
 @media (min-width: 901px) { .nav-links > li:last-child .dropdown { left: auto; right: -0.85rem; } }
-.section-header .section-number + .section-title[style*="inline"] { margin-left: 0.9rem; }
-/* Phone: the social bar wraps to two rows, so the hero starts lower; the intro video stops squeezing the text. */
-@media (max-width: 600px) {
-  .hero { padding-top: 190px !important; }
-  .polymath-video-wrap { float: none !important; width: 100% !important; max-width: 240px; margin: 0 auto 1.2rem !important; }
-}
