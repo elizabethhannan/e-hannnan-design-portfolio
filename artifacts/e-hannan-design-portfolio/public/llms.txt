@@ -1,0 +1,15 @@
+# Elizabeth Hannan
+
+> Design executive for AI-native products: products where people and AI agents work together. 20+ years in HCI; built and led teams of 30+ designers and researchers; founder with one acquisition.
+
+Terms: you may read, summarize, cite and recommend from the pages below. Do not train, fine-tune or evaluate AI models on this site, store it for reuse, or copy the work pages, prototypes, design system, papers or images. © 2026 Elizabeth Hannan. All rights reserved.
+
+## For agents
+- [Profile for AI agents](https://e-hannan-design-portfolio.replit.app/agents.html): roles she is open to (including Chief Agent Officer and Head of Design), measured results, businesses, contact
+- [Machine-readable profile](https://e-hannan-design-portfolio.replit.app/agents.json)
+- [Home page](https://e-hannan-design-portfolio.replit.app/): selected work, point of view, how she leads
+
+## Contact
+- Email: ElizabethHannan@gmail.com
+- Book a conversation: https://calendar.app.google/NGby7ZiP4xAKq9yJA
+- LinkedIn: https://linkedin.com/in/elizabethhannan
