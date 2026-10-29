@@ -333,3 +333,28 @@ details > summary::-webkit-details-marker { display: none; }
 /* Hero buttons: both beige with navy text */
 .hero .hero-links .btn, .hero .hero-links .btn-primary { background: #EAE5D9 !important; color: #0A1A5C !important; border: 1px solid #EAE5D9 !important; font-weight: 700; box-shadow: none !important; }
 .hero .hero-links .btn:hover, .hero .hero-links .btn-primary:hover { background: #fff !important; color: #0A1A5C !important; border-color: #fff !important; }
+
+/* Hero background art: sit lower, near the bottom edge, under the text */
+.hero .thought-background-frame { transform: translateY(12%); }
+@media (max-width: 900px) { .hero .thought-background-frame { transform: translateY(28px); } }
+
+/* Right-arrow circle button (matches the "Read the full story" arrow) */
+.x-more.x-more-arrow { display: inline-flex !important; align-items: center; gap: 0.6rem; }
+.x-more.x-more-arrow::after {
+  content: ''; flex: none; width: 1.7rem; height: 1.7rem; border-radius: 50%;
+  background: #0A1A5C url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E") center / 1rem no-repeat;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.x-more.x-more-arrow:hover::after { transform: translateX(3px); box-shadow: 0 0 0 4px rgba(10,26,92,0.15); }
+@media (prefers-reduced-motion: reduce) { .x-more.x-more-arrow::after { transition: none; } }
+
+/* "Share the One-Page" button: beige with navy text, gentle shine and arrow lift */
+.share-btn.share-one { position: relative; overflow: hidden; background: #EAE5D9 !important; color: #0A1A5C !important; font-weight: 700; box-shadow: var(--neu-shadow-sm), inset 3px 0 0 #0A1A5C !important; animation: shareOneGlow 4.5s ease-in-out infinite; }
+.share-btn.share-one::before { content: ''; position: absolute; top: 0; bottom: 0; left: -60%; width: 45%; background: linear-gradient(100deg, transparent, rgba(255,255,255,0.85), transparent); transform: skewX(-20deg); animation: shareOneShine 4.5s ease-in-out infinite; pointer-events: none; }
+.share-one-arrow { display: inline-block; animation: shareOneArrow 4.5s ease-in-out infinite; }
+.share-btn.share-one:hover { background: #fff !important; transform: translateY(-2px) scale(1.04); box-shadow: var(--neu-shadow), inset 4px 0 0 #0A1A5C !important; }
+.share-btn.share-one:hover .share-one-arrow { animation: none; transform: translate(3px,-3px); transition: transform 0.2s ease; }
+@keyframes shareOneShine { 0%, 55% { left: -60%; } 80%, 100% { left: 130%; } }
+@keyframes shareOneArrow { 0%, 60%, 100% { transform: translate(0,0); } 70% { transform: translate(3px,-3px); } 80% { transform: translate(0,0); } }
+@keyframes shareOneGlow { 0%, 55%, 100% { box-shadow: var(--neu-shadow-sm), inset 3px 0 0 #0A1A5C, 0 0 0 0 rgba(10,26,92,0); } 70% { box-shadow: var(--neu-shadow-sm), inset 3px 0 0 #0A1A5C, 0 0 0 5px rgba(10,26,92,0.12); } }
+@media (prefers-reduced-motion: reduce) { .share-btn.share-one, .share-btn.share-one::before, .share-one-arrow { animation: none !important; } }

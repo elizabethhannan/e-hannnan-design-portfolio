@@ -426,11 +426,12 @@
   </style>
   <link rel="stylesheet" href="/src/navy-accent.css">
   <link rel="stylesheet" href="/src/exec.css">
+<style>.nav-name-logo{display:inline-flex;align-items:center;line-height:0}.nav-logo{width:36px;height:36px;display:block;border-radius:5px;margin:-8px 0}.nav-name-logo:focus-visible{outline:3px solid #0A1A5C;outline-offset:3px}</style>
 </head>
 <body>
 
 <nav>
-  <span class="nav-name">E. Hannan</span>
+  <a href="/" class="nav-name nav-name-logo"><img src="/eh-logo-white.svg" alt="Elizabeth Hannan, home" class="nav-logo" width="40" height="40"></a>
   <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open');this.classList.toggle('open');"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li class="has-dropdown">
@@ -481,7 +482,7 @@
     <span class="subscribers-note">30,000+ subscribers</span>
     <button class="newsletter-btn" onclick="document.getElementById('newsletterModal').classList.add('open')">Newsletter</button>
   </div>
-  <a href="/one-page.html" class="share-btn">↗ Share the One-Page</a>
+  <a href="/one-page.html" class="share-btn share-one"><span class="share-one-arrow" aria-hidden="true">↗</span> Share the One-Page</a>
   <a href="/agents.html" class="share-btn" target="_blank" rel="noopener noreferrer">Welcome Agents ↗</a>
 </div>
 
@@ -502,10 +503,6 @@
     <p class="hero-statement">I lead design for products where people and AI agents work together: what an agent shows, when it acts, and how it hands control back. Founder of the HXO methodology.</p>
     <div class="hero-tags">
       <span class="tag">Human-Agent Collaboration</span><span class="tag">Agentic UX</span><span class="tag">Design Systems</span><span class="tag">Enterprise AI</span><span class="tag">Accessibility</span><span class="tag">HXO / AXO</span>
-    </div>
-    <div class="hero-links">
-      <a href="#work" class="btn btn-primary">Selected Work</a>
-      <a href="/one-page.html" class="btn">One-Page CV</a>
     </div>
   </div>
 </section>
@@ -749,7 +746,7 @@
 
 <section class="x-section" id="work" aria-labelledby="work-title">
   <div class="section-inner">
-    <div class="section-header reveal" style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;"><div><span class="section-number">03</span><h2 class="section-title" id="work-title" style="display:inline;">Selected Work</h2></div><a class="x-more" href="/work/ai-native.html">All cases, methods and testing →</a></div>
+    <div class="section-header reveal" style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;"><div><span class="section-number">03</span><h2 class="section-title" id="work-title" style="display:inline;">Selected Work</h2></div><a class="x-more x-more-arrow" href="/work/ai-native.html">All cases, methods and testing</a></div>
     <p class="x-lead reveal">Portfolio rebuilds of shipped work, each labeled by the business problem it solves.</p>
 
     <div class="x-tabs" role="tablist" aria-label="Work by topic" data-x-tabs="work">
@@ -840,7 +837,7 @@
 
 <section class="employer-section" id="career" aria-labelledby="career-title">
   <div class="section-inner">
-    <div class="section-header reveal" style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;"><div><span class="section-number">06</span><h2 class="section-title" id="career-title" style="display:inline;">Career</h2></div><a class="x-more" href="/work/career.html">Full career and education →</a></div>
+    <div class="section-header reveal" style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;"><div><span class="section-number">06</span><h2 class="section-title" id="career-title" style="display:inline;">Career</h2></div><a class="x-more x-more-arrow" href="/work/career.html">Full career and education</a></div>
     <ol class="x-arc reveal">
       <li class="now"><div class="x-arc-when">2019 – Present</div><div class="x-arc-role">Founder &amp; Chief of Interaction Design</div><div class="x-arc-org">IXDY, AI enablement platform</div></li>
       <li><div class="x-arc-when">2023</div><div class="x-arc-role">Senior Product Manager, Special Projects</div><div class="x-arc-org">Autonomous Vehicle Motor Company</div></li>
