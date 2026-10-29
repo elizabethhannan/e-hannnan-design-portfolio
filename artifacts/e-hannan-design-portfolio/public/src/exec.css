@@ -291,3 +291,8 @@ section[id], article[id], #education { scroll-margin-top: 130px; }
 .speaking-panel .speaking-video-stop { color: #C4C8CE !important; }
 .speaking-panel .speaking-video-stop { border-color: rgba(196,200,206,0.6) !important; }
 .speaking-panel .speaking-video-stop:hover { background: #C4C8CE !important; color: #0f1829 !important; }
+
+/* Leading People and Agent Teams (05) on white */
+#leadership.x-section { background: #ffffff; }
+#leadership + section::before, section + #leadership::before { display: none; }
+#leadership .x-door { background: #faf8f4; }
