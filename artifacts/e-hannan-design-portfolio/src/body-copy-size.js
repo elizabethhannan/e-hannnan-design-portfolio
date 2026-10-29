@@ -51,7 +51,7 @@ function adjustBodyCopy(element) {
 
   const currentSize = Number.parseFloat(window.getComputedStyle(element).fontSize);
   if (!Number.isFinite(currentSize)) return;
-  element.style.setProperty("font-size", `${currentSize + 2}px`, "important");
+  element.style.setProperty("font-size", `${currentSize + 4}px`, "important");
 }
 
 function adjustAllBodyCopy(root = document) {

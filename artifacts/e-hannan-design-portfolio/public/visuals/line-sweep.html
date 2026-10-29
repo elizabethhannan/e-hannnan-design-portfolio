@@ -98,7 +98,7 @@
   let time = 0, last = performance.now();
 
   function frame(now) {
-    const dt = Math.min(50, now - last); last = now;
+    const dt = Math.max(0, Math.min(50, now - last)); last = now;
     time += (dt / 1000) * speed;
     const p = (time / SWEEP_SECONDS) % 1;
     const cx = LEFT + p * (RIGHT - LEFT);
