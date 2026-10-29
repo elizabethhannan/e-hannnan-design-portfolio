@@ -107,3 +107,5 @@ footer a { color: var(--paper); }
 .top { position: relative; overflow: hidden; }
 .top-art { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; pointer-events: none; opacity: 0.55; }
 .top-inner { position: relative; z-index: 1; }
+.media-frame { margin-top: 0.4rem; border-radius: 12px; overflow: hidden; background: #0A1A5C; aspect-ratio: 16 / 9; }
+.media-frame video { display: block; width: 100%; height: 100%; object-fit: cover; }
