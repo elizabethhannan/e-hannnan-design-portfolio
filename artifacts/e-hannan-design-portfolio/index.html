@@ -104,7 +104,7 @@
     .polymath-text h3 { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; margin-bottom: 0.8rem; }
     .polymath-text p { font-size: 0.9rem; color: var(--muted); line-height: 1.75; margin-bottom: 0.9rem; }
     .polymath-journey { font-family: var(--serif); font-style: italic; font-size: 0.97rem; line-height: 1.8; color: var(--ink); border-left: 3px solid var(--accent); padding: 1.1rem 1.5rem; background: var(--paper); margin: 1.3rem 0; border-radius: 0 12px 12px 0; box-shadow: var(--neu-inset); }
-    .nexus-cards { display: grid; grid-template-columns: repeat(5,1fr); gap: 0.85rem; margin-top: 1.5rem; clear: both; }
+    .nexus-cards { display: grid; grid-template-columns: minmax(0,1fr); gap: 0.85rem; margin-top: 1.5rem; clear: both; }
     .nexus-card { padding: 1rem 0.85rem; background: var(--paper); border-radius: 12px; text-align: center; box-shadow: var(--neu-shadow-sm); transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1); }
     .nexus-card:hover { box-shadow: var(--neu-shadow); transform: translateY(-2px); }
     .nexus-card-title { font-family: var(--sans); font-size: 0.82rem; font-weight: 700; color: var(--accent); margin-bottom: 0.3rem; }
@@ -398,7 +398,7 @@
       .section-inner{padding:3rem 1.5rem;}
       .polymath-grid,.research-grid,.patent-grid,.wkiva-grid,.code-grid,.pub-teaser{grid-template-columns:1fr;gap:2rem;}
       .course-grid,.foundation-grid,.employer-grid{grid-template-columns:1fr;}
-      .nexus-cards{grid-template-columns:repeat(3,1fr);}
+      .nexus-cards{grid-template-columns:minmax(0,1fr);}
       .footer-grid{grid-template-columns:1fr;} .footer-links{align-items:flex-start;}
       footer{padding:3rem 1.5rem 2rem;} .edu-row{grid-template-columns:1fr;gap:0.4rem;}
     }
@@ -679,15 +679,7 @@
           <button type="button" id="landingVidMute" aria-label="Toggle sound" onclick="var v=document.getElementById('landingVid');v.muted=!v.muted;this.innerHTML=v.muted?'<svg width=\'16\' height=\'16\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'white\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polygon points=\'11 5 6 9 2 9 2 15 6 15 11 19 11 5\'></polygon><line x1=\'23\' y1=\'9\' x2=\'17\' y2=\'15\'></line><line x1=\'17\' y1=\'9\' x2=\'23\' y2=\'15\'></line></svg>':'<svg width=\'16\' height=\'16\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'white\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polygon points=\'11 5 6 9 2 9 2 15 6 15 11 19 11 5\'></polygon><path d=\'M15.54 8.46a5 5 0 0 1 0 7.07\'></path><path d=\'M19.07 4.93a10 10 0 0 1 0 14.14\'></path></svg>';" style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.6);color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg></button>
         </div>
         <h3>The Polymath Nexus</h3>
-        <p>My work lives at the intersection of five disciplines that, in isolation, each shape the world — but together, form a new kind of leverage point for systemic change. I am not a specialist constrained to one lane; I am a synthesist trained to see across lanes simultaneously.</p>
-
-        <div class="nexus-cards">
-          <div class="nexus-card"><div class="nexus-card-title">Experiential Design</div><div class="nexus-card-sub">Human-centered systems that feel inevitable</div></div>
-          <div class="nexus-card"><div class="nexus-card-title">AI &amp; Human Interaction</div><div class="nexus-card-sub">Machine intelligence meets lived experience</div></div>
-          <div class="nexus-card"><div class="nexus-card-title">Investments, P.E. &amp; V.C.</div><div class="nexus-card-sub">Capital aligned with mission-driven outcomes</div></div>
-          <div class="nexus-card"><div class="nexus-card-title">Sustainability</div><div class="nexus-card-sub">Long-arc thinking for land, ecosystems &amp; communities</div></div>
-          <div class="nexus-card"><div class="nexus-card-title">Philanthropy</div><div class="nexus-card-sub">Structural generosity in every system I design</div></div>
-        </div>
+        <p>My work lives at the intersection of six disciplines that, in isolation, each shape the world — but together, form a new kind of leverage point for systemic change. I am not a specialist constrained to one lane; I am a synthesist trained to see across lanes simultaneously.</p>
         <details class="x-more-story">
           <summary>Read the full story</summary>
         <div class="polymath-journey">After career disruption and personal loss, I chose to rebuild from scratch rather than simply recover. That decision is not a detour from my story; it <em>is</em> my story.</div>
@@ -706,6 +698,15 @@
           </ul>
         </div>
         </details>
+
+        <div class="nexus-cards">
+          <div class="nexus-card"><div class="nexus-card-title">Experiential Design</div><div class="nexus-card-sub">Human-centered systems that feel inevitable</div></div>
+          <div class="nexus-card"><div class="nexus-card-title">AI &amp; Human Interaction</div><div class="nexus-card-sub">Machine intelligence meets lived experience</div></div>
+          <div class="nexus-card"><div class="nexus-card-title">Investments, P.E. &amp; V.C.</div><div class="nexus-card-sub">Capital aligned with mission-driven outcomes</div></div>
+          <div class="nexus-card"><div class="nexus-card-title">Sustainability</div><div class="nexus-card-sub">Long-arc thinking for land, ecosystems &amp; communities</div></div>
+          <div class="nexus-card"><div class="nexus-card-title">Philanthropy</div><div class="nexus-card-sub">Structural generosity in every system I design</div></div>
+          <div class="nexus-card"><div class="nexus-card-title">Agent Design</div><div class="nexus-card-sub">Clear controls and trusted collaboration between people and AI agents</div></div>
+        </div>
 
       </div>
     </div>
