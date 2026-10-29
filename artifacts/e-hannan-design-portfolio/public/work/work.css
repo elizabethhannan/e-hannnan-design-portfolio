@@ -109,3 +109,46 @@ footer a { color: var(--paper); }
 .top-inner { position: relative; z-index: 1; }
 .media-frame { margin-top: 0.4rem; border-radius: 12px; overflow: hidden; background: #0A1A5C; aspect-ratio: 16 / 9; }
 .media-frame video { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- Readability pass (v2.0): larger body text, bold repeating section headers ---------- */
+body { font-size: 20px; }
+.top .lead { font-size: 1.35rem; }
+.case { padding: 2.2rem 2.4rem 2.4rem; }
+.case h2 { font-size: 2.2rem; margin-bottom: 0.6rem; }
+.practice { font-size: 0.84rem; }
+.outcome { font-size: 1.35rem; line-height: 1.5; }
+.client { font-size: 1.08rem; }
+.case p, .case li { font-size: 1.2rem; line-height: 1.7; }
+.results { font-size: 1.1rem; }
+.results th { font-size: 0.84rem; width: 10.5rem; }
+.tile h3 { font-size: 1.4rem; }
+.tile p { font-size: 1.12rem; line-height: 1.6; }
+.honest { font-size: 1rem; }
+.btn { font-size: 0.86rem; padding: 0.6rem 1.15rem; }
+.mark figcaption { font-size: 0.78rem; }
+/* Every section inside a case opens with the same bold header and a divider */
+.case > h3 {
+  display: flex; align-items: center; gap: 0.65rem;
+  margin: 2.4rem 0 0.9rem; padding-top: 1.6rem; border-top: 1px solid var(--line);
+  font-family: var(--sans); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy);
+}
+.case > h3::before { content: ''; flex: none; width: 6px; height: 1.2em; border-radius: 3px; background: var(--navy); }
+.case > table.results + h3, .case > .marks + h3 { margin-top: 2rem; }
+@media (max-width: 760px) {
+  body { font-size: 19px; }
+  .bar { position: static; }
+  .bar nav { flex-wrap: nowrap; overflow-x: auto; gap: 1.1rem; width: 100%; padding-bottom: 0.35rem; -webkit-overflow-scrolling: touch; }
+  .bar nav a { white-space: nowrap; }
+  .case { padding: 1.5rem 1.15rem 1.7rem; }
+  .case h2 { font-size: 1.75rem; }
+  .case p, .case li { font-size: 1.12rem; }
+  .outcome { font-size: 1.2rem; }
+}
+@media (max-width: 760px) {
+  .marks { flex-wrap: nowrap; gap: 0.6rem; }
+  .mark-stage { min-height: 64px; padding: 0.6rem 0.8rem; }
+  .mark-stage.icon { width: 64px; padding: 0.5rem; }
+  .mark-logo { height: 34px; }
+  .mark-icon { width: 40px; height: 40px; }
+}
+@media (max-width: 760px) { .results th { width: auto; } }

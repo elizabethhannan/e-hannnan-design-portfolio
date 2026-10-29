@@ -221,3 +221,29 @@ section[id], article[id], #education { scroll-margin-top: 130px; }
 .x-watch-text p { font-size: 0.97rem; line-height: 1.6; color: var(--x-ink-2); margin-bottom: 1rem; }
 .x-watch-note { font-size: 0.8rem !important; margin: 0.9rem 0 0 !important; }
 @media (max-width: 960px) { .x-watch { grid-template-columns: 1fr; } }
+
+/* ---------- Readability pass (v2.0): text that is not a paragraph also grows ---------- */
+.x-tab { font-size: 0.9rem; padding: 0.75rem 1.1rem; }
+.x-link { font-size: 0.84rem; padding: 0.5rem 0.95rem; }
+.x-more { font-size: 0.86rem; }
+.x-card h3, .x-grid-3 .x-card h3 { font-size: 1.45rem; }
+.x-pov-card h3 { font-size: 1.45rem; }
+.x-kpi-num { font-size: 2.7rem; }
+.x-kpi-what { font-size: 1.12rem; }
+.x-kpi-where { font-size: 1rem; line-height: 1.5; }
+.x-door-kind { font-size: 0.8rem; }
+.x-door-name { font-size: 1.55rem; }
+.x-door-desc { font-size: 1.1rem; line-height: 1.55; }
+.x-door-go { font-size: 0.84rem; }
+.x-arc-when { font-size: 0.84rem; }
+.x-arc-role { font-size: 1.3rem; }
+.x-arc-org { font-size: 1.05rem; }
+.x-rip-links b { font-size: 1.25rem; }
+.x-rip-links span { font-size: 1rem; }
+.x-watch-text h3 { font-size: 1.8rem; }
+/* Polymath: the full story opens on request */
+.x-more-story { margin-top: 1.2rem; clear: both; }
+.x-more-story > summary { cursor: pointer; display: inline-block; font-family: var(--mono); font-size: 0.86rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--x-navy); border-bottom: 1px solid var(--x-navy); padding-bottom: 2px; list-style: none; }
+.x-more-story > summary::-webkit-details-marker { display: none; }
+.x-more-story[open] > summary { margin-bottom: 1.2rem; }
+.x-founder { font-family: var(--serif); font-size: 1.15rem; color: var(--x-ink); margin: 0 0 2rem; padding-left: 1rem; border-left: 3px solid var(--x-navy); }
