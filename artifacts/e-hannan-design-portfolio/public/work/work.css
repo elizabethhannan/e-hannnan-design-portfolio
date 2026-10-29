@@ -159,3 +159,8 @@ body { font-size: 20px; }
 .vp-btn:hover { background: #0A1A5C; color: #fff; }
 .vp-btn:focus-visible { outline: 3px solid #0A1A5C; outline-offset: 2px; }
 .vp-status { font-size: 0.95rem; color: var(--muted, #6b6358); margin-left: 0.25rem; }
+
+/* Team Handback case on its own warm background (#EAE5D9) */
+#team-chat-hand-back.case { background: #EAE5D9; }
+#team-chat-hand-back .results { background: #f4f1ea; }
+#team-chat-hand-back .mark-stage { background: #fff; }
