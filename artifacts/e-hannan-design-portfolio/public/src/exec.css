@@ -317,3 +317,15 @@ details > summary::-webkit-details-marker { display: none; }
 .x-more-story > summary:hover::after { box-shadow: 0 0 0 4px rgba(10,26,92,0.15); }
 .x-more-story > summary:focus-visible { outline: 3px solid #0A1A5C; outline-offset: 4px; }
 @media (prefers-reduced-motion: reduce) { .x-more-story > summary::after { transition: none; } }
+
+/* Hero keyword squares: warm beige (#EAE5D9) with navy text */
+.hero .hero-tags .tag { background: #EAE5D9 !important; color: #0A1A5C !important; border: 1px solid #EAE5D9 !important; font-weight: 700; }
+
+/* Hero declutter: beige actions with navy text, one credential line, quote under the timeline */
+.hero .hero-links .btn { background: transparent !important; color: #EAE5D9 !important; border: 1px solid #EAE5D9 !important; box-shadow: none !important; }
+.hero .hero-links .btn-primary { background: #EAE5D9 !important; color: #0A1A5C !important; font-weight: 700; }
+.hero .hero-links .btn:hover { background: #fff !important; color: #0A1A5C !important; border-color: #fff !important; }
+.hero .hero-title { text-transform: none; letter-spacing: 0.04em; font-size: 0.8rem; }
+.hero-statement { margin-bottom: 1.8rem !important; }
+.timeline-quote { background: var(--paper, #F4F1EA); margin: 0; padding: 0 1.5rem 1.6rem; text-align: center; font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: #0A1A5C; }
+.hero .hero-title span { white-space: nowrap; }
