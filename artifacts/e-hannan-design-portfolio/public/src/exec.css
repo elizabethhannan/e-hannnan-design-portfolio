@@ -262,3 +262,20 @@ section[id], article[id], #education { scroll-margin-top: 130px; }
 .vp-btn:hover { background: #0A1A5C; color: #fff; }
 .vp-btn:focus-visible { outline: 3px solid #0A1A5C; outline-offset: 2px; }
 .vp-status { font-size: 0.95rem; color: var(--muted, #6b6358); margin-left: 0.25rem; }
+
+/* ---------- Selected Work on gray #DCDCDE ---------- */
+#work.x-section { background: #DCDCDE; }
+#work .section-number { color: #4a453e; }
+#work .section-title, #work .x-lead { color: #0f0f0f; }
+#work .x-tabs { background: rgba(255,255,255,0.6); box-shadow: inset 0 0 0 1px rgba(10,26,92,0.12); }
+#work .x-tab { color: #3d3832; }
+#work .x-tab:hover { background: #fff; color: #0A1A5C; }
+#work .x-tab[aria-selected="true"] { background: #0A1A5C; color: #fff; }
+#work .x-card, #work .x-placeholder { background: #faf8f4; border-color: rgba(10,26,92,0.16); box-shadow: 0 2px 10px rgba(10,26,92,0.08); }
+#work .x-card .x-outcome { color: #0f0f0f; }
+#work .x-result { background: #f1efea; }
+#work .x-result b, #work .x-result span, #work .x-placeholder p { color: #4a453e; }
+#work .x-more { color: #0A1A5C !important; border-color: #0A1A5C; }
+#work + section::before, section + #work::before { display: none; }
+#work .x-link:not(.primary) { background: #fff; border-color: rgba(10,26,92,0.45); }
+#work .x-practice { color: #0A1A5C; }
