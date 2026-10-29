@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, noai, noimageai">
+<title>Edge Bundling</title>
+<style>
+  :root { --bg: #0A1A5C; --R: 180s; }
+  html, body { margin: 0; height: 100%; background: var(--bg); overflow: hidden; }
+  svg { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+  .rot { transform-box: view-box; transform-origin: 720px 450px; animation: rot var(--R) linear infinite; }
+  @keyframes rot { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .edge { fill: none; stroke-width: 1; animation: breathe 6s ease-in-out infinite alternate; }
+  @keyframes breathe { from { opacity: .16; } to { opacity: .42; } }
+  .spark { fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 44 100000; stroke-dashoffset: 44;
+           animation-name: travel; animation-timing-function: ease-in-out; animation-iteration-count: infinite;
+           filter: drop-shadow(0 0 6px currentColor); }
+  @keyframes travel { 0% { stroke-dashoffset: 44; } 55% { stroke-dashoffset: calc(var(--len) * -1); } 100% { stroke-dashoffset: calc(var(--len) * -1); } }
+  .arc { fill: none; stroke-width: 5; stroke-linecap: round; }
+  @media (prefers-reduced-motion: reduce) { .rot { animation: none; } .edge { animation: none; opacity: .3; } }
+</style>
+</head>
+<body>
+<svg id="art" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Hierarchical edge bundling: points around a ring connected by curves that bundle through the centre">
+  <g class="rot">
+    <g id="edges"></g>
+    <g id="sparks"></g>
+    <g id="arcs"></g>
+    <g id="leaves"></g>
+  </g>
+</svg>
+
+<script>
+(() => {
+  // ---- settings ----
+  const SPEED = 1;          // 1 = default; lower is slower
+  const TENSION = 0.85;     // 0.2 = loose, 1 = tightly bundled
+  const ROTATE_SECONDS = 180;
+  const MINT = '#3EE8C4';
+  const PALETTE = [MINT, '#2DD4BF', '#7CF5D8', '#5FC8FF', '#9BD6FF', '#B8A6FF', '#4FE3A8', '#A8FFE6'];
+  const G = 8, PER = 12;    // groups, points per group
+
+  document.documentElement.style.setProperty('--R', (ROTATE_SECONDS / SPEED) + 's');
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const r = (v) => Math.round(v * 10) / 10;
+  let seed = 5;
+  const rand = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const el = (tag, attrs, parent) => {
+    const e = document.createElementNS(NS, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    parent.appendChild(e);
+    return e;
+  };
+  const bez = (P, t) => { const m = 1 - t; return [0, 1].map((j) => m*m*m*P[0][j] + 3*m*m*t*P[1][j] + 3*m*t*t*P[2][j] + t*t*t*P[3][j]); };
+  const plen = (P) => { let s = 0, prev = P[0]; for (let i = 1; i <= 40; i++) { const q = bez(P, i / 40); s += Math.hypot(q[0] - prev[0], q[1] - prev[1]); prev = q; } return s; };
+  const lerp = (p, q, t) => [p[0] + (q[0] - p[0]) * t, p[1] + (q[1] - p[1]) * t];
+
+  const SLOT = PER + 2, R = 340, RA = 150, cx = 720, cy = 450;
+  const ang = (slot) => (slot / (G * SLOT)) * Math.PI * 2 - Math.PI / 2;
+  const pol = (a, rad) => [cx + Math.cos(a) * rad, cy + Math.sin(a) * rad];
+  const anchor = (g) => ang(g * SLOT + 1 + (PER - 1) / 2);
+
+  const leaves = [];
+  for (let g = 0; g < G; g++) for (let j = 0; j < PER; j++) { const a = ang(g * SLOT + 1 + j); const p = pol(a, R); leaves.push({ g, x: p[0], y: p[1] }); }
+
+  const edgeG = document.getElementById('edges'), sparkG = document.getElementById('sparks');
+  let count = 0, sparkN = 0;
+  leaves.forEach((A) => {
+    const k = rand() < 0.5 ? 1 : 2;
+    for (let m = 0; m < k; m++) {
+      let j = Math.floor(rand() * leaves.length);
+      if (leaves[j].g === A.g) j = (j + PER) % leaves.length;
+      const B = leaves[j], p0 = [A.x, A.y], p3 = [B.x, B.y];
+      // control points pulled toward each group's inner anchor = the bundling
+      const c1 = lerp(lerp(p0, p3, 0.33), pol(anchor(A.g), RA), TENSION);
+      const c2 = lerp(lerp(p0, p3, 0.66), pol(anchor(B.g), RA), TENSION);
+      const P = [p0, c1, c2, p3];
+      const d = `M${r(p0[0])},${r(p0[1])} C${r(c1[0])},${r(c1[1])} ${r(c2[0])},${r(c2[1])} ${r(p3[0])},${r(p3[1])}`;
+      el('path', { class: 'edge', d, stroke: PALETTE[A.g], style: `animation-delay:${r(-rand() * 6)}s` }, edgeG);
+      if (++count % 6 === 0) {
+        const c = sparkN++ % 2 ? '#E6FFF8' : '#B8A6FF';
+        el('path', { class: 'spark', d, stroke: c, style: `color:${c};--len:${r(plen(P))}px;animation-duration:${r((3.5 + rand() * 2.5) / SPEED)}s;animation-delay:${r(-rand() * 6 / SPEED)}s` }, sparkG);
+      }
+    }
+  });
+
+  // group arcs around the outside
+  const arcG = document.getElementById('arcs');
+  for (let g = 0; g < G; g++) {
+    const R2 = R + 16, s = pol(ang(g * SLOT + 0.6), R2), e = pol(ang(g * SLOT + PER + 0.4), R2);
+    el('path', { class: 'arc', d: `M${r(s[0])},${r(s[1])} A${R2},${R2} 0 0 1 ${r(e[0])},${r(e[1])}`, stroke: PALETTE[g] }, arcG);
+  }
+
+  const leafG = document.getElementById('leaves');
+  leaves.forEach((p) => el('circle', { cx: r(p.x), cy: r(p.y), r: 2.6, fill: PALETTE[p.g] }, leafG));
+})();
+</script>
+</body>
+</html>
