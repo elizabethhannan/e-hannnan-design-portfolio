@@ -1,2 +1,2 @@
-- [Portfolio visual constraints](portfolio-visual-constraints.md) — original hero colors on blue, no text glow, section-scoped animations, and white footer links on dark.
+- [Portfolio visual constraints](portfolio-visual-constraints.md) — white hero text on blue, bottom-aligned artwork, no text glow, section-scoped animations, and white footer links.
 - [Public content privacy](public-content-privacy.md) — keep private personal disclosures out of biographies, exports, and downloads; retain general research content.
