@@ -100,3 +100,5 @@ footer a { color: var(--paper); }
 .lockup.cc b { font: 600 1.4rem "Familjen Grotesk", sans-serif; letter-spacing: -0.015em; color: #FFD23F; -webkit-text-stroke: 1pt #000; paint-order: stroke fill; }
 .lockup.cc b span { color: #FFD23F; }
 .app-icon svg { display: block; width: 56px; height: 56px; }
+.mark-logo { display: block; height: 52px; width: auto; max-width: 100%; }
+.mark-icon { display: block; width: 56px; height: 56px; }

@@ -162,3 +162,6 @@ section[id], article[id], #education { scroll-margin-top: 130px; }
 @media (min-width: 901px) { .nav-links > li:last-child .dropdown { left: auto; right: -0.85rem; } }
 /* Phone only: the icon bar wraps to two rows, so the hero starts below it. Spacing only; no style change. */
 @media (max-width: 600px) { .hero { padding-top: 190px !important; } }
+
+/* Project logo at the head of each work card (from each project's live page). */
+.x-card-logo { display: block; align-self: flex-start; height: 40px; width: auto; max-width: 100%; margin: 0 0 0.9rem; }
