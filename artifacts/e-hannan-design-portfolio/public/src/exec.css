@@ -329,3 +329,7 @@ details > summary::-webkit-details-marker { display: none; }
 .hero-statement { margin-bottom: 1.8rem !important; }
 .timeline-quote { background: var(--paper, #F4F1EA); margin: 0; padding: 0 1.5rem 1.6rem; text-align: center; font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: #0A1A5C; }
 .hero .hero-title span { white-space: nowrap; }
+
+/* Hero buttons: both beige with navy text */
+.hero .hero-links .btn, .hero .hero-links .btn-primary { background: #EAE5D9 !important; color: #0A1A5C !important; border: 1px solid #EAE5D9 !important; font-weight: 700; box-shadow: none !important; }
+.hero .hero-links .btn:hover, .hero .hero-links .btn-primary:hover { background: #fff !important; color: #0A1A5C !important; border-color: #fff !important; }
