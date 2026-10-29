@@ -164,3 +164,9 @@ body { font-size: 20px; }
 #team-chat-hand-back.case { background: #EAE5D9; }
 #team-chat-hand-back .results { background: #f4f1ea; }
 #team-chat-hand-back .mark-stage { background: #fff; }
+
+/* Expand toggles: same obvious drop-down arrow as the home page */
+details > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.6rem; font-weight: 700; color: var(--navy); }
+details > summary::-webkit-details-marker { display: none; }
+details > summary::after { content: ''; flex: none; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: #0A1A5C url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 1rem no-repeat; transition: transform 0.2s ease; }
+details[open] > summary::after { transform: rotate(180deg); }

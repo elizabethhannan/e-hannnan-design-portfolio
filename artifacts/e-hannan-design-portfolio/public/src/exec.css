@@ -296,3 +296,17 @@ section[id], article[id], #education { scroll-margin-top: 130px; }
 #leadership.x-section { background: #ffffff; }
 #leadership + section::before, section + #leadership::before { display: none; }
 #leadership .x-door { background: #faf8f4; }
+
+/* "Read the full story" and any other expand toggle: an obvious drop-down arrow that flips when open */
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+.x-more-story > summary { display: inline-flex !important; align-items: center; gap: 0.6rem; }
+.x-more-story > summary::after {
+  content: ''; flex: none; width: 1.7rem; height: 1.7rem; border-radius: 50%;
+  background: #0A1A5C url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 1rem no-repeat;
+  transition: transform 0.2s ease;
+}
+.x-more-story[open] > summary::after { transform: rotate(180deg); }
+.x-more-story > summary:hover::after { box-shadow: 0 0 0 4px rgba(10,26,92,0.15); }
+.x-more-story > summary:focus-visible { outline: 3px solid #0A1A5C; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) { .x-more-story > summary::after { transition: none; } }
