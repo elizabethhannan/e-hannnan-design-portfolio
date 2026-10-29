@@ -283,3 +283,11 @@ section[id], article[id], #education { scroll-margin-top: 130px; }
 /* Team Handback card on its own warm background (#EAE5D9) */
 #work #work-team-chat.x-card { background: #EAE5D9; border-color: rgba(10,26,92,0.18); }
 #work #work-team-chat .x-result { background: #f4f1ea; }
+
+/* Fireside recording: title, Stop button, status and links in grey */
+.speaking-panel .speaking-video-title,
+.speaking-panel .speaking-video-status,
+.speaking-panel .speaking-video-link,
+.speaking-panel .speaking-video-stop { color: #C4C8CE !important; }
+.speaking-panel .speaking-video-stop { border-color: rgba(196,200,206,0.6) !important; }
+.speaking-panel .speaking-video-stop:hover { background: #C4C8CE !important; color: #0f1829 !important; }
