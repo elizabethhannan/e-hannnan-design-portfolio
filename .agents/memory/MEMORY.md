@@ -1,2 +1,3 @@
 - [Portfolio visual constraints](portfolio-visual-constraints.md) — white hero text on blue, bottom-aligned artwork, no text glow, section-scoped animations, and white footer links.
 - [Public content privacy](public-content-privacy.md) — keep private personal disclosures out of biographies, exports, and downloads; retain general research content.
+- [Package manager quirks](package-manager-quirks.md) — pnpm updates can discard workspace policy comments; preserve them and the release-age safeguard.
