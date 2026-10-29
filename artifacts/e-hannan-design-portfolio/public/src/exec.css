@@ -247,3 +247,12 @@ section[id], article[id], #education { scroll-margin-top: 130px; }
 .x-more-story > summary::-webkit-details-marker { display: none; }
 .x-more-story[open] > summary { margin-bottom: 1.2rem; }
 .x-founder { font-family: var(--serif); font-size: 1.15rem; color: var(--x-ink); margin: 0 0 2rem; padding-left: 1rem; border-left: 3px solid var(--x-navy); }
+
+/* Speaking panel: restore the light labels and links meant for the dark panel (colors only) */
+.speaking-panel .speaking-label,
+.speaking-panel .speaking-event-eyebrow { color: #a8c8d8 !important; }
+.speaking-panel .speaking-link,
+.speaking-panel .speaking-video-link { color: #d9edf4 !important; }
+.speaking-panel .speaking-link:hover { color: #0f1829 !important; }
+/* Newsletter heading sits closer to the sign-up box now that the subtitle is gone */
+.newsletter-section h2 { margin-bottom: 1.4rem; }
