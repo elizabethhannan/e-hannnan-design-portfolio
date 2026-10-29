@@ -337,3 +337,13 @@ details > summary::-webkit-details-marker { display: none; }
 /* Hero background art: sit lower, near the bottom edge, under the text */
 .hero .thought-background-frame { transform: translateY(12%); }
 @media (max-width: 900px) { .hero .thought-background-frame { transform: translateY(28px); } }
+
+/* Right-arrow circle button (matches the "Read the full story" arrow) */
+.x-more.x-more-arrow { display: inline-flex !important; align-items: center; gap: 0.6rem; }
+.x-more.x-more-arrow::after {
+  content: ''; flex: none; width: 1.7rem; height: 1.7rem; border-radius: 50%;
+  background: #0A1A5C url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E") center / 1rem no-repeat;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.x-more.x-more-arrow:hover::after { transform: translateX(3px); box-shadow: 0 0 0 4px rgba(10,26,92,0.15); }
+@media (prefers-reduced-motion: reduce) { .x-more.x-more-arrow::after { transition: none; } }
