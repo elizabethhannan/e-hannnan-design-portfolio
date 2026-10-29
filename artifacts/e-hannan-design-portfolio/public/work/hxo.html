@@ -39,10 +39,18 @@
 <section class="case" aria-labelledby="see-h">
   <p class="practice">See it</p>
   <h2 id="see-h">The method in 49 seconds, and in three minutes</h2>
+  <div data-video-player>
   <div class="media-frame">
-    <video controls muted playsinline preload="none" controlslist="nodownload noplaybackrate" disablepictureinpicture oncontextmenu="return false;" poster="/media/hxo-for-agents-poster.jpg" aria-label="HXO for Agents, a 49-second overview of the method">
-      <source src="/media/hxo-for-agents-process.mp4" type="video/mp4">
+    <video controls playsinline preload="none" controlslist="nodownload noplaybackrate" disablepictureinpicture oncontextmenu="return false;" poster="/media/hxo-for-agents-poster.jpg?v=4" aria-label="HXO for Agents, a 49-second overview of the method, with sound">
+      <source src="/media/hxo-for-agents-process.mp4?v=4" type="video/mp4">
     </video>
+  </div>
+  <div class="vp-bar" role="group" aria-label="Video controls">
+          <button type="button" class="vp-btn" data-vp="play">▶ Play</button>
+          <button type="button" class="vp-btn" data-vp="pause">❚❚ Pause</button>
+          <button type="button" class="vp-btn" data-vp="stop">■ Stop</button>
+          <span class="vp-status" role="status" aria-live="polite">Ready to play</span>
+        </div>
   </div>
   <div class="links"><a class="btn primary" href="/decks/hxo-walkthrough.html" target="_blank" rel="noopener">Open the three-minute walkthrough deck ↗</a></div>
   <p class="honest">Video and deck are proprietary to Elizabeth Hannan. Viewing for evaluation only; no copying, reuse or AI training.</p>
@@ -90,5 +98,24 @@
     <span><a href="/">Home</a> · <a href="/contact.html">Get in touch</a></span>
   </div>
 </footer>
+<script>
+/* Play, Pause and Stop buttons for the HXO video. Nothing plays until a person presses Play. */
+document.querySelectorAll('[data-video-player]').forEach(function (box) {
+  var v = box.querySelector('video'), st = box.querySelector('.vp-status'), stopping = false;
+  if (!v) return;
+  v.autoplay = false;
+  box.querySelectorAll('[data-vp]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var a = b.getAttribute('data-vp');
+      if (a === 'play') { var pr = v.play(); if (pr && pr.catch) pr.catch(function (err) { if (st && (!err || err.name !== 'AbortError')) st.textContent = 'Could not start; try the player controls'; }); }
+      else if (a === 'pause') { v.pause(); if (st) st.textContent = 'Paused'; }
+      else { stopping = true; v.pause(); try { v.currentTime = 0; } catch (e) {} if (st) st.textContent = 'Stopped'; }
+    });
+  });
+  v.addEventListener('play', function () { if (st) st.textContent = 'Playing'; });
+  v.addEventListener('pause', function () { if (!st || v.ended) return; st.textContent = stopping ? 'Stopped' : 'Paused'; stopping = false; });
+  v.addEventListener('ended', function () { if (st) st.textContent = 'Finished'; });
+});
+</script>
 </body>
 </html>

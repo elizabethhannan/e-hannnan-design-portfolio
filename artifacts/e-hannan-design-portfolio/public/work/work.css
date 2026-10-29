@@ -152,3 +152,10 @@ body { font-size: 20px; }
   .mark-icon { width: 40px; height: 40px; }
 }
 @media (max-width: 760px) { .results th { width: auto; } }
+
+/* Video buttons */
+.vp-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-top: 0.75rem; }
+.vp-btn { font-family: var(--mono, monospace); font-size: 0.84rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #0A1A5C; background: #fff; border: 1px solid rgba(10,26,92,0.45); border-radius: 999px; padding: 0.5rem 1rem; cursor: pointer; }
+.vp-btn:hover { background: #0A1A5C; color: #fff; }
+.vp-btn:focus-visible { outline: 3px solid #0A1A5C; outline-offset: 2px; }
+.vp-status { font-size: 0.95rem; color: var(--muted, #6b6358); margin-left: 0.25rem; }
