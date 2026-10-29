@@ -165,3 +165,50 @@ section[id], article[id], #education { scroll-margin-top: 130px; }
 
 /* Project logo at the head of each work card (from each project's live page). */
 .x-card-logo { display: block; align-self: flex-start; height: 40px; width: auto; max-width: 100%; margin: 0 0 0.9rem; }
+
+/* ---------- v2.0 executive home ---------- */
+.x-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.x-grid-3 .x-card h3 { font-size: 1.3rem; }
+.x-logo-gap { margin-top: calc(40px + 0.9rem); }
+.x-result { font-size: 0.92rem; color: var(--x-ink); margin: 0 0 1rem; padding: 0.6rem 0.8rem; background: var(--paper); border: 1px solid var(--x-line); border-radius: 10px; }
+.x-result b { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--x-ink-2); margin-right: 0.4rem; }
+.x-result span { color: var(--x-ink-2); }
+.x-placeholder { border: 1px dashed var(--x-navy); border-radius: 16px; padding: 2rem; background: var(--x-card); max-width: 44rem; }
+.x-placeholder h3 { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; margin-bottom: 0.4rem; }
+.x-placeholder p { font-size: 0.98rem; color: var(--x-ink-2); }
+
+/* Impact: navy band with the line-chart animation behind */
+.x-impact { position: relative; overflow: hidden; background: #0A1A5C; color: #fff; }
+.x-impact .section-inner { position: relative; z-index: 1; }
+.x-impact .section-title, .x-impact .section-number { color: #fff !important; }
+.x-art { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; pointer-events: none; opacity: 0.6; z-index: 0; }
+.x-kpis-dark .x-kpi { background: rgba(10,26,92,0.72); border-color: rgba(255,255,255,0.3); }
+.x-kpis-dark .x-kpi-num, .x-kpis-dark .x-kpi-what { color: #fff; }
+.x-kpis-dark .x-kpi-where { color: rgba(255,255,255,0.85); }
+
+/* Leadership: three doors, each with its own animation */
+.x-doors { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; }
+.x-door { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--x-line); border-radius: 16px; background: var(--x-card); text-decoration: none; color: var(--x-ink) !important; box-shadow: var(--neu-shadow-sm); }
+.x-door:hover { box-shadow: var(--neu-shadow); }
+.x-door:focus-visible { outline: 3px solid var(--x-navy); outline-offset: 3px; }
+.x-door-art { position: relative; display: block; height: 150px; background: #0A1A5C; }
+.x-door-art iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; pointer-events: none; }
+.x-door-body { display: flex; flex-direction: column; gap: 0.35rem; padding: 1.2rem 1.3rem 1.3rem; flex: 1; }
+.x-door-kind { font-family: var(--mono); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--x-ink-2); }
+.x-door-name { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; }
+.x-door-desc { font-size: 0.93rem; line-height: 1.55; color: var(--x-ink-2); }
+.x-door-go { margin-top: auto; padding-top: 0.6rem; font-family: var(--mono); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--x-navy); }
+
+/* Research & IP: one row of links */
+.x-rip-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; }
+.x-rip-links a { display: flex; flex-direction: column; gap: 0.15rem; padding: 1rem 1.1rem; border: 1px solid var(--x-line); border-radius: 12px; background: var(--x-card); text-decoration: none; }
+.x-rip-links a:hover { border-color: var(--x-navy); }
+.x-rip-links b { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--x-ink); }
+.x-rip-links span { font-size: 0.86rem; color: var(--x-ink-2); }
+
+@media (max-width: 960px) {
+  .x-grid-3, .x-doors { grid-template-columns: 1fr; }
+  .x-rip-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .x-logo-gap { margin-top: 0; }
+}
+@media (max-width: 560px) { .x-rip-links { grid-template-columns: 1fr; } }

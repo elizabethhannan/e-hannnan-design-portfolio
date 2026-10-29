@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, noai, noimageai">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Window</title>
+<style>
+  :root { --bg: #0A1A5C; --mint: #3EE8C4; --caption: #BFF5E6; }
+  html, body { margin: 0; height: 100%; background: var(--bg); overflow: hidden; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  svg { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+  .inside { fill: none; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+  .past { fill: none; stroke-width: 1; stroke-linecap: round; stroke-dasharray: 2 7; }
+  .glow { filter: drop-shadow(0 0 7px var(--mint)); }
+  .caption { position: fixed; left: 5vw; bottom: 5vh; margin: 0; font-size: clamp(12px, 1.1vw, 16px); letter-spacing: .02em; color: var(--caption); opacity: .85; max-width: 90vw; }
+</style>
+</head>
+<body>
+<svg id="art" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Lines flow through a glowing window; what passes its edge fades away">
+  <defs>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9BD6FF" stop-opacity="0"/>
+      <stop offset="1" stop-color="#9BD6FF" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="in" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7CF5D8"/>
+      <stop offset="1" stop-color="#E6FFF8"/>
+    </linearGradient>
+  </defs>
+  <rect x="380" y="130" width="680" height="640" rx="20" fill="#3EE8C4" fill-opacity="0.04" stroke="#3EE8C4" stroke-width="1.2" opacity="0.45"/>
+  <g id="past"></g>
+  <g id="inside"></g>
+  <line class="glow" x1="1060" y1="150" x2="1060" y2="750" stroke="#E6FFF8" stroke-width="1.5" opacity="0.7"/>
+  <g id="now"></g>
+</svg>
+<p class="caption" id="caption" hidden></p>
+
+<script>
+(() => {
+  // ---- settings ----
+  const SPEED = 1;     // 1 = default; lower is slower
+  const FLOW = 45;     // how fast lines drift left (px per second)
+  const CAPTION = '';  // original: 'Inside the window I see everything at once. What slips past the edge, I no longer hold.'
+  const K = 14;        // number of lines
+
+  const PH = [0.0, 2.1, 0.7, 3.9, 1.4, 5.2, 2.8, 0.3, 4.6, 1.9, 3.3, 5.9, 0.9, 4.1];
+  const PH2 = [1.2, 4.4, 2.6, 0.5, 5.1, 3.0, 1.7, 4.9, 0.2, 2.9, 5.6, 1.1, 3.7, 0.6];
+
+  if (CAPTION) { const c = document.getElementById('caption'); c.textContent = CAPTION; c.hidden = false; }
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const r = (v) => Math.round(v * 10) / 10;
+  const el = (tag, attrs, parent) => {
+    const e = document.createElementNS(NS, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    parent.appendChild(e);
+    return e;
+  };
+
+  const pastG = document.getElementById('past'), inG = document.getElementById('inside'), nowG = document.getElementById('now');
+  const lines = [];
+  for (let k = 0; k < K; k++) {
+    lines.push({
+      past: el('polyline', { class: 'past', stroke: 'url(#fade)' }, pastG),
+      inside: el('polyline', { class: 'inside', stroke: 'url(#in)', opacity: r((0.55 + 0.4 * Math.abs(Math.sin(k * 1.3))) * 100) / 100 }, inG),
+      dot: el('circle', { class: 'glow', cx: 1060, r: 3, fill: '#E6FFF8' }, nowG)
+    });
+  }
+
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const speed = reduce ? SPEED * 0.35 : SPEED;
+  let time = 0, last = performance.now();
+
+  function frame(now) {
+    const dt = Math.min(50, now - last); last = now;
+    time += (dt / 1000) * speed;
+    const t = time;
+    // irregular phase per line so crests never line up into a straight diagonal
+    const yOf = (k, x) => 450 + (k - 6.5) * 34
+      + 30 * Math.sin((x + t * FLOW) * 0.0062 + PH[k])
+      + 12 * Math.sin((x + t * FLOW) * (0.015 + (k % 4) * 0.002) + PH2[k]);
+    lines.forEach((L, k) => {
+      const a = [], b = [];
+      for (let x = -40; x <= 380; x += 12) a.push(`${x},${r(yOf(k, x))}`);
+      for (let x = 380; x <= 1060; x += 10) b.push(`${x},${r(yOf(k, x))}`);
+      L.past.setAttribute('points', a.join(' '));
+      L.inside.setAttribute('points', b.join(' '));
+      L.dot.setAttribute('cy', r(yOf(k, 1060)));
+    });
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

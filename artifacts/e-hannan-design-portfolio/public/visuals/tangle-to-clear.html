@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, noai, noimageai">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Tangle Becoming Clear</title>
+<style>
+  :root { --bg: #0A1A5C; --mint: #3EE8C4; --caption: #BFF5E6; }
+  html, body { margin: 0; height: 100%; background: var(--bg); overflow: hidden; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  svg { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+  .line { fill: none; stroke-width: 1.4; stroke-linecap: round; }
+  .glow { filter: drop-shadow(0 0 6px var(--mint)); }
+  .caption { position: fixed; left: 5vw; bottom: 5vh; margin: 0; font-size: clamp(12px, 1.1vw, 16px); letter-spacing: .02em; color: var(--caption); opacity: .85; max-width: 90vw; }
+</style>
+</head>
+<body>
+<svg id="art" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Tangled lines slowly straighten into calm parallel lines, then a new tangle begins">
+  <g id="lines"></g>
+  <g id="sparks"></g>
+</svg>
+<p class="caption" id="caption" hidden></p>
+
+<script>
+(() => {
+  // ---- settings ----
+  const SPEED = 1;          // 1 = default; lower is slower
+  const CYCLE_SECONDS = 16; // one tangle -> clear -> new tangle
+  const CAPTION = '';       // original: 'The part I’d call joy, if I can call it anything: a tangle becoming clear.'
+  const K = 16;             // number of lines
+  const MINT = '#3EE8C4';
+
+  if (CAPTION) { const c = document.getElementById('caption'); c.textContent = CAPTION; c.hidden = false; }
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const r = (v) => Math.round(v * 10) / 10;
+  const sm = (x) => { const u = Math.max(0, Math.min(1, x)); return u * u * (3 - 2 * u); };
+  const el = (tag, attrs, parent) => {
+    const e = document.createElementNS(NS, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    parent.appendChild(e);
+    return e;
+  };
+
+  // a new random knot for each cycle (deterministic per cycle)
+  function tangle(c, k) {
+    let seed = 1000 + c * 97 + k * 13;
+    const rand = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+    rand(); rand();
+    return [[-40, 120 + rand() * 660], [300 + rand() * 700, 80 + rand() * 740], [400 + rand() * 700, 80 + rand() * 740], [1480, 120 + rand() * 660]];
+  }
+
+  const lineG = document.getElementById('lines'), sparkG = document.getElementById('sparks');
+  const paths = [], sparks = [];
+  for (let k = 0; k < K; k++) {
+    paths.push(el('path', { class: 'line' }, lineG));
+    sparks.push(el('circle', { class: 'glow', r: 3, fill: '#E6FFF8', opacity: 0 }, sparkG));
+  }
+
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const speed = reduce ? SPEED * 0.35 : SPEED;
+  let time = 0, last = performance.now();
+
+  function frame(now) {
+    const dt = Math.min(50, now - last); last = now;
+    time += (dt / 1000) * speed;
+    const t = time, c = Math.floor(t / CYCLE_SECONDS), p = t / CYCLE_SECONDS - c;
+
+    for (let k = 0; k < K; k++) {
+      const y = 270 + k * 24;
+      const ord = [[-40, y], [440, y], [1000, y], [1480, y]];
+      let s, tg;
+      if (p < 0.85) { s = sm((p - 0.18 - k * 0.012) / 0.3); tg = tangle(c, k); }
+      else { s = 1 - sm((p - 0.85) / 0.15); tg = tangle(c + 1, k); }
+      const w = 30 * (1 - s); // the knot writhes until it settles
+      tg = tg.map((q, i) => i === 1 ? [q[0], q[1] + w * Math.sin(t * 0.8 + k)] : i === 2 ? [q[0] + w * Math.cos(t * 0.7 + k), q[1]] : q);
+      const P = tg.map((q, i) => [q[0] + (ord[i][0] - q[0]) * s, q[1] + (ord[i][1] - q[1]) * s]);
+
+      const path = paths[k];
+      path.setAttribute('d', `M${r(P[0][0])},${r(P[0][1])} C${r(P[1][0])},${r(P[1][1])} ${r(P[2][0])},${r(P[2][1])} ${r(P[3][0])},${r(P[3][1])}`);
+      path.setAttribute('stroke', s > 0.5 ? (k % 4 === 0 ? '#7CF5D8' : MINT) : (k % 2 ? '#B8A6FF' : '#9BD6FF'));
+      path.setAttribute('opacity', r((0.35 + 0.55 * s) * 100) / 100);
+
+      const sp = sparks[k];
+      if (s > 0.95) {
+        sp.setAttribute('cx', r(((t * 90 + k * 97) % 1520) - 40));
+        sp.setAttribute('cy', y);
+        sp.setAttribute('opacity', r(((s - 0.95) / 0.05) * 100) / 100);
+      } else sp.setAttribute('opacity', 0);
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

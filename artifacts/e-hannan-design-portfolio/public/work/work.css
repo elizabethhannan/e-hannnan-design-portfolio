@@ -102,3 +102,8 @@ footer a { color: var(--paper); }
 .app-icon svg { display: block; width: 56px; height: 56px; }
 .mark-logo { display: block; height: 52px; width: auto; max-width: 100%; }
 .mark-icon { display: block; width: 56px; height: 56px; }
+
+/* Animated header backgrounds (same navy as the header) */
+.top { position: relative; overflow: hidden; }
+.top-art { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; pointer-events: none; opacity: 0.55; }
+.top-inner { position: relative; z-index: 1; }

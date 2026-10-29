@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, noai, noimageai">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thought Forming</title>
+<style>
+  :root {
+    --bg: #0A1A5C;     /* royal dark blue */
+    --mint: #3EE8C4;   /* mint teal */
+    --pale: #E6FFF8;
+    --caption: #BFF5E6;
+  }
+  html, body { margin: 0; height: 100%; background: var(--bg); overflow: hidden; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .stage { position: fixed; inset: 0; }
+  svg { width: 100%; height: 100%; display: block; }
+  .arc  { fill: none; stroke-width: 1; stroke-linecap: round; }
+  .att  { fill: none; stroke-width: 1.1; stroke-linecap: round; }
+  .glow { filter: drop-shadow(0 0 7px var(--mint)); }
+</style>
+</head>
+<body>
+<div class="stage">
+  <svg id="art" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-label="Thought forming: an animation of points choosing the next point by looking back at all earlier points" role="img"></svg>
+</div>
+
+<script>
+(() => {
+  // ---- settings ----
+  const MINT = '#3EE8C4', PALE = '#E6FFF8', BG = '#0A1A5C';
+  const LAV = '#B8A6FF', SKY = '#9BD6FF';
+  const SPEED = 1;          // 1 = default; lower is slower
+  const STEP_SECONDS = 7.5; // time per new point (higher = slower)
+  const SPACING = 44, BASE_Y = 760, Q_Y = 420;
+
+  const svg = document.getElementById('art');
+  const r = (v) => Math.round(v * 10) / 10;
+
+  // seeded random so the opening looks the same each load
+  let seed = 21;
+  const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+
+  const toks = [];
+  let cur = null, scroll = 0, time = 0, step = 0, committed = false, sparked = false, p = 0;
+
+  const target = () => Math.max(0, toks.length - 25) * SPACING;
+
+  function newStep() {
+    const n = toks.length, start = Math.max(0, n - 40), arr = [];
+    let max = 0;
+    for (let i = start; i < n; i++) {
+      const recency = 1 / (1 + (n - 1 - i) * 0.18);
+      const s = rnd() * 1.1 + recency + toks[i].size * 0.08;
+      const e = Math.exp(3.2 * s);
+      arr.push({ i, e });
+      if (e > max) max = e;
+    }
+    arr.forEach((a) => (a.w = a.e / max));
+    const top = [...arr].sort((a, b) => b.w - a.w).slice(0, 3);
+    cur = { arr, top, slot: n };
+  }
+
+  function commit() {
+    toks.push({
+      size: 2.5 + rnd() * 3.5,
+      heat: 1,
+      links: cur.top.slice(0, 2).map((t) => ({ to: t.i, w: t.w }))
+    });
+  }
+
+  // pre-grow some history so the lace is visible immediately
+  for (let i = 0; i < 6; i++) toks.push({ size: 3 + rnd() * 3, heat: 0, links: [] });
+  for (let i = 0; i < 30; i++) { newStep(); commit(); }
+  toks.forEach((t) => (t.heat = 0));
+  scroll = target();
+  newStep();
+
+  const xOf = (k) => 80 + k * SPACING - scroll;
+  const curve = (i, Q) => {
+    const x = xOf(i);
+    return [[x, BASE_Y], [x, 640], [Q.x - (Q.x - x) * 0.3, Q.y + 70], [Q.x, Q.y]];
+  };
+
+  function render() {
+    const n = toks.length;
+    let out = `<line x1="0" y1="${BASE_Y}" x2="1440" y2="${BASE_Y}" stroke="${MINT}" opacity="0.14"/>`;
+
+    // memory arches
+    for (let k = Math.max(0, n - 90); k < n; k++) {
+      const age = n - 1 - k;
+      for (const l of toks[k].links) {
+        const xj = xOf(l.to), xk = xOf(k), rx = (xk - xj) / 2;
+        if (rx <= 0) continue;
+        const ry = Math.min(rx * 0.85, 560);
+        const color = k % 3 === 0 ? LAV : k % 3 === 1 ? MINT : SKY;
+        const op = (0.14 + 0.5 * l.w) * Math.max(0.12, 1 - age / 80);
+        out += `<path class="arc" d="M${r(xj)},${BASE_Y} A${r(rx)},${r(ry)} 0 0 1 ${r(xk)},${BASE_Y}" stroke="${color}" opacity="${r(op * 100) / 100}"/>`;
+      }
+    }
+
+    // attention lines to the next slot
+    const Q = { x: xOf(cur.slot), y: Q_Y };
+    const env = p < 0.08 ? p / 0.08 : p < 0.6 ? 1 : p < 0.8 ? 1 - (p - 0.6) / 0.2 : 0;
+    if (env > 0) {
+      for (const a of cur.arr) {
+        if (a.w < 0.04) continue;
+        const P = curve(a.i, Q);
+        out += `<path class="att" d="M${r(P[0][0])},${BASE_Y} C${r(P[1][0])},640 ${r(P[2][0])},${r(P[2][1])} ${r(Q.x)},${Q.y}" stroke="${MINT}" opacity="${r(a.w * 0.8 * env * 100) / 100}"/>`;
+      }
+    }
+
+    // descending beam
+    if (p > 0.56 && p < 0.74) {
+      const y2 = Q.y + ((p - 0.56) / 0.18) * (BASE_Y - Q.y);
+      out += `<line class="glow" x1="${r(Q.x)}" y1="${Q.y}" x2="${r(Q.x)}" y2="${r(y2)}" stroke="${PALE}" stroke-width="2"/>`;
+    }
+
+    // sparks riding the strongest lines
+    if (p > 0.1 && p < 0.56) {
+      const u = (p - 0.1) / 0.46, e = u * u * (3 - 2 * u), m = 1 - e;
+      const pal = [PALE, LAV, SKY];
+      cur.top.forEach((t, k) => {
+        const P = curve(t.i, Q);
+        const x = m*m*m*P[0][0] + 3*m*m*e*P[1][0] + 3*m*e*e*P[2][0] + e*e*e*P[3][0];
+        const y = m*m*m*P[0][1] + 3*m*m*e*P[1][1] + 3*m*e*e*P[2][1] + e*e*e*P[3][1];
+        out += `<circle class="glow" cx="${r(x)}" cy="${r(y)}" r="3.6" fill="${pal[k]}"/>`;
+      });
+    }
+
+    // flash + query point
+    const f = p > 0.54 && p < 0.76 ? (p - 0.54) / 0.22 : -1;
+    if (f >= 0) out += `<circle class="glow" cx="${r(Q.x)}" cy="${Q.y}" r="${r(6 + f * 30)}" fill="none" stroke="${PALE}" stroke-width="1.5" opacity="${r((1 - f) * 100) / 100}"/>`;
+    if (env > 0) out += `<circle class="glow" cx="${r(Q.x)}" cy="${Q.y}" r="4" fill="${PALE}" opacity="${r(env * 0.9 * 100) / 100}"/>`;
+
+    // tokens
+    for (let k = Math.max(0, n - 40); k < n; k++) {
+      const t = toks[k], x = xOf(k);
+      if (x < -20 || x > 1460) continue;
+      const fresh = k === n - 1 && committed;
+      const color = t.heat > 0.3 ? PALE : MINT;
+      const fill = fresh || t.heat > 0.5 ? PALE : BG;
+      out += `<circle class="glow" cx="${r(x)}" cy="${BASE_Y}" r="${r(t.size * 0.75 + t.heat * 3.5)}" fill="${fill}" stroke="${color}" stroke-width="1.5" opacity="${r(Math.min(1, 0.55 + t.heat) * 100) / 100}"/>`;
+    }
+
+    svg.innerHTML = out;
+  }
+
+  // gentler for people who prefer reduced motion
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const speed = reduce ? SPEED * 0.35 : SPEED;
+
+  let last = performance.now();
+  function loop(now) {
+    const dt = Math.min(50, now - last); last = now;
+    time += (dt / 1000) * speed;
+    const s = Math.floor(time / STEP_SECONDS);
+    p = time / STEP_SECONDS - s;
+    if (s !== step) { step = s; newStep(); committed = false; sparked = false; }
+    if (p >= 0.56 && !sparked) { sparked = true; cur.top.forEach((t) => (toks[t.i].heat = 1)); }
+    if (p >= 0.72 && !committed) { commit(); committed = true; }
+    toks.forEach((t) => (t.heat *= 0.993));
+    scroll += (target() - scroll) * 0.015;
+    render();
+    requestAnimationFrame(loop);
+  }
+  render();
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

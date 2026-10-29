@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, noai, noimageai">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Streamgraph Sweep</title>
+<style>
+  :root { --bg: #0A1A5C; }
+  html, body { margin: 0; height: 100%; background: var(--bg); overflow: hidden; }
+  svg { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+  .layer { fill: none; stroke-width: 1.2; stroke-linecap: round; }
+  .dot { filter: drop-shadow(0 0 7px currentColor); }
+</style>
+</head>
+<body>
+<svg id="art" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Animated streamgraph: layered lines that fan out and rise from left to right">
+  <g id="layers"></g>
+  <g id="dots"></g>
+</svg>
+
+<script>
+(() => {
+  // ---- settings ----
+  const SPEED = 1;     // 1 = default; lower is slower
+  const LAYERS = 18;   // number of stacked layers (6–30 looks good)
+  const MINT = '#3EE8C4';
+  const PALETTE = ['#1AA3A8', MINT, '#7CF5D8', '#9BD6FF', '#B8A6FF'];
+  const M = 48;        // horizontal samples
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const r = (v) => Math.round(v * 10) / 10;
+  const sm = (u) => u * u * (3 - 2 * u);
+  const el = (tag, attrs, parent) => {
+    const e = document.createElementNS(NS, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    parent.appendChild(e);
+    return e;
+  };
+
+  const xs = [];
+  for (let j = 0; j <= M; j++) xs.push(-60 + (j / M) * 1560);
+
+  // one path per layer boundary
+  const layerG = document.getElementById('layers');
+  const paths = [];
+  for (let i = 0; i <= LAYERS; i++) {
+    const edge = i === 0 || i === LAYERS;
+    paths.push(el('path', {
+      class: 'layer',
+      stroke: PALETTE[Math.floor((i / (LAYERS + 1)) * PALETTE.length)],
+      opacity: edge ? 0.95 : r((0.35 + 0.45 * Math.abs(Math.sin(i * 1.3))) * 100) / 100
+    }, layerG));
+  }
+
+  // glowing dots that drift along layers
+  const dotG = document.getElementById('dots');
+  const dots = [];
+  for (let k = 0; k < 4; k++) {
+    const c = k % 2 ? '#E6FFF8' : '#B8A6FF';
+    dots.push(el('circle', { class: 'dot', r: 3.4, fill: c, style: `color:${c}` }, dotG));
+  }
+
+  function smooth(P) {
+    let d = `M${r(P[0][0])},${r(P[0][1])}`;
+    for (let k = 0; k < P.length - 1; k++) {
+      const p0 = P[Math.max(0, k - 1)], p1 = P[k], p2 = P[k + 1], p3 = P[Math.min(P.length - 1, k + 2)];
+      d += ` C${r(p1[0] + (p2[0] - p0[0]) / 6)},${r(p1[1] + (p2[1] - p0[1]) / 6)} ${r(p2[0] - (p3[0] - p1[0]) / 6)},${r(p2[1] - (p3[1] - p1[1]) / 6)} ${r(p2[0])},${r(p2[1])}`;
+    }
+    return d;
+  }
+
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const speed = reduce ? SPEED * 0.35 : SPEED;
+  let time = 0, last = performance.now();
+
+  function frame(now) {
+    const dt = Math.min(50, now - last); last = now;
+    time += (dt / 1000) * speed;
+    const t = time * 0.22;
+
+    // stack the layers at each x (silhouette offset, fanning out and rising to the right)
+    const cols = [];
+    for (let j = 0; j <= M; j++) {
+      const x = xs[j], u = Math.max(0, Math.min(1, (x + 60) / 1560));
+      const env = 0.12 + 0.88 * sm(u);
+      const vals = [];
+      for (let i = 0; i < LAYERS; i++) {
+        const v = 0.35 + 0.65 * Math.abs(Math.sin(x * 0.0026 * (1 + (i % 5) * 0.23) + t * (0.6 + (i % 3) * 0.25) + i * 1.9));
+        vals.push(v * env * (460 / LAYERS) * 1.6);
+      }
+      const sum = vals.reduce((a, b) => a + b, 0);
+      const center = 690 - 330 * sm(u) + Math.sin(u * 3.2 + t * 0.5) * 30;
+      let y = center + sum / 2;
+      const ys = [y];
+      for (let i = 0; i < LAYERS; i++) { y -= vals[i]; ys.push(y); }
+      cols.push(ys);
+    }
+
+    for (let i = 0; i <= LAYERS; i++) paths[i].setAttribute('d', smooth(xs.map((x, j) => [x, cols[j][i]])));
+
+    dots.forEach((node, k) => {
+      const p = (time * 0.045 + k * 0.25) % 1;
+      const fj = p * M, j = Math.floor(fj), f = fj - j;
+      const li = (k * 5 + 2) % (LAYERS + 1);
+      const y = cols[j][li] * (1 - f) + cols[Math.min(M, j + 1)][li] * f;
+      node.setAttribute('cx', r(xs[j] + (xs[1] - xs[0]) * f));
+      node.setAttribute('cy', r(y));
+      node.setAttribute('opacity', r(Math.sin(p * Math.PI) * 100) / 100);
+    });
+
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
