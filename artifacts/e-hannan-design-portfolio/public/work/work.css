@@ -85,3 +85,18 @@ footer a { color: var(--paper); }
   .results td { border-top: 0; padding-top: 0; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Project logos and app icons, reproduced from each project's live page. */
+.marks { display: flex; flex-wrap: wrap; gap: 1rem; margin: 0 0 1.4rem; }
+.mark { margin: 0; }
+.mark-stage { display: flex; align-items: center; justify-content: center; min-height: 92px; padding: 1rem 1.4rem; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.mark-stage.icon { width: 92px; padding: 0.9rem; }
+.mark figcaption { margin-top: 0.4rem; font-family: var(--mono); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-2); }
+.lockup { display: inline-flex; align-items: center; gap: 0.55rem; }
+.lockup.nfr svg { width: 40px; height: 40px; }
+.lockup.nfr span { font-family: "Familjen Grotesk", sans-serif; font-weight: 700; font-size: 1.5rem; letter-spacing: -0.01em; color: #161513; }
+.lockup.cc { background: #0b0b0c; border-radius: 0.7rem; padding: 0.35rem 0.8rem 0.35rem 0.55rem; gap: 0.45rem; }
+.lockup.cc svg { width: 2.6rem; height: 1.75rem; }
+.lockup.cc b { font: 600 1.4rem "Familjen Grotesk", sans-serif; letter-spacing: -0.015em; color: #FFD23F; -webkit-text-stroke: 1pt #000; paint-order: stroke fill; }
+.lockup.cc b span { color: #FFD23F; }
+.app-icon svg { display: block; width: 56px; height: 56px; }
