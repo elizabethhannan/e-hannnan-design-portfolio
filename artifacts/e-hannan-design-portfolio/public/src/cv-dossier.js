@@ -7,7 +7,7 @@ if (root) {
     <section class="cv-dossier cv-dossier--navy" id="cv-dossier" aria-labelledby="cv-dossier-heading">
       <div class="cv-inner"><div class="cv-panel">
         <div class="cv-panel-head">
-          <div><h2 class="cv-panel-title" id="cv-dossier-heading">Recruiter question bot — Ask my CV:</h2>
+          <div><h2 class="cv-panel-title" id="cv-dossier-heading">Dossier Bot: Ask my CV:</h2>
           <p class="cv-panel-subtitle">AI-assisted answers grounded in the public CV and portfolio site. This conversation stays in this page session and is not saved.</p></div>
           <button class="cv-reset" type="button">Clear</button>
         </div>
