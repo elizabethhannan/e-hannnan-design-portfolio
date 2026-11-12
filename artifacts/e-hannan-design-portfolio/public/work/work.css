@@ -181,3 +181,7 @@ details[open] > summary::after { transform: rotate(180deg); }
 .case-fold > summary h2 { margin-bottom: 0; }
 .case-fold > summary:focus-visible { outline: 3px solid var(--navy); outline-offset: 6px; }
 .case-body { padding-top: 0.6rem; }
+
+/* Case buttons: on top while closed, at the bottom once open */
+.links.links-top { margin-top: 1.1rem; }
+.case-fold[open] .links-top { display: none; }

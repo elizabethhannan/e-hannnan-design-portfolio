@@ -365,3 +365,6 @@ details > summary::-webkit-details-marker { display: none; }
 .nexus-chips .nexus-card-title { font-size: 0.8rem; margin-bottom: 0.15rem; }
 .nexus-chips .nexus-card-sub { font-size: 0.7rem; line-height: 1.35; }
 @media (max-width: 900px) { .nexus-cards.nexus-chips { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* 2027 Design UI placeholder card */
+#work .x-card.x-card-soon { border-style: dashed; border-width: 1.5px; border-color: rgba(10,26,92,0.45); }
