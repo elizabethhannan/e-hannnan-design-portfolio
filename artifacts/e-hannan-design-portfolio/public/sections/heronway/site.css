@@ -142,3 +142,9 @@ main { animation: page-rise var(--dur-glide) var(--ease-glide) both; }
 .panel .hw-points { width: 100%; min-width: 0; box-sizing: border-box; }
 .hw-carousel { min-width: 0; max-width: 100%; }
 .panel .hw-points { box-shadow: none; padding: 0; background: none; }
+
+/* illustration set */
+.hw-card-media { height: 176px; }
+.hw-card-media svg { width: 100%; height: 100%; }
+.hw-window { position: relative; overflow: hidden; }
+.hw-window-view { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
