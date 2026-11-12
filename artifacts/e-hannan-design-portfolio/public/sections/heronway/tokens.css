@@ -1,0 +1,115 @@
+/* Heronway — generated from tokens.json */
+@font-face { font-family: "Figtree"; font-style: normal; font-weight: 300 900; font-display: swap; src: url("fonts/figtree-latin-wght-normal.woff2") format("woff2"); }
+@font-face { font-family: "Figtree"; font-style: italic; font-weight: 300 900; font-display: swap; src: url("fonts/figtree-latin-wght-italic.woff2") format("woff2"); }
+:root {
+  --surface: #FAF8F4;
+  --surface-raised: #FFFFFF;
+  --surface-sky: #E3EFF8;
+  --ink: #121417;
+  --ink-muted: #4A5262;
+  --line: #D9DDE3;
+  --navy: #13294B;
+  --on-navy: #FFFFFF;
+  --royal: #2F4FD1;
+  --on-royal: #FFFFFF;
+  --teal: #0B6B6B;
+  --on-teal: #FFFFFF;
+  --forest: #2E6A3A;
+  --plum: #5A3A8C;
+  --on-plum: #FFFFFF;
+  --fox: #B4471F;
+  --chocolate: #4A2E22;
+  --sky: #CFE6F5;
+  --success: #1F7A4A;
+  --error: #B3261E;
+  --focus: #2F4FD1;
+  --shadow-card: 0 1px 2px rgba(19,41,75,0.06), 0 4px 16px rgba(19,41,75,0.08);
+  --shadow-lift: 0 12px 32px rgba(19,41,75,0.18);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+  --ease-glide: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soar: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-hop: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 150ms;
+  --dur-base: 280ms;
+  --dur-slow: 520ms;
+  --dur-glide: 900ms;
+  --font-sans: "Figtree", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --surface: #0B1220;
+  --surface-raised: #14213A;
+  --surface-sky: #1B2D47;
+  --ink: #F3F1EC;
+  --ink-muted: #B4BCC9;
+  --line: #2C3A50;
+  --navy: #2A4A7F;
+  --on-navy: #FFFFFF;
+  --royal: #8FA5F4;
+  --on-royal: #0B1220;
+  --teal: #5FC0BA;
+  --on-teal: #0B1220;
+  --forest: #82C690;
+  --plum: #BFA4EC;
+  --on-plum: #0B1220;
+  --fox: #F2946A;
+  --chocolate: #D2A68E;
+  --sky: #2A4566;
+  --success: #6FD19B;
+  --error: #FF8A80;
+  --focus: #9FB2F7;
+  --shadow-card: 0 1px 2px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.35);
+  --shadow-lift: 0 12px 32px rgba(0,0,0,0.55);
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface: #0B1220;
+    --surface-raised: #14213A;
+    --surface-sky: #1B2D47;
+    --ink: #F3F1EC;
+    --ink-muted: #B4BCC9;
+    --line: #2C3A50;
+    --navy: #2A4A7F;
+    --on-navy: #FFFFFF;
+    --royal: #8FA5F4;
+    --on-royal: #0B1220;
+    --teal: #5FC0BA;
+    --on-teal: #0B1220;
+    --forest: #82C690;
+    --plum: #BFA4EC;
+    --on-plum: #0B1220;
+    --fox: #F2946A;
+    --chocolate: #D2A68E;
+    --sky: #2A4566;
+    --success: #6FD19B;
+    --error: #FF8A80;
+    --focus: #9FB2F7;
+    --shadow-card: 0 1px 2px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.35);
+    --shadow-lift: 0 12px 32px rgba(0,0,0,0.55);
+    color-scheme: dark;
+  }
+}
+.display-xl { font: 800 64px/68px var(--font-sans); letter-spacing: -1.5px; }
+.display-l { font: 750 48px/54px var(--font-sans); letter-spacing: -1px; }
+.heading-l { font: 700 32px/40px var(--font-sans); letter-spacing: -0.5px; }
+.heading-m { font: 650 24px/30px var(--font-sans); }
+.heading-s { font: 650 18px/24px var(--font-sans); }
+.body-l { font: 400 18px/28px var(--font-sans); }
+.body-m { font: 400 16px/24px var(--font-sans); }
+.body-s { font: 400 14px/20px var(--font-sans); }
+.label { font: 600 14px/20px var(--font-sans); }
+.eyebrow { font: 700 12px/16px var(--font-sans); letter-spacing: 1.5px; text-transform: uppercase; }

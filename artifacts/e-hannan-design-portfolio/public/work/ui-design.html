@@ -48,6 +48,7 @@
       <a href="#horizon">Horizon</a>
       <a href="#concierge">Concierge</a>
       <a href="#canopy">Canopy: ESG Reporting</a>
+      <a href="#heronway">Heronway</a>
       <a href="#travel-2027">Private Travel Company Site</a>
     </nav>
   </div>
@@ -318,6 +319,75 @@
   </details>
 </article>
 
+<article class="case" id="heronway" aria-labelledby="hw-h">
+  <details class="case-fold" open>
+  <summary class="case-summary">
+  <div class="marks" aria-label="Heronway logo and app icon">
+    <figure class="mark"><div class="mark-stage"><img class="mark-logo" src="/sections/heronway/assets/heronway-wordmark.svg" alt="Heronway logo"></div><figcaption>Logo</figcaption></figure>
+    <figure class="mark"><div class="mark-stage icon"><img class="mark-icon" src="/sections/heronway/assets/heronway-mark.svg" alt="Heronway app icon"></div><figcaption>App icon</figcaption></figure>
+  </div>
+  <p class="practice">Design section 13 · Heronway · brand, design system and motion-led booking site</p>
+  <h2 id="hw-h">Heronway: a calm airline, built for motion</h2>
+  <div class="links links-top">
+    <button type="button" class="btn primary" data-open-site>View the full site ↗</button>
+    <a class="btn" href="/sections/heronway/index.html" target="_blank" rel="noopener">Open in a new tab ↗</a>
+  </div>
+  </summary>
+  <div class="case-body">
+  <p class="outcome">A fictional boutique airline, designed end to end: the brand, a 22-component design system with its own motion language, and a three-page site built on it.</p>
+  <p class="client">Self-initiated hospitality concept · fictional brand · brand, design system, motion and front-end build</p>
+  <table class="results">
+    <tr><th scope="row">Scope</th><td>Wordmark, mark and two mascots; colour, type, space and motion tokens in Day and Night themes; 22 components, 12 of them page-motion patterns; a three-page site: Home, Where we fly, Rewards</td></tr>
+    <tr><th scope="row">Baseline</th><td>Airline sites lead with fare grids and urgency banners. Motion, where it exists, is decoration that breaks keyboard use and reduced-motion settings</td></tr>
+    <tr><th scope="row">Target</th><td>A booking experience where every movement explains something: where the plane goes, what a tier includes, that you are booked</td></tr>
+    <tr><th scope="row">Result</th><td>Every text colour token meets 4.5:1 contrast on all three surfaces in both themes. Every component works by keyboard and drops to instant state changes under reduced motion. One call, <code>Heronway.init()</code>, wires the whole site</td></tr>
+    <tr><th scope="row">Not achieved</th><td class="gap">No usability testing yet. Booking is a front-end demo with no fares engine behind it. Mascot art is a first pass</td></tr>
+  </table>
+  <h3>The challenge</h3>
+  <p>Budget travel feels hurried by design: countdown timers, upsell walls and a seat map that punishes you for not paying. Heronway asks what “elevated economy” would look like on screen: calm, warm, a little playful, and exact about prices and fine print.</p>
+  <h3>Design decisions</h3>
+  <ul>
+    <li><b>Motion has a vocabulary.</b> Three easings named for flight: <em>glide</em> for entrances, <em>soar</em> for anything that travels, <em>hop</em> for Juni’s playful overshoot. Four durations from 150 to 900 ms.</li>
+    <li><b>Colour tells you where you are.</b> Navy is the brand field and royal is action. Teal, plum, forest and chocolate each give one story its own colour. No yellow or gold anywhere.</li>
+    <li><b>Two hosts with jobs.</b> Hollis the heron leads informational pages; Juni the fox leads offers and Rewards. Only one animated mascot is in view at a time.</li>
+    <li><b>Shapes from the cabin.</b> The 32 px radius on hero media and promo bands echoes an aircraft window.</li>
+    <li><b>Words like a host, not a ticket counter.</b> Sentence case, the benefit first, exact numbers, no exclamation stacks.</li>
+  </ul>
+  <h3>Motion, explained</h3>
+  <p>Six moments from the live site. Each one carries information, and each has a still, instant version for people who turn motion off.</p>
+  <div class="motion-grid">
+    <figure><picture><source srcset="/work/heronway/hero-poster.webp" media="(prefers-reduced-motion: reduce)"><img src="/work/heronway/hero.webp" alt="Hero entrance and parallax: Copy rises line by line on the glide easing; clouds, hills and the plane path drift at different depths with the pointer." loading="lazy" width="960" height="540"></picture><figcaption><b>Hero entrance and parallax</b>Copy rises line by line on the glide easing; clouds, hills and the plane path drift at different depths with the pointer.</figcaption></figure>
+    <figure><picture><source srcset="/work/heronway/wipe-poster.webp" media="(prefers-reduced-motion: reduce)"><img src="/work/heronway/wipe.webp" alt="Page transition: A navy wipe carries the mark between pages, then the next page rises in and focus moves to its first heading." loading="lazy" width="960" height="540"></picture><figcaption><b>Page transition</b>A navy wipe carries the mark between pages, then the next page rises in and focus moves to its first heading.</figcaption></figure>
+    <figure><picture><source srcset="/work/heronway/story-poster.webp" media="(prefers-reduced-motion: reduce)"><img src="/work/heronway/story.webp" alt="Story band: The experience band recolours navy, royal, plum and teal as each story takes the stage; the window art slides in." loading="lazy" width="960" height="600"></picture><figcaption><b>Story band</b>The experience band recolours navy, royal, plum and teal as each story takes the stage; the window art slides in.</figcaption></figure>
+    <figure><picture><source srcset="/work/heronway/map-poster.webp" media="(prefers-reduced-motion: reduce)"><img src="/work/heronway/map.webp" alt="Route map: Routes draw in on view. Hover or tab to an airport and its routes light up with a tooltip that stays in bounds." loading="lazy" width="960" height="480"></picture><figcaption><b>Route map</b>Routes draw in on view. Hover or tab to an airport and its routes light up with a tooltip that stays in bounds.</figcaption></figure>
+    <figure><picture><source srcset="/work/heronway/rewards-poster.webp" media="(prefers-reduced-motion: reduce)"><img src="/work/heronway/rewards.webp" alt="Rewards card and points: A sheen on hover, a 3D flip to the benefits, and a yearly points total that counts up as you drag." loading="lazy" width="960" height="475"></picture><figcaption><b>Rewards card and points</b>A sheen on hover, a 3D flip to the benefits, and a yearly points total that counts up as you drag.</figcaption></figure>
+    <figure><picture><source srcset="/work/heronway/booked-poster.webp" media="(prefers-reduced-motion: reduce)"><img src="/work/heronway/booked.webp" alt="Booked moment: The check draws, the headline rises and the boarding pass slides up. Calm on purpose: no confetti." loading="lazy" width="960" height="355"></picture><figcaption><b>Booked moment</b>The check draws, the headline rises and the boarding pass slides up. Calm on purpose: no confetti.</figcaption></figure>
+  </div>
+  <h3>How it’s built</h3>
+  <p>Framework-free: tokens compile to CSS variables, components are <code>hw-</code> classes, and one small script wires ripples, reveals, tabs, the booking panel’s airport search, date range and traveller stepper, the route map, the tier table, card flips, counters and page transitions. The Night flight theme swaps every token at once.</p>
+  <h3>Testing</h3>
+  <p>Done: automated browser runs of all three pages at laptop and phone width, checked for layout overflow and script errors. Planned: a five-person test of the booking flow measuring time to a first search, and whether the motion helps people find routes and tier benefits faster than a static version.</p>
+  <div class="links">
+    <button type="button" class="btn primary" data-open-site>View the full site ↗</button>
+    <a class="btn" href="/sections/heronway/index.html" target="_blank" rel="noopener">Open in a new tab ↗</a>
+  </div>
+  <p class="honest">Heronway is a fictional airline made for this portfolio. Routes, fares and figures are illustrative.</p>
+  </div>
+  </details>
+</article>
+
+<dialog class="site-pop" id="site-pop" aria-label="Heronway sample site">
+  <div class="pop-bar">
+    <strong>Heronway · sample site</strong>
+    <button type="button" data-page="index.html" aria-pressed="true">Home</button>
+    <button type="button" data-page="where-we-fly.html" aria-pressed="false">Where we fly</button>
+    <button type="button" data-page="rewards.html" aria-pressed="false">Rewards</button>
+    <a href="/sections/heronway/index.html" target="_blank" rel="noopener">New tab ↗</a>
+    <button type="button" data-close aria-label="Close the sample site">Close ✕</button>
+  </div>
+  <iframe title="Heronway sample site" src="about:blank"></iframe>
+</dialog>
+
 <article class="case" id="travel-2027" aria-labelledby="tr-h">
   <details class="case-fold">
   <summary class="case-summary">
@@ -342,6 +412,19 @@
     if(d&&!d.open){ d.open=true; requestAnimationFrame(function(){ el.scrollIntoView(); }); }
   }
   window.addEventListener('hashchange',openFromHash); openFromHash();
+})();
+</script>
+<script>
+(function(){
+  var d=document.getElementById('site-pop'); if(!d) return;
+  var f=d.querySelector('iframe'), base='/sections/heronway/';
+  function go(pg){ f.src=base+pg; d.querySelectorAll('[data-page]').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.page===pg?'true':'false'); }); }
+  document.querySelectorAll('[data-open-site]').forEach(function(b){ b.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); go('index.html'); if(d.showModal) d.showModal(); else window.open(base+'index.html','_blank'); }); });
+  d.querySelectorAll('[data-page]').forEach(function(b){ b.addEventListener('click', function(){ go(b.dataset.page); }); });
+  d.querySelector('[data-close]').addEventListener('click', function(){ d.close(); });
+  d.addEventListener('close', function(){ f.src='about:blank'; });
+  d.addEventListener('click', function(e){ if(e.target===d) d.close(); });
+  f.addEventListener('load', function(){ try{ var p=f.contentWindow.location.pathname.split('/').pop()||'index.html'; d.querySelectorAll('[data-page]').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.page===p?'true':'false'); }); }catch(e){} });
 })();
 </script>
 </body>

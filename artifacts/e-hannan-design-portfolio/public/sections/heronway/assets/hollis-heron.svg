@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 320" role="img" aria-labelledby="t"><title id="t">Hollis the heron, Heronway's captain mascot</title>
+<ellipse cx="120" cy="304" rx="70" ry="8" fill="#13294B" opacity=".12"></ellipse>
+<g stroke="#4A2E22" stroke-width="5" stroke-linecap="round" fill="none"><path d="M108 228 L104 300 L90 302"></path><path d="M132 228 L138 300 L152 302"></path></g>
+<path d="M60 170 C60 120 110 108 150 128 C186 146 196 196 168 222 C140 248 84 240 66 214 C60 202 60 186 60 170Z" fill="#8FA9BE"></path>
+<path d="M74 164 C96 138 150 138 176 170 C170 206 140 228 104 224 C84 214 72 192 74 164Z" fill="#13294B"></path>
+<path d="M92 176 C116 166 146 170 166 186" stroke="#2A4A7F" stroke-width="4" fill="none" stroke-linecap="round"></path>
+<path d="M140 132 C122 104 150 84 146 60 C143 40 124 34 124 34" stroke="#C9D8E3" stroke-width="22" fill="none" stroke-linecap="round"></path>
+<path d="M132 120 C150 112 156 126 148 136 L128 140Z" fill="#0B6B6B"></path>
+<circle cx="122" cy="40" r="22" fill="#E8EFF4"></circle>
+<path d="M104 30 C110 18 130 14 142 22 L134 30 C124 26 112 28 104 30Z" fill="#13294B"></path>
+<path d="M98 26 C86 22 76 26 70 34" stroke="#13294B" stroke-width="4" fill="none" stroke-linecap="round"></path>
+<path d="M140 40 L200 48 L140 52Z" fill="#C98A5B"></path>
+<circle cx="128" cy="38" r="5" fill="#121417"></circle><circle cx="130" cy="36" r="1.8" fill="#FFFFFF"></circle>
+</svg>

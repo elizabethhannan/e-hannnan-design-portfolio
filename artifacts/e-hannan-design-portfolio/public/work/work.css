@@ -191,3 +191,19 @@ details[open] > summary::after { transform: rotate(180deg); }
 .section-demo iframe { display: block; width: 100%; height: min(78vh, 760px); min-height: 480px; border: 0; }
 .demo-hint { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.06em; color: var(--ink-2); margin: 0.4rem 0 0; }
 @media (max-width: 760px) { .section-demo iframe { height: 72vh; min-height: 420px; } }
+
+/* Heronway case: motion gallery + site popup */
+.motion-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0 1.4rem; }
+.motion-grid figure { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.motion-grid img { display: block; width: 100%; height: auto; background: var(--paper-alt); }
+.motion-grid figcaption { padding: 0.7rem 0.9rem 0.85rem; font-size: 0.88rem; color: var(--ink-2); }
+.motion-grid figcaption b { display: block; color: var(--ink); font-size: 0.92rem; margin-bottom: 0.15rem; }
+.site-pop { width: min(1240px, 96vw); height: min(880px, 92vh); padding: 0; border: 0; border-radius: 16px; background: var(--paper); box-shadow: 0 30px 80px rgba(10, 26, 92, 0.35); overflow: hidden; }
+.site-pop::backdrop { background: rgba(10, 16, 32, 0.62); }
+.site-pop[open] { display: flex; flex-direction: column; }
+.site-pop .pop-bar { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--line); background: var(--card); }
+.site-pop .pop-bar strong { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; margin-right: auto; }
+.site-pop .pop-bar button, .site-pop .pop-bar a { font: 600 0.82rem/1 var(--sans); padding: 0.5rem 0.8rem; border-radius: 999px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); cursor: pointer; text-decoration: none; }
+.site-pop .pop-bar button[aria-pressed="true"] { background: var(--navy); color: #fff; border-color: var(--navy); }
+.site-pop iframe { flex: 1; width: 100%; border: 0; background: #FAF8F4; }
+@media (max-width: 700px) { .motion-grid { grid-template-columns: 1fr; } .site-pop { width: 100vw; height: 100dvh; max-width: none; max-height: none; border-radius: 0; } }
