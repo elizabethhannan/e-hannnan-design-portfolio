@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, noai, noimageai">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Design — Elizabeth Hannan</title>
+  <meta name="description" content="Interface and visual design case studies, labeled by the design styles each one uses.">
+  <link rel="icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Familjen+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/work/work.css">
+<style>.brand-logo{display:inline-flex;align-items:center;gap:0.6rem;line-height:1}.nav-logo{width:36px;height:36px;display:block;border-radius:5px;margin:-8px 0;flex:none}.brand-logo:focus-visible{outline:3px solid #0A1A5C;outline-offset:3px}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="bar">
+  <a class="bar-name brand-logo" href="/" aria-label="Elizabeth Hannan, home"><img src="/eh-logo-white.svg" alt="" class="nav-logo" width="36" height="36"><span>Home</span></a>
+  <nav aria-label="Site sections">
+      <a href="/work/ai-native.html">AI-Native &amp; Agentic</a>
+      <a href="/work/ui-design.html" aria-current="page">UI Design</a>
+      <a href="/work/shipped.html">Shipped Results</a>
+      <a href="/work/system.html">The System</a>
+      <a href="/work/leadership.html">Leadership Style</a>
+      <a href="/work/hxo.html">HXO &amp; AXO</a>
+      <a href="/work/career.html">Career</a>
+      <a href="/work/research.html">Research</a>
+  </nav>
+</div>
+<header class="top">
+  <iframe class="top-art" src="/visuals/flow-field.html" title="" aria-hidden="true" tabindex="-1" loading="lazy"></iframe>
+  <div class="top-inner">
+    <p class="label">Topic · UI design</p>
+    <h1>Interfaces built in the styles of 2027</h1>
+    <p class="lead">Interface and visual design work, each case labeled by the design styles it uses. Every case opens with scope, baseline, target, result and what was not achieved, then shows the design decisions and the build.</p>
+    <nav class="jump" aria-label="Cases on this page">
+      <a href="#travel-2027">Private Travel Company Site</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<article class="case" id="travel-2027" aria-labelledby="tr-h">
+  <details class="case-fold">
+  <summary class="case-summary">
+  <p class="practice">2027 design styles · coming soon</p>
+  <h2 id="tr-h">Private Travel Company Site</h2>
+  </summary>
+  <div class="case-body">
+  <p class="outcome">A private travel company's site, designed in the UI styles shaping 2027.</p>
+  <p class="client">Private client, unnamed · audience: design leaders at funded startups and enterprise AI companies</p>
+  <p>This case is in progress. Each design style it uses will be labeled here, with the live build.</p>
+  </div>
+  </details>
+</article>
+
+</main>
+<script>
+(function(){
+  function openFromHash(){
+    var id=decodeURIComponent(location.hash.slice(1)); if(!id) return;
+    var el=document.getElementById(id); if(!el) return;
+    var d=el.closest('article.case'); d=d&&d.querySelector('details.case-fold');
+    if(d&&!d.open){ d.open=true; requestAnimationFrame(function(){ el.scrollIntoView(); }); }
+  }
+  window.addEventListener('hashchange',openFromHash); openFromHash();
+})();
+</script>
+</body>
+</html>
