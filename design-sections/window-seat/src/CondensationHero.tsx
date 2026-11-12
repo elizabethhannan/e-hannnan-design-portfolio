@@ -17,73 +17,26 @@ const sweepOf = (p: number) => smooth(0.1, 0.48, p)
 const zoomOf = (p: number) => 1 + 0.35 * smooth(0.55, 0.92, p)
 const CLEARED_AT = 0.52
 
-/** cabin windows: 4 across on desktop, 3 on tablets, 2 on phones; the window we fly through is `focus` */
+/* the cabin is a photograph; its window glass was keyed out (scripts/key-cabin.py) */
+import cabin from './cabin-windows.json'
+const CABIN = new URL('./assets/cabin.webp', import.meta.url).href
+
+/** where the photo's windows land on a stage of w × h once the photo is cover-fit */
 function cabinLayout(w: number, h: number) {
-  const n = w > 1000 ? 4 : w > 700 ? 3 : 2
-  const ww = Math.min(w * (n === 2 ? 0.3 : 0.15), h * 0.27)
-  const wh = ww * 1.42
-  const step = ww * (n === 2 ? 1.5 : 1.62)
-  const cy = h * (w > 700 ? 0.41 : 0.43)
-  const x0 = w / 2 - (step * (n - 1)) / 2
-  const wins = Array.from({ length: n }, (_, i) => ({ x: x0 + i * step, y: cy, w: ww, h: wh, r: ww * 0.44 }))
-  const focus = n === 4 ? 1 : n === 3 ? 1 : 0
-  return { wins, focus }
-}
-const rrect = (x: number, y: number, w: number, h: number, r: number) =>
-  `M${x + r},${y}H${x + w - r}A${r},${r} 0 0 1 ${x + w},${y + r}V${y + h - r}A${r},${r} 0 0 1 ${x + w - r},${y + h}H${x + r}A${r},${r} 0 0 1 ${x},${y + h - r}V${y + r}A${r},${r} 0 0 1 ${x + r},${y}Z`
-
-function CabinWall({ w, h }: { w: number; h: number }) {
-  const { wins } = cabinLayout(w, h)
-  const holes = wins.map((o) => rrect(o.x - o.w / 2, o.y - o.h / 2, o.w, o.h, o.r)).join('')
-  const bez = 0.16
-  const rims = wins
-    .map((o) => {
-      const bw = o.w * (1 + bez * 2), bh = o.h + o.w * bez * 2
-      return rrect(o.x - bw / 2, o.y - bh / 2, bw, bh, o.r + o.w * bez) + rrect(o.x - o.w / 2, o.y - o.h / 2, o.w, o.h, o.r)
-    })
-    .join('')
-  return (
-    <svg className="cd-cabin" width={w} height={h} viewBox={`0 0 ${w} ${h}`} aria-hidden="true">
-      <defs>
-        <linearGradient id="ws-wall" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#E9E6DF" />
-          <stop offset="0.55" stopColor="#F2F0EB" />
-          <stop offset="1" stopColor="#DCD8CF" />
-        </linearGradient>
-        <linearGradient id="ws-rim" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#CFCBC2" />
-          <stop offset="1" stopColor="#F7F5F0" />
-        </linearGradient>
-      </defs>
-      <path d={`M0,0H${w}V${h}H0Z${holes}`} fill="url(#ws-wall)" fillRule="evenodd" />
-      <path d={rims} fill="url(#ws-rim)" fillRule="evenodd" />
-      {wins.map((o, i) => (
-        <path key={i} d={rrect(o.x - o.w / 2, o.y - o.h / 2, o.w, o.h, o.r)} fill="none" stroke="rgba(30,32,40,0.35)" strokeWidth={Math.max(2, o.w * 0.025)} />
-      ))}
-    </svg>
-  )
-}
-
-function usePrefersReducedMotion() {
-  const [reduced, setReduced] = useState(
-    () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches,
-  )
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const onChange = () => setReduced(mq.matches)
-    mq.addEventListener('change', onChange)
-    return () => mq.removeEventListener('change', onChange)
-  }, [])
-  return reduced
-}
-
-function loadImage(src: string) {
-  return new Promise<HTMLImageElement>((resolve, reject) => {
-    const img = new Image()
-    img.onload = () => resolve(img)
-    img.onerror = () => reject(new Error(`failed to load ${src}`))
-    img.src = src
-  })
+  const s = Math.max(w / cabin.width, h / cabin.height)
+  const ox = (w - cabin.width * s) / 2
+  const oy = (h - cabin.height * s) / 2
+  const wins = cabin.windows.map((o) => ({
+    x: ox + o.x * cabin.width * s,
+    y: oy + o.y * cabin.height * s,
+    w: o.w * cabin.width * s,
+    h: o.h * cabin.height * s,
+  }))
+  const visible = wins.filter((o) => o.x > 0 && o.x < w)
+  const pool = visible.length ? visible : wins
+  // fly through the window nearest the middle of the screen
+  const f = pool.reduce((a, b) => (Math.abs(b.x - w / 2) < Math.abs(a.x - w / 2) ? b : a))
+  return { wins, focus: wins.indexOf(f) }
 }
 
 export default function CondensationHero() {
@@ -373,7 +326,7 @@ export default function CondensationHero() {
             aria-hidden="true"
             style={size.w > 0 ? (() => { const l = cabinLayout(size.w, size.h); const f = l.wins[l.focus]; return { transformOrigin: `${f.x}px ${f.y}px` } })() : undefined}
           >
-            {size.w > 0 && <CabinWall w={size.w} h={size.h} />}
+            <img className="cd-cabin" src={CABIN} alt="" draggable={false} />
           </div>
 
           <div ref={bladeRef} className="cd-blade" aria-hidden="true">

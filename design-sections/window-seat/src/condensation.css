@@ -209,9 +209,14 @@ html.lenis, html.lenis body { height: auto; }
 
 /* ------------------------------------------------- Window Seat: the cabin */
 .cd-frame { box-shadow: none; transform-origin: 50% 50%; }
-.cd-cabin { position: absolute; inset: 0; display: block; filter: drop-shadow(0 0 30px rgba(20, 22, 40, 0.18)); will-change: transform; }
+.cd-cabin { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block; user-select: none; -webkit-user-drag: none; }
 .cd-blade { display: none; }
 .cd-head { bottom: clamp(70px, 7vw, 110px); font-size: clamp(48px, 6.4vw, 118px); }
 @media (max-width: 700px) {
   .cd-head { top: auto; bottom: 150px; font-size: clamp(42px, 11.5vw, 60px); }
 }
+
+/* type over the cabin photo */
+.cd-top { color: #f4f1ea; border-bottom-color: rgba(244, 241, 234, 0.25); text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45); }
+.cd-top__r { color: rgba(244, 241, 234, 0.8); }
+.cd-head { color: #f4f1ea; text-shadow: 0 2px 24px rgba(0, 0, 0, 0.5); }
