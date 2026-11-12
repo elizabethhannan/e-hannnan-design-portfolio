@@ -34,8 +34,9 @@ function cabinLayout(w: number, h: number) {
   }))
   const visible = wins.filter((o) => o.x > 0 && o.x < w)
   const pool = visible.length ? visible : wins
-  // fly through the window nearest the middle of the screen
-  const f = pool.reduce((a, b) => (Math.abs(b.x - w / 2) < Math.abs(a.x - w / 2) ? b : a))
+  // fly through the closest (largest) window that is fully on screen
+  const whole = pool.filter((o) => o.x - o.w / 2 >= 0 && o.x + o.w / 2 <= w)
+  const f = (whole.length ? whole : pool).reduce((a, b) => (b.w * b.h > a.w * a.h ? b : a))
   return { wins, focus: wins.indexOf(f) }
 }
 
