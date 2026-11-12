@@ -1,0 +1,316 @@
+/* Cyanotype — a sun print you make yourself */
+:root {
+  --cy-table: #cbc3ae;
+  --cy-ink: #1d2117;
+  --cy-soft: rgba(29, 33, 23, 0.66);
+  --cy-rule: rgba(29, 33, 23, 0.16);
+  --cy-paper: #f5f1e6;
+  --cy-blue: #173b8a;
+  --cy-lime: #d6f06b;
+  --cy-serif: 'Instrument Serif', 'Times New Roman', serif;
+  --cy-sans: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  --cy-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; background: var(--cy-table); color: var(--cy-ink); }
+body { font-family: var(--cy-sans); -webkit-font-smoothing: antialiased; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+.cy-track { position: relative; height: 420vh; }
+.cy-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  overflow: clip;
+  background-color: var(--cy-table);
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  isolation: isolate;
+}
+
+/* linen: woven grain + a soft window light */
+.cy-table {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(90% 70% at 70% 20%, rgba(255, 250, 235, 0.35), transparent 60%),
+    radial-gradient(120% 100% at 50% 50%, transparent 50%, rgba(60, 50, 30, 0.22)),
+    repeating-linear-gradient(0deg, rgba(90, 80, 55, 0.05) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(90, 80, 55, 0.045) 0 1px, transparent 1px 4px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .26 0 0 0 0 .15 0 0 0 .12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ------------------------------------------------------------ the sheet */
+.cy-paper { position: absolute; z-index: 2; transform-origin: 50% 50%; will-change: transform; }
+.cy-paper__in { position: absolute; inset: 0; }
+.cy-print {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-shadow: 0 1px 1px rgba(40, 34, 20, 0.2), 0 18px 40px -16px rgba(40, 34, 20, 0.45);
+}
+.cy-paper__in::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .47 0 0 0 0 .4 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* rinse tray + water (moves with the sheet) */
+.cy-tray {
+  position: absolute;
+  inset: -7% -9%;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #e9ecef, #d4dadf);
+  box-shadow: inset 0 0 0 6px #f3f5f7, inset 0 4px 20px rgba(30, 40, 50, 0.25), 0 24px 50px -20px rgba(30, 40, 50, 0.5);
+  opacity: 0;
+}
+.cy-water {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background:
+    radial-gradient(40% 12% at 30% 30%, rgba(255, 255, 255, 0.28), transparent 70%),
+    radial-gradient(30% 10% at 70% 60%, rgba(255, 255, 255, 0.2), transparent 70%),
+    linear-gradient(180deg, rgba(150, 185, 205, 0.42), rgba(95, 140, 170, 0.5));
+}
+.cy-waterbox { position: absolute; inset: -7% -9%; border-radius: 14px; overflow: hidden; z-index: 1; pointer-events: none; }
+.cy-water__surface {
+  position: absolute;
+  left: -50%;
+  top: -10px;
+  width: 200%;
+  height: 20px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='20'%3E%3Cpath d='M0 10 Q30 2 60 10 T120 10 V20 H0Z' fill='rgba(150,185,205,0.42)'/%3E%3Cpath d='M0 10 Q30 2 60 10 T120 10' fill='none' stroke='rgba(255,255,255,0.7)' stroke-width='1.5'/%3E%3C/svg%3E") repeat-x;
+  animation: cy-wave 2.4s linear infinite;
+}
+@keyframes cy-wave { to { transform: translateX(120px); } }
+/* the water sits over the sheet, the tray sits under it */
+.cy-paper__in { isolation: isolate; }
+.cy-tray { z-index: -1; }
+
+/* clothes pegs for the hung print */
+.cy-peg {
+  position: absolute;
+  top: -5%;
+  width: 5%;
+  height: 12%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #b88a55, #dcb27a 45%, #a47844);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+}
+.cy-peg::after { content: ''; position: absolute; left: 15%; right: 15%; top: 38%; height: 12%; background: #7c7f86; border-radius: 2px; }
+.cy-peg--l { left: 14%; }
+.cy-peg--r { right: 14%; }
+
+/* ------------------------------------------------------------ cuttings */
+.cy-specwrap { position: absolute; inset: 0; pointer-events: none; }
+.cy-spec {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: auto;
+  cursor: grab;
+  touch-action: none;
+  outline: none;
+}
+.cy-spec.is-turning { transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.cy-spec.is-lifted { cursor: grabbing; }
+.cy-spec__in { width: 100%; height: 100%; }
+.cy-spec svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(1px 3px 2px rgba(40, 34, 20, 0.3));
+  transition: filter 0.4s ease, transform 0.25s ease;
+}
+.cy-spec.is-lifted svg { filter: drop-shadow(10px 18px 10px rgba(40, 34, 20, 0.28)); transform: scale(1.04); }
+.cy-spec:focus-visible svg { filter: drop-shadow(0 0 0 var(--cy-blue)) drop-shadow(0 0 3px var(--cy-blue)); }
+[data-sun='on'] .cy-spec svg { filter: drop-shadow(5px 9px 1.5px rgba(40, 30, 10, 0.4)); }
+
+/* sunlight */
+.cy-sun {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: soft-light;
+  background:
+    radial-gradient(70% 60% at 75% 0%, rgba(255, 244, 200, 0.95), transparent 70%),
+    linear-gradient(115deg, transparent 30%, rgba(255, 240, 190, 0.35) 45%, transparent 60%);
+  transition: opacity 0.6s ease;
+}
+[data-sun='on'] .cy-sun { opacity: 1; }
+
+/* --------------------------------------------------------------- overlay */
+.cy-top, .cy-head, .cy-sub, .cy-dock, .cy-sunbtn, .cy-note, .cy-final { position: absolute; z-index: 40; }
+
+.cy-top {
+  top: 0;
+  left: clamp(16px, 2.4vw, 32px);
+  right: clamp(16px, 2.4vw, 32px);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: clamp(14px, 1.8vw, 22px) 0 12px;
+  border-bottom: 1px solid var(--cy-rule);
+  font: 500 10.5px/1 var(--cy-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.cy-top__c em { font-family: var(--cy-serif); font-size: 15px; letter-spacing: 0.02em; text-transform: none; }
+.cy-top__r { justify-self: end; opacity: 0.8; }
+.cy-top__r b { font-weight: 500; color: #fff; background: var(--cy-blue); padding: 2px 5px; font-variant-numeric: tabular-nums; }
+
+.cy-head {
+  left: clamp(16px, 3vw, 44px);
+  top: clamp(70px, 9vh, 110px);
+  margin: 0;
+  font-family: var(--cy-serif);
+  font-weight: 400;
+  font-size: clamp(54px, 6.6vw, 124px);
+  line-height: 0.86;
+  letter-spacing: -0.035em;
+  pointer-events: none;
+}
+.cy-head .ln { display: block; overflow: hidden; padding-bottom: 0.07em; }
+.cy-head .li { display: inline-block; }
+.cy-head em { font-style: italic; color: var(--cy-blue); }
+
+.cy-sub { left: clamp(16px, 3vw, 44px); top: calc(clamp(70px, 9vh, 110px) + clamp(54px, 6.6vw, 124px) * 1.9); width: min(300px, 26vw); pointer-events: none; }
+.cy-sub__in { margin: 0; font-size: 13px; line-height: 1.5; color: var(--cy-soft); }
+
+.cy-sunbtn {
+  left: clamp(16px, 3vw, 44px);
+  bottom: clamp(20px, 3vw, 40px);
+  width: 108px;
+  height: 108px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 40% 35%, #fff7c9, #f4d35e 55%, #e0a93a);
+  color: var(--cy-ink);
+  cursor: pointer;
+  touch-action: none;
+  -webkit-touch-callout: none;
+  box-shadow: 0 10px 30px -8px rgba(200, 140, 30, 0.7), 0 0 0 0 rgba(255, 220, 120, 0.5);
+  transition: box-shadow 0.4s ease, transform 0.2s ease;
+}
+.cy-sunbtn.is-on { transform: scale(0.96); box-shadow: 0 10px 40px -6px rgba(230, 160, 30, 0.9), 0 0 0 16px rgba(255, 220, 120, 0.25), 0 0 80px 20px rgba(255, 220, 120, 0.4); }
+.cy-sunbtn:focus-visible { outline: 2px solid var(--cy-blue); outline-offset: 4px; }
+.cy-sunbtn svg { position: absolute; inset: -8px; width: calc(100% + 16px); height: calc(100% + 16px); transform: rotate(-90deg); pointer-events: none; }
+.cy-sunbtn__track { fill: none; stroke: rgba(29, 33, 23, 0.12); stroke-width: 2; }
+.cy-sunbtn__ring { fill: none; stroke: var(--cy-blue); stroke-width: 3; stroke-dasharray: 1; stroke-dashoffset: 1; stroke-linecap: round; }
+.cy-sunbtn__label { position: relative; font: 500 10px/1.2 var(--cy-mono); letter-spacing: 0.12em; text-transform: uppercase; text-align: center; width: 70px; }
+
+.cy-dock { right: clamp(16px, 2.4vw, 32px); bottom: clamp(20px, 3vw, 40px); }
+.cy-dock__in {
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--cy-rule);
+  border-radius: 999px;
+  background: rgba(245, 241, 230, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.cy-dock button, .cy-final__btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--cy-ink);
+  font: 500 10.5px/1 var(--cy-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 11px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.cy-dock button:hover { background: var(--cy-lime); }
+.cy-dock button:focus-visible, .cy-final__btn:focus-visible { outline: 1px solid currentColor; outline-offset: 2px; }
+
+.cy-note {
+  left: 0;
+  right: 0;
+  bottom: clamp(26px, 6vh, 60px);
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  margin: 0 auto;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: rgba(245, 241, 230, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-align: center;
+  font: 400 clamp(20px, 2.2vw, 32px)/1.1 var(--cy-serif);
+  opacity: 0;
+  pointer-events: none;
+}
+.cy-note em { font-style: italic; color: var(--cy-blue); }
+
+.cy-final {
+  left: clamp(20px, 4vw, 64px);
+  bottom: clamp(24px, 6vh, 72px);
+  width: min(460px, 38vw);
+  color: var(--cy-paper);
+  opacity: 0;
+  pointer-events: none;
+}
+.cy-final__kicker { margin: 0 0 14px; font: 500 10.5px/1.4 var(--cy-mono); letter-spacing: 0.16em; text-transform: uppercase; }
+.cy-final__kicker::before { content: ''; display: inline-block; width: 8px; height: 8px; margin-right: 10px; background: var(--cy-lime); vertical-align: 0; }
+.cy-final__title { margin: 0; font: 400 clamp(52px, 6.4vw, 118px)/0.86 var(--cy-serif); letter-spacing: -0.04em; }
+.cy-final__title em { font-style: italic; color: #8fb0ff; }
+.cy-final__body { margin: 18px 0 22px; font-size: 14px; line-height: 1.5; color: rgba(245, 241, 230, 0.75); }
+.cy-final__row { display: flex; flex-wrap: wrap; gap: 8px; }
+.cy-final__btn { color: var(--cy-paper); border: 1px solid rgba(245, 241, 230, 0.5); padding: 13px 18px; }
+.cy-final__btn:hover { background: var(--cy-lime); border-color: var(--cy-lime); color: var(--cy-ink); }
+.cy-final__btn--solid { background: var(--cy-paper); color: var(--cy-blue); border-color: var(--cy-paper); }
+.cy-final__btn:disabled { opacity: 0.6; cursor: default; }
+
+/* ----------------------------------------------------------- responsive */
+@media (max-width: 699px) {
+  .cy-top { grid-template-columns: 1fr auto; }
+  .cy-top__c { display: none; }
+  .cy-head { top: 54px; font-size: clamp(40px, 11vw, 56px); }
+  .cy-head .ln:first-child { display: inline-block; margin-right: 0.22em; }
+  .cy-head .ln { display: inline-block; }
+  .cy-sub { top: auto; bottom: 104px; left: 108px; right: 16px; width: auto; }
+  .cy-sub__in { font-size: 11.5px; line-height: 1.4; }
+  .cy-sunbtn { left: 16px; bottom: 18px; width: 80px; height: 80px; }
+  .cy-sunbtn__label { font-size: 9px; width: 56px; }
+  .cy-dock { left: 112px; right: 12px; bottom: 30px; display: flex; justify-content: flex-end; }
+  .cy-dock button { padding: 11px 10px; font-size: 9.5px; letter-spacing: 0.1em; }
+  .cy-final { left: 20px; right: 20px; width: auto; bottom: 22px; }
+  .cy-final__title { font-size: clamp(40px, 11vw, 56px); }
+  .cy-final__body { font-size: 12.5px; margin: 10px 0 14px; }
+}
+@media (min-width: 700px) and (max-width: 1000px) {
+  .cy-sub { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cy-water__surface { animation: none; }
+  .cy-spec.is-turning { transition: none; }
+  .cy-sun { transition: none; }
+}
