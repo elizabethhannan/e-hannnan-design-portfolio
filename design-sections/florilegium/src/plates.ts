@@ -20,16 +20,16 @@ export type Plate = {
 
 // Photographs: generated for this portfolio, cropped to 3:4 WebP.
 export const PLATES: Plate[] = [
-  { src: stem01, time: '05:40', title: 'Anemone, first light', note: 'Window, east', tint: '#c9cdd2' },
-  { src: stem02, time: '07:05', title: 'The boardwalk at low tide', note: 'Dune trail', tint: '#b9b29c' },
-  { src: stem03, time: '08:30', title: 'Up the ridge trail', note: 'Trailhead', tint: '#5d5a44' },
-  { src: stem04, time: '10:15', title: 'Poppy at the front desk', note: 'Lobby', tint: '#d8d3cb' },
-  { src: stem05, time: '11:50', title: 'The cove, all to ourselves', note: 'Beach', tint: '#cfc8bd' },
-  { src: stem06, time: '13:10', title: 'Pinot among the vines', note: 'Wine country', tint: '#8a8a5e' },
-  { src: stem07, time: '14:45', title: 'A bath with a view', note: 'Suite, upstairs', tint: '#cdbba4' },
-  { src: stem08, time: '18:05', title: 'Sunset, then dinner', note: 'The terrace', tint: '#c98a74' },
-  { src: stem09, time: '20:10', title: 'Piano in the lobby', note: 'The bar', tint: '#2b231c' },
-  { src: stem10, time: '21:15', title: 'Through the keyhole', note: 'Your room', tint: '#141210', focus: '50% 50%' },
+  { src: stem01, time: '05:40', title: 'Anemone, first light', note: 'Window, east', tint: '#8a8f94' },
+  { src: stem02, time: '07:05', title: 'The boardwalk at low tide', note: 'Dune trail', tint: '#807b6d' },
+  { src: stem03, time: '08:30', title: 'Up the ridge trail', note: 'Trailhead', tint: '#6c6a5d' },
+  { src: stem04, time: '10:15', title: 'Poppy at the front desk', note: 'Lobby', tint: '#8d8173' },
+  { src: stem05, time: '11:50', title: 'The cove, all to ourselves', note: 'Beach', tint: '#a8a29a' },
+  { src: stem06, time: '13:10', title: 'Pinot among the vines', note: 'Wine country', tint: '#8a8264' },
+  { src: stem07, time: '14:45', title: 'A bath with a view', note: 'Suite, upstairs', tint: '#8b745b' },
+  { src: stem08, time: '18:05', title: 'Sunset, then dinner', note: 'The terrace', tint: '#885145' },
+  { src: stem09, time: '20:10', title: 'Piano in the lobby', note: 'The bar', tint: '#3a2719' },
+  { src: stem10, time: '21:15', title: 'Through the keyhole', note: 'Your room', tint: '#0a0804', focus: '50% 50%' },
 ]
 
 export const toMinutes = (t: string) => {
