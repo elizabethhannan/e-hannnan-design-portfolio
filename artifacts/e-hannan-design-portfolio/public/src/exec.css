@@ -335,8 +335,8 @@ details > summary::-webkit-details-marker { display: none; }
 .hero .hero-links .btn:hover, .hero .hero-links .btn-primary:hover { background: #fff !important; color: #0A1A5C !important; border-color: #fff !important; }
 
 /* Hero background art: sit lower, near the bottom edge, under the text */
-.hero .thought-background-frame { transform: translateY(12%); }
-@media (max-width: 900px) { .hero .thought-background-frame { transform: translateY(28px); } }
+/* Hero background: Flow Field fills the whole header */
+.hero .thought-background-frame { transform: none; }
 
 /* Right-arrow circle button (matches the "Read the full story" arrow) */
 .x-more.x-more-arrow { display: inline-flex !important; align-items: center; gap: 0.6rem; }
