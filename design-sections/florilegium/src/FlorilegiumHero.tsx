@@ -228,12 +228,12 @@ export default function FlorilegiumHero() {
 
   return (
     <main className="fl-root" data-ready={ready}>
-      <section ref={trackRef} className="fl-track" style={{ height: `${N * 42 + 170}vh` }} aria-label="Florilegium — one day away, ten moments">
+      <section ref={trackRef} className="fl-track" style={{ height: `${N * 42 + 170}vh` }} aria-label="Resort Florilegium — one day away, ten moments">
         <div ref={stageRef} className="fl-stage">
           <div ref={chromeRef} className="fl-chrome">
             <header className="fl-top">
               <span className="fl-top__l">(Archive) <em>Vol. 01</em></span>
-              <span className="fl-logo">Florilegium</span>
+              <span className="fl-logo">Resort Florilegium</span>
               <span className="fl-top__r">Ten moments · One day</span>
             </header>
 
@@ -291,7 +291,7 @@ export default function FlorilegiumHero() {
           <div ref={finalRef} className="fl-final">
             <p className="fl-final__kicker">Plate 10 · 21:15 · Your room</p>
             <h1 className="fl-final__title">Plan your Day away<br /><em>Plan your Holiday here.</em></h1>
-            <p className="fl-final__body">Florilegium, Vol. 01 — ten moments from a single day away: the trail, the beach, the vines and the room waiting at the end of it.</p>
+            <p className="fl-final__body">Resort Florilegium, Vol. 01 — ten moments from a single day away: the trail, the beach, the vines and the room waiting at the end of it.</p>
             <button type="button" className="fl-final__btn" onClick={() => scrollToProgress(0)}>
               Back to first light <span aria-hidden="true">↑</span>
             </button>

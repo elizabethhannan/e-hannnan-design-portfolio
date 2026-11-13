@@ -10,7 +10,7 @@ const valley = new URL('./assets/valley.webp', import.meta.url).href
 
 const HORIZONS = { '7d': { label: '7 days', n: 7 }, '30d': { label: '30 days', n: 14 }, '90d': { label: '90 days', n: 22 } } as const
 type Horizon = keyof typeof HORIZONS
-const LINES = ['Predict the quietest week in October', 'Predict room rates over the holidays', 'Predict which trail is dry by Saturday', 'Predict how full the cove gets at noon']
+const LINES = ['Predict aircraft orders next quarter', 'Predict fleet demand by region for 2028', 'Predict which fleet buyers will convert', 'Predict charter flight hours over the holidays']
 
 function useReduced() {
   const [r, setR] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches)
@@ -182,9 +182,9 @@ export default function App() {
   const onFile = (e: ChangeEvent<HTMLInputElement>) => { readFile(e.target.files?.[0]); e.target.value = '' }
   const onDrop = (e: DragEvent) => { e.preventDefault(); setDragging(false); readFile(e.dataTransfer.files?.[0]) }
   const sample = () => {
-    const rows = ['week,bookings', ...synth('sample', 36).map((v, i) => `${i + 1},${v.toFixed(1)}`)]
-    setData({ ...parseCsv(rows.join('\n'))!, file: 'sample-bookings.csv' })
-    setValue('Predict weekly bookings')
+    const rows = ['month,orders', ...synth('sample', 36).map((v, i) => `${i + 1},${v.toFixed(1)}`)]
+    setData({ ...parseCsv(rows.join('\n'))!, file: 'sample-aircraft-orders.csv' })
+    setValue('Predict monthly aircraft orders')
     setError('')
   }
 
@@ -230,7 +230,7 @@ export default function App() {
       <header className="hz-top">
         <div className="hz-model">
           <button type="button" aria-haspopup="listbox" aria-expanded={menu} onClick={() => setMenu((m) => !m)}>
-            <span className="hz-dot" /> Compass-1 · {HORIZONS[horizon].label}
+            <span className="hz-dot" /> Kestrel-1 · {HORIZONS[horizon].label}
             <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" /></svg>
           </button>
           <ul role="listbox" className={menu ? 'is-open' : ''} aria-label="Forecast horizon">
@@ -241,13 +241,13 @@ export default function App() {
             ))}
           </ul>
         </div>
-        <a className="hz-brand" href="#">ARBORETUM</a>
-        <a className="hz-api" href="#"><span>Plan a stay</span><i aria-hidden="true">›</i></a>
+        <a className="hz-brand" href="#">KESTREL</a>
+        <a className="hz-api" href="#"><span>Book a demo flight</span><i aria-hidden="true">›</i></a>
       </header>
 
       <section className="hz-hero">
-        <p className="hz-eyebrow">The trip forecaster</p>
-        <h1>Know before you go.</h1>
+        <p className="hz-eyebrow">The fleet sales forecaster</p>
+        <h1>See demand before it lands.</h1>
 
         <form className="hz-panel" onSubmit={submit}>
           <i className="hz-c hz-c1" /><i className="hz-c hz-c2" /><i className="hz-c hz-c3" /><i className="hz-c hz-c4" />
@@ -255,7 +255,7 @@ export default function App() {
             <textarea
               rows={2}
               value={value}
-              aria-label="What should Compass forecast for your trip?"
+              aria-label="What should Kestrel forecast for your fleet sales?"
               onChange={(e) => setValue(e.target.value)}
               onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); run(value) } }}
             />
@@ -282,7 +282,7 @@ export default function App() {
           {error && <p className="hz-err" role="alert">{error}</p>}
         </form>
 
-        <p className="hz-tag">Forecasts for every stay.<br />No guesswork. No crowds.</p>
+        <p className="hz-tag">Forecasts for autonomous aircraft sales.<br />No pilot. No guesswork.</p>
       </section>
 
       {series && chart && (

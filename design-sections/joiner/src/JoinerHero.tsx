@@ -12,6 +12,8 @@ const SEED = 1987
 const ROLL = 36
 const MOBILE = 700
 const JOINED_AT = 0.48
+const FOCUS_X = 0.47 // bench on the left, house on the right
+const FOCUS_Y = 0.8 // where the zoom lands, 0 = top of the photo, 1 = bottom (bench and house)
 
 const smooth = (a: number, b: number, v: number) => {
   const t = Math.max(0, Math.min(1, (v - a) / (b - a)))
@@ -264,11 +266,15 @@ export default function JoinerHero() {
       const cover = () => {
         const r = boxRect.current
         const w = stage.clientWidth, h = stage.clientHeight
-        return {
-          s: Math.max(w / r.w, h / r.h) * 1.02,
-          x: w / 2 - (r.x + r.w / 2),
-          y: h / 2 - (r.y + r.h / 2),
-        }
+        // on tall screens the photo already fills the height, so zoom further to reach the bench and house
+        const s = Math.max(w / r.w, h / r.h) * (w < h ? 1.6 : 1.02)
+        // zoom in on the bench and the house (low in the photo), not the treetop
+        const cx = r.x + r.w / 2, cy = r.y + r.h / 2
+        const y = h / 2 - cy - (FOCUS_Y - 0.5) * r.h * s
+        const yMin = h - (r.h * s) / 2 - cy // keep the photo's bottom edge on the stage's bottom edge
+        const x = w / 2 - cx - (FOCUS_X - 0.5) * r.w * s
+        const xMin = w - (r.w * s) / 2 - cx, xMax = (r.w * s) / 2 - cx // never show past the photo's sides
+        return { s, x: Math.min(xMax, Math.max(x, xMin)), y: Math.max(y, yMin) }
       }
       const tl = gsap.timeline({ paused: true, defaults: { ease: 'none' } })
       tl.to(target, { p: 1, duration: 1, onUpdate: () => apply(target.p) }, 0)

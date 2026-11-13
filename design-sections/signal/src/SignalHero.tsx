@@ -90,8 +90,8 @@ export default function SignalHero() {
         const stage = stageRef.current
         const canvas = canvasRef.current
         if (!alive || !stage || !canvas) return
-        const wordDesk = wordmark(['Arboretum'])
-        const wordMob = wordmark(['The', 'Arboretum'])
+        const wordDesk = wordmark(['Second', 'Pasture'])
+        const wordMob = wordmark(['Second', 'Pasture'])
         const scenes: Scene[] = [
           {
             source: horse,
@@ -305,7 +305,7 @@ export default function SignalHero() {
 
   return (
     <main className="sg-root" data-state={state}>
-      <section ref={trackRef} className="sg-track" aria-label="Signal and Soil — The Arboretum estate typed in glyphs">
+      <section ref={trackRef} className="sg-track" aria-label="Second Pasture — a horse rescue estate typed in glyphs">
         <div ref={stageRef} className="sg-stage">
           <div className="sg-bg" aria-hidden="true">
             <div className="sg-bg__in">
@@ -320,21 +320,21 @@ export default function SignalHero() {
             ref={canvasRef}
             className="sg-glyphs"
             role="img"
-            aria-label="A horse, then poppies, then the word Arboretum, each typed out of glowing text characters"
+            aria-label="A horse, then poppies, then the words Second Pasture, each typed out of glowing text characters"
           />
           <div className="sg-grain" aria-hidden="true" />
 
           <header className="sg-top">
-            <span>The Arboretum</span>
-            <span className="sg-top__c">Signal <em>&amp;</em> Soil</span>
+            <span>Second Pasture · 501(c)(3)</span>
+            <span className="sg-top__c">Second <em>Pasture</em></span>
             <span className="sg-top__r">
               Glyphs <b ref={countRef}>00000</b>
             </span>
           </header>
 
           <h1 className="sg-head">
-            <span className="ln"><span className="li">Old ground,</span></span>
-            <span className="ln"><span className="li"><em>new signal.</em></span></span>
+            <span className="ln"><span className="li">Saved at auction,</span></span>
+            <span className="ln"><span className="li"><em>home for good.</em></span></span>
           </h1>
 
           <div className="sg-sub">
@@ -342,14 +342,14 @@ export default function SignalHero() {
               {state === 'error'
                 ? 'Some images didn’t load. Check your connection and reload.'
                 : isTouch
-                  ? 'An old estate, reached by modern means. Drag through the glyphs to scatter them; tap to send a pulse.'
-                  : 'An old estate, reached by modern means. Move through the glyphs to scatter them; click to send a pulse.'}
+                  ? 'A horse rescue on a sweeping estate, funded by luxury barn rentals. Drag through the glyphs to scatter them; tap to send a pulse.'
+                  : 'A horse rescue on a sweeping estate, funded by luxury barn rentals. Move through the glyphs to scatter them; click to send a pulse.'}
             </p>
           </div>
 
-          <p className="sg-ch sg-ch--1"><span className="sg-ch__in">I — The horse that knows the trail</span></p>
-          <p className="sg-ch sg-ch--2" aria-hidden="true">II — The poppies that came back</p>
-          <p className="sg-ch sg-ch--3" aria-hidden="true">III — The name on the gate</p>
+          <p className="sg-ch sg-ch--1"><span className="sg-ch__in">I — The horse we outbid at auction</span></p>
+          <p className="sg-ch sg-ch--2" aria-hidden="true">II — The pasture that waited for her</p>
+          <p className="sg-ch sg-ch--3" aria-hidden="true">III — The name on the barn</p>
 
           <div className="sg-dock">
             <div className="sg-dock__in">
@@ -359,12 +359,12 @@ export default function SignalHero() {
           </div>
 
           <div className="sg-final">
-            <p className="sg-final__kicker">The Arboretum · the estate</p>
+            <p className="sg-final__kicker">Second Pasture · horse rescue, a 501(c)(3)</p>
             <h2 className="sg-final__title">
-              The past, <br />
-              <em>in focus.</em>
+              Every stall <br />
+              <em>saves another.</em>
             </h2>
-            <p className="sg-final__body">A farm estate kept by hand for a hundred summers, and booked by guests who still sign the old guestbook.</p>
+            <p className="sg-final__body">Board your horse in our luxury barn and the stall fees fund the next rescue from auction. Every horse we save gets a pasture for life.</p>
             <button type="button" className="sg-final__btn" onClick={() => scrollToProgress(0)}>
               Scatter again <span aria-hidden="true">↑</span>
             </button>

@@ -10,21 +10,21 @@ import type { Orb, OrbState, Palette } from './Orb'
    too if you turn the sound on. */
 
 const VOICES: Record<string, { label: string; palette: Palette; dot: string }> = {
-  ember: { label: 'Ember', palette: ['#ff3d7f', '#8a5cff', '#ffd9b0'], dot: 'linear-gradient(135deg,#ff3d7f,#8a5cff)' },
-  tide: { label: 'Tide', palette: ['#2b5cff', '#36e0ff', '#dff8ff'], dot: 'linear-gradient(135deg,#2b5cff,#36e0ff)' },
-  moss: { label: 'Moss', palette: ['#1aa36b', '#d8f05a', '#f2ffe0'], dot: 'linear-gradient(135deg,#1aa36b,#d8f05a)' },
+  cos: { label: 'Chief of Staff', palette: ['#00a6c8', '#36e0ff', '#e0fbff'], dot: 'linear-gradient(135deg,#00a6c8,#36e0ff)' },
+  cro: { label: 'Revenue Officer', palette: ['#138a5c', '#4fe0a0', '#e6fff3'], dot: 'linear-gradient(135deg,#138a5c,#4fe0a0)' },
+  ed: { label: 'Executive Director', palette: ['#5b3df5', '#b8a6ff', '#f1ecff'], dot: 'linear-gradient(135deg,#5b3df5,#b8a6ff)' },
 }
 type Voice = keyof typeof VOICES
 
-const SAMPLES = ['Book a table for two at sunset', 'Is the ridge trail open today?', 'What time does the piano start?']
+const SAMPLES = ['Move my 3 pm with the Hartwell family office to Friday', 'Where is the pipeline this quarter?', 'Draft a reply to opposing counsel on the Reyes matter']
 const REPLIES: [RegExp, string][] = [
-  [/table|dinner|book|restaurant|eat/i, 'Done: a table for two on the terrace at 7:40, ten minutes before sunset. I’ve asked for the corner one, away from the heaters.'],
-  [/trail|hike|ridge|walk/i, 'The ridge trail is open and dry this morning. Go before eleven; the boardwalk loop is the shady way back.'],
-  [/piano|music|bar|lobby/i, 'The piano starts at eight in the lobby bar. Requests are welcome after nine.'],
-  [/spa|bath|massage|pool/i, 'There’s an opening at four for a sixty-minute massage. Want me to hold it and send towels up after?'],
-  [/hello|hi|hey/i, 'Good evening. I’m the house concierge. Ask me for a table, a trail, a late check-out, anything at all.'],
+  [/move|meeting|calendar|schedule|resched/i, 'Done: the Hartwell family office is now Friday at 3 pm. I sent them the new invite and moved your prep block to Thursday afternoon.'],
+  [/pipeline|revenue|forecast|quarter|deal/i, 'The pipeline is at $18.4M for the quarter, with three mandates in final review. The largest decision is due Thursday.'],
+  [/counsel|draft|reply|matter|contract/i, 'I drafted a reply asking opposing counsel for a two-week extension on discovery, in your usual tone. It is in your inbox for review. Nothing goes out until you approve it.'],
+  [/return|fund|portfolio|performance/i, 'The growth fund returned 4.2% last quarter after fees, against 3.1% for its benchmark. Want the one-page summary sent to the partners?'],
+  [/hello|hi|hey/i, 'Good morning. I am your concierge. Ask me to move a meeting, brief you on a matter or pull the numbers.'],
 ]
-const reply = (q: string) => REPLIES.find(([r]) => r.test(q))?.[1] ?? 'Leave it with me. I’ll check with the front desk and send the details to your room in a few minutes.'
+const reply = (q: string) => REPLIES.find(([r]) => r.test(q))?.[1] ?? 'Leave it with me. I will pull that together and send it to you and your chief of staff within the hour.'
 
 type Phase = OrbState
 type Rec = { lang: string; interimResults: boolean; continuous: boolean; start(): void; stop(): void; abort(): void; onresult: ((e: { results: ArrayLike<ArrayLike<{ transcript: string }> & { isFinal: boolean }> }) => void) | null; onend: (() => void) | null; onerror: (() => void) | null }
@@ -47,7 +47,7 @@ export default function App() {
   const [noGL, setNoGL] = useState(false)
   const [phase, setPhaseState] = useState<Phase>('idle')
   const phaseRef = useRef<Phase>('idle')
-  const [voice, setVoice] = useState<Voice>('ember')
+  const [voice, setVoice] = useState<Voice>('cos')
   const [sound, setSound] = useState(false)
   const [heard, setHeard] = useState('')
   const [said, setSaid] = useState('')
@@ -71,10 +71,20 @@ export default function App() {
   }
 
   useEffect(() => {
-    const o = createOrb(canvas.current!)
+    const c = canvas.current!
+    const o = createOrb(c)
     if (!o) setNoGL(true)
     orb.current = o
-    return () => o?.dispose()
+    // if the browser drops the WebGL canvas (too many on one page), show the CSS orb instead
+    const lost = (e: Event) => { e.preventDefault(); setNoGL(true) }
+    const back = () => setNoGL(false)
+    c.addEventListener('webglcontextlost', lost)
+    c.addEventListener('webglcontextrestored', back)
+    return () => {
+      c.removeEventListener('webglcontextlost', lost)
+      c.removeEventListener('webglcontextrestored', back)
+      o?.dispose()
+    }
   }, [])
   useEffect(() => orb.current?.setPalette(VOICES[voice].palette), [voice, noGL])
   useEffect(() => orb.current?.setReduced(reduced), [reduced, noGL])
@@ -103,7 +113,7 @@ export default function App() {
       if (sound && 'speechSynthesis' in window) {
         const u = new SpeechSynthesisUtterance(text)
         u.rate = 1.02
-        u.pitch = voice === 'tide' ? 0.9 : voice === 'moss' ? 1.05 : 1.15
+        u.pitch = voice === 'cro' ? 0.9 : voice === 'ed' ? 1.05 : 1.15
         window.speechSynthesis.cancel()
         window.speechSynthesis.speak(u)
       }
@@ -275,23 +285,23 @@ export default function App() {
       <header className="mm-nav">
         <a className="mm-logo" href="/">
           <span aria-hidden="true">{[0, 1, 2, 3, 4].map((i) => <i key={i} style={{ animationDelay: `${i * 0.12}s` }} />)}</span>
-          concierge
+          oniit concierge
         </a>
         <nav aria-label="Main">
-          <a href="#">Your stay</a>
-          <a href="#">Dining</a>
-          <a href="#">Spa</a>
+          <a href="#">Calendar</a>
+          <a href="#">Portfolio</a>
+          <a href="#">Matters</a>
         </nav>
-        <a className="mm-dl" href="#"><span>Book a stay</span></a>
+        <a className="mm-dl" href="#"><span>Request access</span></a>
       </header>
 
       <section className="mm-hero">
         <h1>Just ask.</h1>
-        <p>A voice concierge that knows the house, the trails and the kitchen. Ask for anything during your stay.</p>
+        <p>A voice concierge for investment firms, family offices and law practices. It knows your calendar, your portfolio and your matters.</p>
       </section>
 
       <div className="mm-stage">
-        <canvas ref={canvas} className="mm-orb" role="img" aria-label={`Voice orb, ${status}`} onClick={toggle} />
+        <canvas ref={canvas} className="mm-orb" style={noGL ? { visibility: 'hidden' } : undefined} role="img" aria-label={`Voice orb, ${status}`} onClick={toggle} />
         {noGL && <div className="mm-orb-css" aria-hidden="true" />}
         <p className="mm-status" aria-live="polite"><i />{status}</p>
       </div>

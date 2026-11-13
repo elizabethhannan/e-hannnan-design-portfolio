@@ -101,9 +101,9 @@ export function createOrb(canvas: HTMLCanvasElement) {
     uFreq: { value: 1.3 },
     uTwist: { value: 0 },
     uGlow: { value: 0 },
-    uA: { value: new THREE.Color('#ff3d7f') },
-    uB: { value: new THREE.Color('#8a5cff') },
-    uC: { value: new THREE.Color('#ffe1f0') },
+    uA: { value: new THREE.Color('#00a6c8') },
+    uB: { value: new THREE.Color('#36e0ff') },
+    uC: { value: new THREE.Color('#e0fbff') },
   }
   const mat = new THREE.ShaderMaterial({ vertexShader: VERT, fragmentShader: FRAG, uniforms })
   const geo = new THREE.IcosahedronGeometry(1, 48)
@@ -112,6 +112,7 @@ export function createOrb(canvas: HTMLCanvasElement) {
 
   const resize = () => {
     const w = canvas.clientWidth, h = canvas.clientHeight
+    if (w < 2 || h < 2) return // not laid out yet (e.g. a lazy iframe); the observer calls again
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2))
     renderer.setSize(w, h, false)
     camera.aspect = w / h

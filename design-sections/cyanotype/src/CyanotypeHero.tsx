@@ -467,22 +467,22 @@ export default function CyanotypeHero() {
 
           <header className="cy-top">
             <span>The Arboretum</span>
-            <span className="cy-top__c">Sun prints <em>Workshop</em></span>
+            <span className="cy-top__c">Garden workshop <em>Sun prints</em></span>
             <span className="cy-top__r">
               Sun <b ref={sunRef}>00 min</b>
             </span>
           </header>
 
           <h1 className="cy-head">
-            <span className="ln"><span className="li">Printed by</span></span>
-            <span className="ln"><span className="li"><em>the sun.</em></span></span>
+            <span className="ln"><span className="li">Your garden,</span></span>
+            <span className="ln"><span className="li"><em>in blue.</em></span></span>
           </h1>
 
           <div className="cy-sub">
             <p className="cy-sub__in">
               {isTouch
-                ? 'Drag the cuttings onto the coated paper, tap one to turn it, then hold the sun. Whatever you cover stays white.'
-                : 'Drag the cuttings onto the coated paper, click one to turn it, then hold the sun. Whatever you cover stays white.'}
+                ? 'Lay cuttings from our garden on the coated paper and tap one to turn it. Then hold the sun. Every leaf you cover prints white.'
+                : 'Lay cuttings from our garden on the coated paper and click one to turn it. Then hold the sun. Every leaf you cover prints white.'}
             </p>
           </div>
 
@@ -518,20 +518,20 @@ export default function CyanotypeHero() {
           </div>
 
           <p className="cy-note" aria-hidden="true">
-            Into cold water. <em>The yellow runs off; the blue stays.</em>
+            Rinse it in cold water. <em>The yellow washes away and the blue stays.</em>
           </p>
 
           <div className="cy-final">
-            <p className="cy-final__kicker">The Arboretum · garden workshops</p>
+            <p className="cy-final__kicker">The Arboretum · Saturday garden workshop</p>
             <h2 className="cy-final__title">
-              Yours, in <br />
-              <em>Prussian blue.</em>
+              A print <br />
+              <em>to take home.</em>
             </h2>
             <p className="cy-final__body">
               {autoExposed
-                ? `Your sheet went in unexposed, so we gave it ${AUTO_SECONDS} minutes of sun. `
+                ? `Your sheet had no sun yet, so we gave it ${AUTO_SECONDS} minutes. `
                 : ''}
-              Iron salts, paper and an afternoon on the terrace. Every guest takes one sheet of the garden home.
+              Cuttings from the estate garden, iron-coated paper and an afternoon on the terrace. Every guest leaves with one print of the garden.
             </p>
             <div className="cy-final__row">
               <button type="button" className="cy-final__btn cy-final__btn--solid" onClick={save} disabled={saving}>

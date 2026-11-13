@@ -203,25 +203,29 @@ function oak(): Specimen {
   }
 }
 
-export const SPECIMENS: Specimen[] = [fern(), ginkgo(), umbel(), daisy(), grass(), maidenhair(), oak()]
+const fern2: Specimen = { ...fern(), id: 'fern-2' } // a second lady fern, so the print can hold two
+
+export const SPECIMENS: Specimen[] = [fern(), ginkgo(), umbel(), daisy(), grass(), maidenhair(), oak(), fern2]
 
 /** where each cutting starts: u/v in paper heights from the paper centre, size in paper heights */
 export type Place = { u: number; v: number; rot: number; size: number }
 export const START_DESK: Place[] = [
-  { u: -0.13, v: 0.02, rot: -9, size: 0.66 }, // fern, on the paper
-  { u: 0.16, v: -0.25, rot: 14, size: 0.3 }, // ginkgo, on the paper
-  { u: 0.14, v: 0.22, rot: -6, size: 0.36 }, // umbel, on the paper
+  { u: -0.2, v: 0.03, rot: -9, size: 0.64 }, // fern, on the paper
+  { u: 0.2, v: -0.27, rot: 14, size: 0.28 }, // ginkgo, on the paper
+  { u: 0.21, v: 0.22, rot: -6, size: 0.34 }, // umbel, on the paper
   { u: -0.98, v: 0.24, rot: 18, size: 0.42 }, // daisy
   { u: 0.78, v: 0.06, rot: -12, size: 0.6 }, // grass
   { u: 0.72, v: -0.3, rot: 22, size: 0.36 }, // maidenhair
   { u: -0.66, v: 0.36, rot: -24, size: 0.34 }, // oak
+  { u: -0.01, v: 0.06, rot: 11, size: 0.56 }, // second fern, on the paper
 ]
 export const START_MOBILE: Place[] = [
-  { u: -0.12, v: 0.02, rot: -9, size: 0.66 },
-  { u: 0.16, v: -0.25, rot: 14, size: 0.3 },
-  { u: 0.14, v: 0.22, rot: -6, size: 0.36 },
+  { u: -0.19, v: 0.03, rot: -9, size: 0.64 },
+  { u: 0.2, v: -0.27, rot: 14, size: 0.28 },
+  { u: 0.21, v: 0.22, rot: -6, size: 0.34 },
   { u: -0.34, v: 0.8, rot: 70, size: 0.34 },
   { u: 0.36, v: 0.84, rot: -76, size: 0.46 },
   { u: 0.04, v: 0.86, rot: 12, size: 0.28 },
   { u: -0.02, v: 0.66, rot: -96, size: 0.26 },
+  { u: -0.01, v: 0.06, rot: 11, size: 0.56 },
 ]
